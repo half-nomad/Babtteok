@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밥떡한끼 - 검증된 안정성과 차별화된 기회</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 슬라이드 네비게이션 -->
+    <nav class="slide-nav">
+        <div class="nav-container">
+            <div class="slide-counter">
+                <span class="current-slide">01</span>
+                <span class="divider">/</span>
+                <span class="total-slides">06</span>
+            </div>
+            <div class="nav-controls">
+                <button class="nav-btn prev-btn" onclick="previousSlide()" disabled>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="nav-btn next-btn" onclick="nextSlide()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 슬라이드 컨테이너 -->
+    <main class="slides-container">
+        
+        <!-- 슬라이드 1: 문제 정의/현황 분석 -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content">
+                <header class="slide-header">
+                    <div class="header-tag">현황 분석</div>
+                    <h1 class="slide-title">소자본 창업시장의 현실</h1>
+                    <p class="slide-subtitle">높은 임대료, 치열한 경쟁, 불안한 수익성</p>
+                </header>
+
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="problem-list">
+                            <div class="problem-item">
+                                <div class="problem-icon">📊</div>
+                                <div class="problem-content">
+                                    <h3>1억원 내외 소자본 창업</h3>
+                                    <p>치킨, 카페 등 포화 업종만 선택 가능<br>높은 가맹비로 수익성 악화</p>
+                                </div>
+                            </div>
+                            <div class="problem-item">
+                                <div class="problem-icon">📈</div>
+                                <div class="problem-content">
+                                    <h3>코로나19 이후 악화</h3>
+                                    <p>임대료 상승 + 유동인구 감소<br>오프라인 매장 운영 더욱 어려워짐</p>
+                                </div>
+                            </div>
+                            <div class="problem-item">
+                                <div class="problem-icon">🏢</div>
+                                <div class="problem-content">
+                                    <h3>시장 공백과 독과점</h3>
+                                    <p>밥버거 시장: 봉구스 실패로 공백<br>떡볶이 시장: 대기업 독과점</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-right">
+                        <div class="chart-container">
+                            <h4 class="chart-title">소자본 창업 실패율</h4>
+                            <div class="failure-rate-chart">
+                                <div class="chart-bar">
+                                    <div class="bar-item" data-value="75">
+                                        <div class="bar-fill"></div>
+                                        <div class="bar-label">치킨 프랜차이즈</div>
+                                        <div class="bar-value">75%</div>
+                                    </div>
+                                    <div class="bar-item" data-value="68">
+                                        <div class="bar-fill"></div>
+                                        <div class="bar-label">카페 프랜차이즈</div>
+                                        <div class="bar-value">68%</div>
+                                    </div>
+                                    <div class="bar-item" data-value="62">
+                                        <div class="bar-fill"></div>
+                                        <div class="bar-label">분식 프랜차이즈</div>
+                                        <div class="bar-value">62%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="stat-cards">
+                            <div class="stat-card">
+                                <div class="stat-number">+37%</div>
+                                <div class="stat-label">임대료 상승률</div>
+                                <div class="stat-period">2021-2024</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">-28%</div>
+                                <div class="stat-label">유동인구 감소</div>
+                                <div class="stat-period">코로나 이후</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 2: 솔루션/아이디어 제시 -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <header class="slide-header">
+                    <div class="header-tag">솔루션 제시</div>
+                    <h1 class="slide-title">밥떡이: 검증된 안정성과 차별화된 기회</h1>
+                    <p class="slide-subtitle">8,000만원 초기투자, 월 3,500만원 손익분기점의 현실적 수익모델</p>
+                </header>
+
+                <div class="content-grid">
+                    <div class="content-left">
+                        <div class="solution-highlights">
+                            <div class="highlight-card">
+                                <div class="highlight-icon">✅</div>
+                                <h3>검증된 메뉴 조합</h3>
+                                <p>이미 검증된 밥버거+떡볶이로<br>창업 리스크 최소화</p>
+                                <div class="highlight-value">8,000만원</div>
+                                <div class="highlight-desc">합리적 초기 투자</div>
+                            </div>
+                            <div class="highlight-card">
+                                <div class="highlight-icon">🎯</div>
+                                <h3>하이브리드 운영</h3>
+                                <p>배달 50% + 매장 50%<br>다양한 매출 채널 확보</p>
+                                <div class="highlight-value">8,000원</div>
+                                <div class="highlight-desc">기본 세트 가격</div>
+                            </div>
+                            <div class="highlight-card">
+                                <div class="highlight-icon">🚀</div>
+                                <h3>시장 선점 기회</h3>
+                                <p>봉구스 공백 시장<br>선점 효과 극대화</p>
+                                <div class="highlight-value">3,500만원</div>
+                                <div class="highlight-desc">월 손익분기점</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-right">
+                        <div class="investment-breakdown">
+                            <h4 class="chart-title">초기 투자금 구성</h4>
+                            <div class="pie-chart-container">
+                                <div class="pie-chart">
+                                    <div class="pie-segment segment-1" data-value="35"></div>
+                                    <div class="pie-segment segment-2" data-value="25"></div>
+                                    <div class="pie-segment segment-3" data-value="20"></div>
+                                    <div class="pie-segment segment-4" data-value="20"></div>
+                                </div>
+                                <div class="pie-legend">
+                                    <div class="legend-item">
+                                        <div class="legend-color color-1"></div>
+                                        <span>인테리어 (35%)</span>
+                                        <strong>2,800만원</strong>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color color-2"></div>
+                                        <span>설비/주방 (25%)</span>
+                                        <strong>2,000만원</strong>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color color-3"></div>
+                                        <span>초기 재료비 (20%)</span>
+                                        <strong>1,600만원</strong>
+                                    </div>
+                                    <div class="legend-item">
+                                        <div class="legend-color color-4"></div>
+                                        <span>운영자금 (20%)</span>
+                                        <strong>1,600만원</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="roi-simulator">
+                            <h4 class="chart-title">손익분기점 달성 시뮬레이션</h4>
+                            <div class="roi-chart">
+                                <div class="roi-months">
+                                    <div class="month-bar" data-month="1" data-value="-2800">
+                                        <div class="month-fill negative"></div>
+                                        <span class="month-label">1월</span>
+                                    </div>
+                                    <div class="month-bar" data-month="2" data-value="-1900">
+                                        <div class="month-fill negative"></div>
+                                        <span class="month-label">2월</span>
+                                    </div>
+                                    <div class="month-bar" data-month="3" data-value="-800">
+                                        <div class="month-fill negative"></div>
+                                        <span class="month-label">3월</span>
+                                    </div>
+                                    <div class="month-bar" data-month="4" data-value="200">
+                                        <div class="month-fill positive"></div>
+                                        <span class="month-label">4월</span>
+                                    </div>
+                                    <div class="month-bar" data-month="5" data-value="1300">
+                                        <div class="month-fill positive"></div>
+                                        <span class="month-label">5월</span>
+                                    </div>
+                                    <div class="month-bar" data-month="6" data-value="2500">
+                                        <div class="month-fill positive"></div>
+                                        <span class="month-label">6월</span>
+                                    </div>
+                                </div>
+                                <div class="breakeven-line">
+                                    <span class="breakeven-label">손익분기점</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 슬라이드 인디케이터 -->
+    <div class="slide-indicators">
+        <button class="indicator active" onclick="goToSlide(1)"></button>
+        <button class="indicator" onclick="goToSlide(2)"></button>
+        <button class="indicator" onclick="goToSlide(3)"></button>
+        <button class="indicator" onclick="goToSlide(4)"></button>
+        <button class="indicator" onclick="goToSlide(5)"></button>
+        <button class="indicator" onclick="goToSlide(6)"></button>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
