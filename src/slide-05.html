@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밥떡한끼 - 결과 및 성과 예측</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 슬라이드 5: 결과/성과 예측 -->
+    <section class="slide slide-05">
+        <div class="slide-content">
+            <header class="slide-header">
+                <div class="header-tag results-tag">성과 예측</div>
+                <h1 class="slide-title">
+                    안정적 투자 회수: <span class="highlight-brand">2년 내 투자금 회수</span><br>
+                    <span class="highlight-accent">3년차부터 순익 3,000만원</span>
+                </h1>
+                <p class="slide-subtitle">브랜드 가치 상승으로 점포 자산가치 증대 효과</p>
+            </header>
+
+            <div class="content-grid results-grid">
+                <!-- 왼쪽: 월별 손익 시뮬레이션 -->
+                <div class="content-left">
+                    <div class="profit-simulation" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="section-title">월별 손익 시뮬레이션</h3>
+                        <div class="simulation-controls">
+                            <div class="control-group">
+                                <label>시나리오 선택:</label>
+                                <select id="scenario-select">
+                                    <option value="optimistic">최적 시나리오</option>
+                                    <option value="realistic" selected>현실적 시나리오</option>
+                                    <option value="conservative">보수적 시나리오</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="profit-chart" width="500" height="300"></canvas>
+                        </div>
+                        <div class="simulation-summary">
+                            <div class="summary-item">
+                                <div class="summary-label">월평균 매출</div>
+                                <div class="summary-value" id="avg-revenue">6,000만원</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">월평균 순익</div>
+                                <div class="summary-value" id="avg-profit">1,300만원</div>
+                            </div>
+                            <div class="summary-item">
+                                <div class="summary-label">순익률</div>
+                                <div class="summary-value" id="profit-margin">21.7%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 투자 회수 분석 -->
+                    <div class="payback-analysis" data-aos="fade-up" data-aos-delay="400">
+                        <h3 class="section-title">투자 회수 기간 분석</h3>
+                        <div class="payback-timeline">
+                            <div class="timeline-item" data-month="6">
+                                <div class="timeline-point"></div>
+                                <div class="timeline-content">
+                                    <h4>6개월차</h4>
+                                    <p>손익분기점 달성</p>
+                                    <div class="timeline-value">월 3,500만원 매출</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-month="12">
+                                <div class="timeline-point"></div>
+                                <div class="timeline-content">
+                                    <h4>12개월차</h4>
+                                    <p>안정적 수익 창출</p>
+                                    <div class="timeline-value">월 5,500만원 매출</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-month="24">
+                                <div class="timeline-point highlight"></div>
+                                <div class="timeline-content">
+                                    <h4>24개월차</h4>
+                                    <p>투자금 회수 완료</p>
+                                    <div class="timeline-value">누적 수익 8,000만원</div>
+                                </div>
+                            </div>
+                            <div class="timeline-item" data-month="36">
+                                <div class="timeline-point"></div>
+                                <div class="timeline-content">
+                                    <h4>36개월차</h4>
+                                    <p>고수익 단계 진입</p>
+                                    <div class="timeline-value">월 2,500만원 순익</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 오른쪽: 브랜드 가치 및 리스크 분석 -->
+                <div class="content-right">
+                    <!-- 브랜드 가치 상승 -->
+                    <div class="brand-value-section" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="section-title">브랜드 성장에 따른 점포 가치</h3>
+                        <div class="value-chart-container">
+                            <canvas id="brand-value-chart" width="400" height="250"></canvas>
+                        </div>
+                        <div class="value-highlights">
+                            <div class="highlight-item">
+                                <div class="highlight-icon">📈</div>
+                                <div class="highlight-content">
+                                    <h4>권리금 상승</h4>
+                                    <p>초기 가맹점 권리금 2-3배 상승 예상</p>
+                                    <div class="highlight-value">+5,000만원</div>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">💎</div>
+                                <div class="highlight-content">
+                                    <h4>브랜드 프리미엄</h4>
+                                    <p>성공 브랜드 초기 가맹점 프리미엄</p>
+                                    <div class="highlight-value">+3,000만원</div>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <div class="highlight-icon">🏆</div>
+                                <div class="highlight-content">
+                                    <h4>매각 프리미엄</h4>
+                                    <p>매장 매각 시 브랜드 가치 반영</p>
+                                    <div class="highlight-value">+40%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 리스크 대비 수익률 -->
+                    <div class="risk-return-analysis" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="section-title">리스크 대비 수익률 분석</h3>
+                        <div class="risk-comparison">
+                            <div class="comparison-item best">
+                                <div class="comparison-header">
+                                    <h4>밥떡이</h4>
+                                    <div class="risk-score">위험도: 낮음</div>
+                                </div>
+                                <div class="comparison-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">연 수익률</span>
+                                        <span class="metric-value">35-45%</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">투자 회수</span>
+                                        <span class="metric-value">2년</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">리스크 요인</span>
+                                        <span class="metric-value">검증된 메뉴</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-item average">
+                                <div class="comparison-header">
+                                    <h4>일반 치킨점</h4>
+                                    <div class="risk-score">위험도: 높음</div>
+                                </div>
+                                <div class="comparison-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">연 수익률</span>
+                                        <span class="metric-value">15-25%</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">투자 회수</span>
+                                        <span class="metric-value">3-4년</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">리스크 요인</span>
+                                        <span class="metric-value">포화 시장</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-item poor">
+                                <div class="comparison-header">
+                                    <h4>카페 창업</h4>
+                                    <div class="risk-score">위험도: 매우 높음</div>
+                                </div>
+                                <div class="comparison-metrics">
+                                    <div class="metric">
+                                        <span class="metric-label">연 수익률</span>
+                                        <span class="metric-value">5-15%</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">투자 회수</span>
+                                        <span class="metric-value">5년+</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-label">리스크 요인</span>
+                                        <span class="metric-value">과도한 경쟁</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 성공 사례 -->
+                    <div class="success-examples" data-aos="fade-up" data-aos-delay="700">
+                        <h3 class="section-title">성공 프랜차이즈 자산가치 증가 사례</h3>
+                        <div class="examples-grid">
+                            <div class="example-card">
+                                <div class="example-brand">빽다방</div>
+                                <div class="example-metric">
+                                    <span class="metric-label">초기 가맹비</span>
+                                    <span class="metric-value">2,000만원</span>
+                                </div>
+                                <div class="example-metric">
+                                    <span class="metric-label">현재 권리금</span>
+                                    <span class="metric-value">8,000만원</span>
+                                </div>
+                                <div class="example-growth">400% 상승</div>
+                            </div>
+
+                            <div class="example-card">
+                                <div class="example-brand">공차</div>
+                                <div class="example-metric">
+                                    <span class="metric-label">초기 가맹비</span>
+                                    <span class="metric-value">3,500만원</span>
+                                </div>
+                                <div class="example-metric">
+                                    <span class="metric-label">현재 권리금</span>
+                                    <span class="metric-value">1.5억원</span>
+                                </div>
+                                <div class="example-growth">330% 상승</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 핵심 포인트 요약 -->
+            <div class="key-points-section" data-aos="fade-up" data-aos-delay="900">
+                <h3 class="section-title">투자 성과 핵심 포인트</h3>
+                <div class="points-grid">
+                    <div class="point-card">
+                        <div class="point-number">01</div>
+                        <div class="point-content">
+                            <h4>빠른 투자 회수</h4>
+                            <p>2년 내 초기 투자금 완전 회수</p>
+                        </div>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-number">02</div>
+                        <div class="point-content">
+                            <h4>안정적 수익성</h4>
+                            <p>3년차부터 월 2,500만원 이상 순익</p>
+                        </div>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-number">03</div>
+                        <div class="point-content">
+                            <h4>자산 가치 증대</h4>
+                            <p>브랜드 성장 시 점포 가치 2-3배 상승</p>
+                        </div>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-number">04</div>
+                        <div class="point-content">
+                            <h4>낮은 리스크</h4>
+                            <p>검증된 메뉴와 시장 공백 활용</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 슬라이드 내비게이션 -->
+        <div class="slide-navigation">
+            <button class="nav-btn prev" onclick="previousSlide()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                이전
+            </button>
+            <div class="slide-indicator">
+                <span class="current">05</span> / <span class="total">06</span>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                다음
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // 슬라이드 5 전용 차트 및 인터랙션 스크립트
+        document.addEventListener('DOMContentLoaded', function() {
+            // 보라색 컬러 팔레트
+            const purpleColors = {
+                primary: '#673AB7',
+                secondary: '#9C27B0',
+                accent: '#B388FF',
+                light: 'rgba(179, 136, 255, 0.3)',
+                gradient: ['#673AB7', '#9C27B0', '#B388FF', '#E1BEE7']
+            };
+
+            // 손익 시뮬레이션 데이터
+            const scenarios = {
+                optimistic: {
+                    revenue: [3500, 4500, 5500, 6500, 7500, 8000, 8500, 9000, 9500, 10000, 10500, 11000],
+                    profit: [0, 800, 1500, 2200, 2800, 3200, 3600, 4000, 4300, 4600, 4900, 5200],
+                    avgRevenue: '8,000만원',
+                    avgProfit: '3,200만원',
+                    profitMargin: '40.0%'
+                },
+                realistic: {
+                    revenue: [3500, 4000, 4800, 5500, 6000, 6200, 6500, 6800, 7000, 7200, 7400, 7600],
+                    profit: [0, 300, 800, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000],
+                    avgRevenue: '6,000만원',
+                    avgProfit: '1,300만원',
+                    profitMargin: '21.7%'
+                },
+                conservative: {
+                    revenue: [3500, 3800, 4200, 4600, 5000, 5200, 5400, 5600, 5800, 6000, 6100, 6200],
+                    profit: [0, 100, 400, 700, 900, 1000, 1100, 1200, 1300, 1400, 1450, 1500],
+                    avgRevenue: '5,200만원',
+                    avgProfit: '900만원',
+                    profitMargin: '17.3%'
+                }
+            };
+
+            // 손익 차트 생성 함수
+            function createProfitChart(scenarioKey) {
+                const ctx = document.getElementById('profit-chart').getContext('2d');
+                const scenario = scenarios[scenarioKey];
+                
+                // 기존 차트 제거
+                if (window.profitChart) {
+                    window.profitChart.destroy();
+                }
+
+                window.profitChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+                        datasets: [
+                            {
+                                label: '매출',
+                                data: scenario.revenue,
+                                borderColor: purpleColors.primary,
+                                backgroundColor: purpleColors.light,
+                                borderWidth: 3,
+                                fill: false,
+                                tension: 0.4
+                            },
+                            {
+                                label: '순익',
+                                data: scenario.profit,
+                                borderColor: purpleColors.accent,
+                                backgroundColor: 'rgba(179, 136, 255, 0.1)',
+                                borderWidth: 3,
+                                fill: true,
+                                tension: 0.4
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: '#B388FF',
+                                    font: { family: 'Pretendard' }
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: 'rgba(179, 136, 255, 0.1)' },
+                                ticks: {
+                                    color: '#B388FF',
+                                    font: { family: 'Pretendard' },
+                                    callback: function(value) {
+                                        return value + '만원';
+                                    }
+                                }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: {
+                                    color: '#B388FF',
+                                    font: { family: 'Pretendard' }
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // 요약 정보 업데이트
+                document.getElementById('avg-revenue').textContent = scenario.avgRevenue;
+                document.getElementById('avg-profit').textContent = scenario.avgProfit;
+                document.getElementById('profit-margin').textContent = scenario.profitMargin;
+            }
+
+            // 브랜드 가치 차트 생성
+            function createBrandValueChart() {
+                const ctx = document.getElementById('brand-value-chart').getContext('2d');
+                
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1년차', '2년차', '3년차', '4년차', '5년차'],
+                        datasets: [{
+                            label: '점포 가치(억원)',
+                            data: [0.8, 1.2, 1.8, 2.5, 3.2],
+                            backgroundColor: purpleColors.gradient,
+                            borderColor: purpleColors.primary,
+                            borderWidth: 1,
+                            borderRadius: 8
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                grid: { color: 'rgba(179, 136, 255, 0.1)' },
+                                ticks: {
+                                    color: '#B388FF',
+                                    font: { family: 'Pretendard' },
+                                    callback: function(value) {
+                                        return value + '억원';
+                                    }
+                                }
+                            },
+                            x: {
+                                grid: { display: false },
+                                ticks: {
+                                    color: '#B388FF',
+                                    font: { family: 'Pretendard' }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // 시나리오 선택 이벤트
+            document.getElementById('scenario-select').addEventListener('change', function() {
+                const selectedScenario = this.value;
+                
+                // 차트 재생성
+                createProfitChart(selectedScenario);
+            });
+
+            // 타임라인 애니메이션
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate');
+                }, index * 500);
+            });
+
+            // 초기 차트 생성
+            createProfitChart('realistic');
+            createBrandValueChart();
+
+            // 비교 카드 호버 효과
+            const comparisonItems = document.querySelectorAll('.comparison-item');
+            comparisonItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 15px 35px rgba(179, 136, 255, 0.3)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+                });
+            });
+
+            // 성공 사례 카드 순차 애니메이션
+            const exampleCards = document.querySelectorAll('.example-card');
+            exampleCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('fade-in');
+                }, index * 200);
+            });
+
+            // 핵심 포인트 카드 애니메이션
+            const pointCards = document.querySelectorAll('.point-card');
+            pointCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('slide-up');
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>
+                                    <div class="comparison-badge">추천</div>
+                                </div>
+                                <div class="comparison-body">
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">예상 수익률</div>
+                                        <div class="metric-value">19.5%</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">리스크 레벨</div>
+                                        <div class="metric-value risk-low">낮음</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">시장 포화도</div>
+                                        <div class="metric-value risk-low">낮음</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <h4>치킨 프랜차이즈</h4>
+                                </div>
+                                <div class="comparison-body">
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">예상 수익률</div>
+                                        <div class="metric-value">12.8%</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">리스크 레벨</div>
+                                        <div class="metric-value risk-high">높음</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">시장 포화도</div>
+                                        <div class="metric-value risk-high">매우 높음</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <h4>카페 프랜차이즈</h4>
+                                </div>
+                                <div class="comparison-body">
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">예상 수익률</div>
+                                        <div class="metric-value">8.2%</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">리스크 레벨</div>
+                                        <div class="metric-value risk-medium">중간</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">시장 포화도</div>
+                                        <div class="metric-value risk-high">높음</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="comparison-item">
+                                <div class="comparison-header">
+                                    <h4>분식 프랜차이즈</h4>
+                                </div>
+                                <div class="comparison-body">
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">예상 수익률</div>
+                                        <div class="metric-value">15.3%</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">리스크 레벨</div>
+                                        <div class="metric-value risk-medium">중간</div>
+                                    </div>
+                                    <div class="comparison-metric">
+                                        <div class="metric-label">시장 포화도</div>
+                                        <div class="metric-value risk-medium">중간</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 성공 프랜차이즈 자산가치 증가 사례 -->
+                    <div class="success-examples" data-aos="fade-up" data-aos-delay="600">
+                        <h3 class="section-title">성공 프랜차이즈 자산가치 증가 사례</h3>
+                        <div class="examples-grid">
+                            <div class="example-card">
+                                <div class="example-brand">신전떡볶이</div>
+                                <div class="example-period">2010~2020</div>
+                                <div class="example-growth">
+                                    <div class="growth-label">권리금 상승률</div>
+                                    <div class="growth-value">+320%</div>
+                                </div>
+                                <div class="example-note">초기 가맹점 평균 권리금 3배 상승</div>
+                            </div>
+
+                            <div class="example-card">
+                                <div class="example-brand">맘스터치</div>
+                                <div class="example-period">2015~2023</div>
+                                <div class="example-growth">
+                                    <div class="growth-label">브랜드 가치</div>
+                                    <div class="growth-value">+450%</div>
+                                </div>
+                                <div class="example-note">햄버거 시장 후발주자 → 업계 3위</div>
+                            </div>
+
+                            <div class="example-card">
+                                <div class="example-brand">투썸플레이스</div>
+                                <div class="example-period">2005~2018</div>
+                                <div class="example-growth">
+                                    <div class="growth-label">매각 프리미엄</div>
+                                    <div class="growth-value">+280%</div>
+                                </div>
+                                <div class="example-note">CJ 인수 시 초기 가맹점 고수익</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 핵심 포인트 요약 -->
+            <div class="key-points-summary" data-aos="fade-up" data-aos-delay="700">
+                <h3 class="section-title">핵심 투자 포인트</h3>
+                <div class="points-grid">
+                    <div class="point-card">
+                        <div class="point-number">01</div>
+                        <div class="point-content">
+                            <h4>안정적 투자 회수</h4>
+                            <p>월 매출 6,000만원 달성 시 24개월 내 투자금 완전 회수</p>
+                        </div>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-number">02</div>
+                        <div class="point-content">
+                            <h4>브랜드 성장 수혜</h4>
+                            <p>초기 가맹점 권리금 및 매각가치 2-3배 상승 기대</p>
+                        </div>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-number">03</div>
+                        <div class="point-content">
+                            <h4>리스크 대비 고수익</h4>
+                            <p>업계 평균 대비 높은 수익률과 낮은 시장 포화도</p>
+                        </div>
+                    </div>
+                    <div class="point-card">
+                        <div class="point-number">04</div>
+                        <div class="point-content">
+                            <h4>지속적 성장 모델</h4>
+                            <p>3년차부터 월 2,500만원 순익으로 안정적 수익 창출</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 슬라이드 내비게이션 -->
+        <div class="slide-navigation">
+            <button class="nav-btn prev" onclick="previousSlide()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                이전
+            </button>
+            <div class="slide-indicator">
+                <span class="current">05</span> / <span class="total">06</span>
+            </div>
+            <button class="nav-btn next" onclick="nextSlide()">
+                다음
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <script src="js/app.js"></script>
+    <script>
+        // 슬라이드 5 전용 스크립트
+        document.addEventListener('DOMContentLoaded', function() {
+            // 시나리오 데이터
+            const scenarios = {
+                optimistic: {
+                    name: '최적 시나리오',
+                    monthlyRevenue: [3500, 4500, 5500, 6500, 7500, 8000, 8200, 8500, 8800, 9000, 9200, 9500],
+                    monthlyCost: [2800, 3200, 3600, 4000, 4200, 4400, 4500, 4600, 4700, 4800, 4900, 5000],
+                    avgRevenue: 7800,
+                    avgProfit: 2900,
+                    profitMargin: 37.2
+                },
+                realistic: {
+                    name: '현실적 시나리오',
+                    monthlyRevenue: [3000, 3500, 4000, 4500, 5000, 5500, 6000, 6200, 6400, 6500, 6600, 6800],
+                    monthlyCost: [2500, 2800, 3100, 3400, 3600, 3800, 4000, 4100, 4200, 4300, 4400, 4500],
+                    avgRevenue: 6000,
+                    avgProfit: 1300,
+                    profitMargin: 21.7
+                },
+                conservative: {
+                    name: '보수적 시나리오',
+                    monthlyRevenue: [2500, 2800, 3200, 3500, 3800, 4000, 4200, 4300, 4400, 4500, 4600, 4700],
+                    monthlyCost: [2200, 2400, 2600, 2800, 3000, 3200, 3300, 3400, 3500, 3600, 3700, 3800],
+                    avgRevenue: 4200,
+                    avgProfit: 500,
+                    profitMargin: 11.9
+                }
+            };
+
+            // 차트 생성
+            function createProfitChart(scenario) {
+                const canvas = document.getElementById('profit-chart');
+                const ctx = canvas.getContext('2d');
+                
+                // 캔버스 클리어
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const data = scenarios[scenario];
+                const months = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+                
+                // 차트 설정
+                const chartWidth = canvas.width - 100;
+                const chartHeight = canvas.height - 80;
+                const barWidth = chartWidth / months.length;
+                const maxValue = Math.max(...data.monthlyRevenue);
+                
+                // 배경 그리기
+                ctx.fillStyle = 'rgba(179, 136, 255, 0.1)';
+                ctx.fillRect(50, 40, chartWidth, chartHeight);
+                
+                // 바 차트 그리기
+                data.monthlyRevenue.forEach((revenue, index) => {
+                    const cost = data.monthlyCost[index];
+                    const profit = revenue - cost;
+                    
+                    const x = 50 + (index * barWidth) + (barWidth * 0.1);
+                    const barHeight = (revenue / maxValue) * chartHeight;
+                    const y = 40 + chartHeight - barHeight;
+                    
+                    // 매출 바
+                    ctx.fillStyle = profit > 0 ? '#B388FF' : '#FF6B6B';
+                    ctx.fillRect(x, y, barWidth * 0.8, barHeight);
+                    
+                    // 비용 바 (내부)
+                    const costHeight = (cost / maxValue) * chartHeight;
+                    const costY = 40 + chartHeight - costHeight;
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                    ctx.fillRect(x, costY, barWidth * 0.8, costHeight);
+                    
+                    // 월 라벨
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = '12px Pretendard';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(months[index], x + (barWidth * 0.4), chartHeight + 60);
+                });
+                
+                // Y축 라벨
+                ctx.fillStyle = '#B388FF';
+                ctx.font = '14px Pretendard';
+                ctx.textAlign = 'right';
+                for (let i = 0; i <= 5; i++) {
+                    const value = (maxValue / 5) * i;
+                    const y = 40 + chartHeight - (i * chartHeight / 5);
+                    ctx.fillText(`${(value / 10000).toFixed(1)}억`, 45, y + 5);
+                }
+            }
+
+            // 브랜드 가치 차트 생성
+            function createBrandValueChart() {
+                const canvas = document.getElementById('brand-value-chart');
+                const ctx = canvas.getContext('2d');
+                
+                const years = ['1년차', '2년차', '3년차', '4년차', '5년차'];
+                const values = [6500, 8000, 10500, 13000, 16500]; // 만원 단위
+                
+                // 캔버스 클리어
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                const chartWidth = canvas.width - 80;
+                const chartHeight = canvas.height - 60;
+                const maxValue = Math.max(...values);
+                
+                // 라인 차트 그리기
+                ctx.strokeStyle = '#B388FF';
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                
+                values.forEach((value, index) => {
+                    const x = 40 + (index * (chartWidth / (values.length - 1)));
+                    const y = 30 + chartHeight - ((value / maxValue) * chartHeight);
+                    
+                    if (index === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                    
+                    // 포인트 그리기
+                    ctx.fillStyle = '#B388FF';
+                    ctx.beginPath();
+                    ctx.arc(x, y, 6, 0, 2 * Math.PI);
+                    ctx.fill();
+                    
+                    // 값 라벨
+                    ctx.fillStyle = '#ffffff';
+                    ctx.font = '12px Pretendard';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`${(value / 10000).toFixed(1)}억`, x, y - 15);
+                    
+                    // 년도 라벨
+                    ctx.fillText(years[index], x, chartHeight + 50);
+                });
+                
+                ctx.stroke();
+            }
+
+            // 시나리오 변경 이벤트
+            const scenarioSelect = document.getElementById('scenario-select');
+            scenarioSelect.addEventListener('change', function() {
+                const selectedScenario = this.value;
+                const data = scenarios[selectedScenario];
+                
+                // 요약 정보 업데이트
+                document.getElementById('avg-revenue').textContent = `${data.avgRevenue.toLocaleString()}만원`;
+                document.getElementById('avg-profit').textContent = `${data.avgProfit.toLocaleString()}만원`;
+                document.getElementById('profit-margin').textContent = `${data.profitMargin}%`;
+                
+                // 차트 재생성
+                createProfitChart(selectedScenario);
+            });
+
+            // 타임라인 애니메이션
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('animate');
+                }, index * 500);
+            });
+
+            // 초기 차트 생성
+            createProfitChart('realistic');
+            createBrandValueChart();
+
+            // 비교 카드 호버 효과
+            const comparisonItems = document.querySelectorAll('.comparison-item');
+            comparisonItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 15px 35px rgba(179, 136, 255, 0.3)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.2)';
+                });
+            });
+
+            // 성공 사례 카드 순차 애니메이션
+            const exampleCards = document.querySelectorAll('.example-card');
+            exampleCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('fade-in');
+                }, index * 200);
+            });
+
+            // 핵심 포인트 카드 애니메이션
+            const pointCards = document.querySelectorAll('.point-card');
+            pointCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('slide-up');
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>
