@@ -30,59 +30,57 @@
 5. **slide-05.html**: 성과 예측 - 구체적 수익 모델
 6. **slide-06.html**: 제안/CTA - 얼리어답터 모집
 
-## 🎨 디자인 시스템 (업데이트됨)
-### 컬러 팔레트 (브랜드 맞춤 조정)
-- **Primary**: #2C3E50 (신뢰감의 네이비)
-- **Secondary**: #34495E (라이트 네이비)  
-- **Accent**: #E67E22 (포인트 오렌지)
-- **Tertiary**: #7F8C8D (안정감의 그레이)
-- **Text**: #2C3E50 (다크 네이비)
-- **Background**: #FFFFFF (화이트)
+## 🎨 디자인 시스템 (최종 확정)
+### 컬러 팔레트 (원본 보라색 테마)
+- **Primary**: #673AB7 (Deep Purple)
+- **Secondary**: #9C27B0 (Light Purple)  
+- **Accent**: #B388FF (Soft Purple)
+- **Tertiary**: #3F51B5 (Indigo)
+- **Background**: #000000 (Black) + #1a1a1a (Dark)
+- **Text**: #FFFFFF (White) + #CCCCCC (Gray)
 
 ### 타이포그래피
 - **헤딩**: Noto Sans KR Bold
 - **바디**: Noto Sans KR Regular
 - **강조**: Noto Sans KR Medium
 
-## 📁 파일 구조 (업데이트됨)
+## 📁 파일 구조 (현재 상태)
 ```
 Babtteok/
-├── index.html              # 메인 랜딩 페이지
-├── slide-01.html           # 문제 정의 슬라이드
-├── slide-02.html           # 솔루션 제시 슬라이드  
-├── slide-03.html           # 시장 분석 슬라이드
-├── slide-04.html           # 실행 계획 슬라이드
-├── slide-05.html           # 성과 예측 슬라이드
-├── slide-06.html           # 제안/CTA 슬라이드
+├── index.html              # 메인 랜딩 페이지 (예정)
+├── slide-01.html           # 문제 정의 슬라이드 (예정)
+├── slide-02.html           # 솔루션 제시 슬라이드 (예정)
+├── slide-03.html           # 시장 분석 슬라이드 (예정)
+├── slide-04.html           # 실행 계획 슬라이드 (예정)
+├── slide-05.html           # 성과 예측 슬라이드 (예정)
+├── slide-06.html           # 제안/CTA 슬라이드 (예정)
 ├── assets/
 │   ├── css/
 │   │   ├── reset.css       # CSS 리셋 ✅
 │   │   ├── variables.css   # CSS 변수 ✅
-│   │   ├── layout.css      # 레이아웃
-│   │   ├── slides.css      # 슬라이드 스타일
-│   │   └── animations.css  # 애니메이션
+│   │   ├── layout.css      # 레이아웃 (예정)
+│   │   ├── slides.css      # 슬라이드 스타일 (예정)
+│   │   └── animations.css  # 애니메이션 (예정)
 │   ├── js/
-│   │   ├── main.js         # 메인 로직
-│   │   ├── slides.js       # 슬라이드 제어
-│   │   └── animations.js   # 애니메이션 제어
-│   └── images/
-│       ├── logo/           # 로고 파일
-│       ├── charts/         # 차트 이미지
-│       └── icons/          # 아이콘 세트
+│   │   ├── main.js         # 메인 로직 (예정)
+│   │   ├── slides.js       # 슬라이드 제어 (예정)
+│   │   └── animations.js   # 애니메이션 제어 (예정)
+│   └── images/             📁 준비됨
 ├── docs/
 │   ├── design-system.md    # 디자인 시스템 ✅
-│   └── content-plan.md     # 콘텐츠 계획 ✅
-└── build/                  # 배포용 빌드
+│   └── slide-content.md    # 원본 슬라이드 기획서 ✅
+└── build/                  # 배포용 빌드 (예정)
 ```
 
 ## ⏰ 개발 일정
 ### Day 1 (오늘): 프로젝트 초기화 및 기본 구조 ✅
 - [x] 프로젝트 완전 초기화
 - [x] 7페이지 구조 설계 (메인 + 슬라이드 6개)
-- [x] 디자인 시스템 문서 작성 (보라색 → 브랜드 컬러 조정)
-- [x] CSS 변수 파일 생성 (variables.css)
-- [x] CSS 리셋 파일 생성 (reset.css)
-- [x] 콘텐츠 계획서 작성
+- [x] 디자인 시스템 문서 작성 (원본 보라색 팔레트 적용)
+- [x] CSS 변수 파일 생성 (variables.css) - 보라색 테마
+- [x] CSS 리셋 파일 생성 (reset.css) - 다크 테마
+- [x] 원본 슬라이드 기획서 정리 (slide-content.md)
+- [x] 불필요한 중복 파일 제거 (content-plan.md 삭제)
 - [ ] 메인 index.html 구조 생성
 - [ ] 기본 레이아웃 CSS 설정
 
@@ -149,10 +147,25 @@ Babtteok/
    - 콘텐츠 확정 지연 → 더미 콘텐츠로 개발 병행
 
 ## 📝 변경 이력
+- **v2.2** (2025.06.29 18:10): 컬러 팔레트 원본 보라색 테마로 최종 확정, 불필요한 중복 파일 정리
 - **v2.1** (2025.06.29 17:50): 7페이지 구조 확정, 디자인 시스템 브랜드 맞춤 조정, CSS 기본 파일 생성
 - **v2.0** (2025.06.29 17:45): 프로젝트 완전 초기화 및 새로운 시작
 - **v1.0** (2025.06.29): 초기 프로젝트 설정
 
+## 🔄 주요 결정 사항
+1. **컬러 팔레트**: 원본 보라색 테마 채택 (Deep Purple + Soft Purple + 다크 배경)
+2. **파일 구조**: 7페이지 구조 (메인 + 슬라이드 6개)
+3. **콘텐츠 소스**: 원본 기획서 활용 (중복 제거)
+4. **디자인 방향**: 모던 다크 테마 + 글래스모피즘
+
 ---
 
-**다음 액션**: 기본 HTML 구조 및 CSS 기반 설정
+**다음 액션**: 메인 index.html 구조 생성 (보라색 테마 기반 랜딩 페이지)
+
+## 📋 준비 완료 사항
+- ✅ 원본 슬라이드 기획서 (`docs/slide-content.md`)
+- ✅ 보라색 테마 디자인 시스템 (`docs/design-system.md`) 
+- ✅ CSS 기본 파일 (variables.css, reset.css)
+- ✅ 프로젝트 구조 및 폴더 준비
+
+**다음 개발 단계**: HTML 구조 → CSS 레이아웃 → JavaScript 인터랙션
