@@ -315,6 +315,442 @@
     font-weight: 500;
 }
 
+/* =============================================================================
+   슬라이드 4: 실행 계획/프로세스
+   ============================================================================= */
+
+.execution-plan {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--accent-light);
+    text-align: center;
+    margin: 0 0 40px 0;
+    font-weight: 600;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+/* 3단계 확장 로드맵 */
+.roadmap-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 0 20px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 50px;
+    right: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), #6366F1, #10B981);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+.timeline-item {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-marker {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.timeline-number {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 183, 77, 0.4);
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover .timeline-number {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(255, 183, 77, 0.6);
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: white;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.timeline-period {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 0 20px 0;
+}
+
+.timeline-details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.timeline-details li {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 0.95rem;
+}
+
+.timeline-details li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.timeline-metrics {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.metric {
+    background: rgba(255, 183, 77, 0.2);
+    color: var(--accent-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 183, 77, 0.3);
+}
+
+/* 가맹 조건 비교 */
+.franchise-comparison {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-table {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.comparison-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: rgba(255, 183, 77, 0.2);
+    border-bottom: 2px solid rgba(255, 183, 77, 0.3);
+}
+
+.comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-item {
+    padding: 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.brand-column {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.comparison-item.highlight,
+.brand-column.highlight {
+    background: rgba(255, 183, 77, 0.15);
+    color: var(--accent-light);
+    font-weight: 600;
+}
+
+.comparison-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* 본부 지원 시스템 */
+.support-system {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.support-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.support-step {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.support-step:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.support-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.support-step h3 {
+    font-size: 1.3rem;
+    color: white;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.support-step p {
+    color: var(--accent-light);
+    margin: 0 0 20px 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.support-step ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.support-step li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.support-step li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.support-arrow {
+    font-size: 2rem;
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+/* 수익률 시뮬레이션 */
+.profit-simulation {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.simulation-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.simulation-input,
+.simulation-result {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.simulation-input h3,
+.simulation-result h3 {
+    font-size: 1.4rem;
+    color: var(--accent-light);
+    margin: 0 0 25px 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+.condition-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.condition-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.condition-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.condition-value {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.profit-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.profit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profit-item.revenue {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.profit-item.cost {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.profit-item.net {
+    background: rgba(255, 183, 77, 0.2);
+    border-color: rgba(255, 183, 77, 0.3);
+}
+
+.profit-item.annual {
+    background: rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.profit-label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.profit-value {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.roi-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.roi-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.roi-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.roi-value {
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
 /* 경쟁력 비교 섹션 */
 .competitive-advantage {
     margin-top: 50px;
