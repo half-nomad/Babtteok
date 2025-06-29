@@ -320,10 +320,11 @@
    ============================================================================= */
 
 .execution-plan {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 30px;
     margin-top: 20px;
+    height: 100%;
 }
 
 .section-title {
@@ -756,10 +757,12 @@
    ============================================================================= */
 
 .results-forecast {
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     margin-top: 20px;
+    height: 100%;
+    align-items: start;
 }
 
 /* 투자 회수 시뮬레이션 */
@@ -1368,10 +1371,12 @@
    ============================================================================= */
 
 .cta-section {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     margin-top: 20px;
+    height: 100%;
+    align-items: center;
 }
 
 /* 핵심 가치 제안 */
@@ -2238,25 +2243,27 @@
    ============================================================================= */
 
 .market-analysis {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     margin-top: 20px;
+    height: 100%;
+    align-items: start;
 }
 
 /* 시장 통계 카드들 */
 .market-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
 }
 
 .market-stat-card {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     border: 2px solid transparent;
-    border-radius: 20px;
-    padding: 35px 25px;
+    border-radius: 16px;
+    padding: 25px 15px;
     text-align: center;
     transition: all 0.4s ease;
     position: relative;
