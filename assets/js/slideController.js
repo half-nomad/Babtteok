@@ -113,19 +113,6 @@ class SlideController {
             }
         });
         
-        // 마우스 휠 이벤트
-        this.slideContainer.addEventListener('wheel', (e) => {
-            if (this.isTransitioning) return;
-            
-            e.preventDefault();
-            
-            if (e.deltaY > 0) {
-                this.nextSlide();
-            } else {
-                this.previousSlide();
-            }
-        }, { passive: false });
-        
         // 브라우저 뒤로가기/앞으로가기
         window.addEventListener('popstate', (e) => {
             if (e.state && e.state.slide) {
