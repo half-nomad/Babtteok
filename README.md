@@ -31,8 +31,8 @@ src/
 ```
 
 ## 🚀 Live Demo
-**배포 URL**: `https://[사용자명].github.io/Babtteok/`  
-*(GitHub 저장소 연결 후 자동 배포)*
+**배포 URL**: `https://half-nomad.github.io/Babtteok/`  
+*(자동 배포 완료 - 약 1-2분 후 접속 가능)*
 
 ## ✅ 개발 현황 (완료)
 
