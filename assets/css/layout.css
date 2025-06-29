@@ -6,10 +6,11 @@
 body {
     font-family: var(--font-primary);
     line-height: 1.6;
-    background: var(--gradient-bg);
     color: var(--text-primary);
     overflow: hidden;
     position: relative;
+    margin: 0;
+    padding: 0;
 }
 
 /* 로딩 스크린 */
@@ -64,12 +65,26 @@ body {
     opacity: 0.9;
 }
 
-/* 메인 슬라이드 컨테이너 */
-.slide-container {
+/* 16:9 비율 래퍼 */
+.slide-wrapper {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-bg);
+    position: relative;
+}
+
+/* 메인 슬라이드 컨테이너 - 16:9 비율 강제 */
+.slide-container {
+    width: min(100vw, 177.78vh); /* 16:9 비율 = 177.78% */
+    height: min(100vh, 56.25vw);  /* 9:16 비율 = 56.25% */
     position: relative;
     overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    background: var(--gradient-bg);
 }
 
 /* 개별 슬라이드 */
