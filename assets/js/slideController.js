@@ -30,7 +30,7 @@ class SlideController {
         this.setupEventListeners();
         
         // 초기 슬라이드 설정
-        this.updateSlide(1);
+        this.goToSlide(1, false, false);
         this.updateProgress();
         
         // 키보드 도움말 자동 숨김
