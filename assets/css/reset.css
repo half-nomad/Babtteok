@@ -38,7 +38,7 @@ body {
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
   color: var(--text-primary);
-  background-color: var(--background-white);
+  background-color: var(--background-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -46,12 +46,12 @@ body {
 /* A elements that don't have a class get default styles */
 a:not([class]) {
   text-decoration-skip-ink: auto;
-  color: var(--primary-navy);
+  color: var(--primary-purple);
   text-decoration: underline;
 }
 
 a:not([class]):hover {
-  color: var(--accent-orange);
+  color: var(--accent-purple);
 }
 
 /* Make images easier to work with */
@@ -141,7 +141,7 @@ p {
 
 /* Provide visible focus for keyboard users */
 *:focus-visible {
-  outline: 2px solid var(--accent-orange);
+  outline: 2px solid var(--accent-purple);
   outline-offset: 2px;
 }
 
@@ -150,13 +150,13 @@ p {
    ================================= */
 
 ::selection {
-  background-color: var(--accent-orange);
-  color: var(--text-white);
+  background-color: var(--accent-purple);
+  color: var(--background-black);
 }
 
 ::-moz-selection {
-  background-color: var(--accent-orange);
-  color: var(--text-white);
+  background-color: var(--accent-purple);
+  color: var(--background-black);
 }
 
 /* =================================
@@ -169,16 +169,16 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-light);
+  background: var(--background-dark);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--tertiary-gray);
+  background: var(--tertiary-indigo);
   border-radius: var(--border-radius-sm);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-navy);
+  background: var(--primary-purple);
 }
 
 /* =================================
@@ -203,8 +203,8 @@ p {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--primary-navy);
-  color: var(--text-white);
+  background: var(--primary-purple);
+  color: var(--text-primary);
   padding: 8px;
   text-decoration: none;
   border-radius: var(--border-radius-sm);

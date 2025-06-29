@@ -3,29 +3,27 @@
 
 :root {
   /* =================================
-     BRAND COLOR PALETTE
+     COLOR PALETTE - ORIGINAL PURPLE THEME
      ================================= */
   
-  /* Core Brand Colors */
-  --primary-navy: #2C3E50;
-  --secondary-navy: #34495E; 
-  --accent-orange: #E67E22;
-  --tertiary-gray: #7F8C8D;
+  /* Core Purple Palette */
+  --primary-purple: #673AB7;
+  --secondary-purple: #9C27B0; 
+  --accent-purple: #B388FF;
+  --tertiary-indigo: #3F51B5;
   
   /* Background Colors */
-  --background-white: #FFFFFF;
-  --background-light: #F8F9FA;
-  --background-dark: #2C3E50;
+  --background-black: #000000;
+  --background-dark: #1a1a1a;
   
   /* Glass Effect */
-  --glass-bg: rgba(44, 62, 80, 0.1);
-  --glass-border: rgba(44, 62, 80, 0.2);
+  --glass-bg: rgba(30, 30, 30, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.15);
   
   /* Text Colors */
-  --text-primary: #2C3E50;
-  --text-secondary: #7F8C8D;
-  --text-light: #BDC3C7;
-  --text-white: #FFFFFF;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --text-light: #E0E0E0;
   
   /* =================================
      TYPOGRAPHY SYSTEM
@@ -96,11 +94,11 @@
      SHADOWS
      ================================= */
   
-  --shadow-sm: 0 2px 8px rgba(44, 62, 80, 0.1);
-  --shadow-md: 0 4px 16px rgba(44, 62, 80, 0.15);
-  --shadow-lg: 0 8px 32px rgba(44, 62, 80, 0.2);
-  --shadow-orange: 0 0 25px rgba(230, 126, 34, 0.3);
-  --shadow-text: 0 0 10px rgba(230, 126, 34, 0.3);
+  --shadow-sm: 0 2px 8px rgba(103, 58, 183, 0.1);
+  --shadow-md: 0 4px 16px rgba(103, 58, 183, 0.15);
+  --shadow-lg: 0 8px 32px rgba(103, 58, 183, 0.2);
+  --shadow-purple: 0 0 25px rgba(103, 58, 183, 0.5);
+  --shadow-text: 0 0 10px rgba(179, 136, 255, 0.4);
   
   /* =================================
      TRANSITIONS & ANIMATIONS
@@ -142,21 +140,21 @@
    ================================= */
 
 .gradient-title {
-  background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-subtitle {
-  background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-orange) 100%);
+  background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-purple) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-box {
-  background: linear-gradient(120deg, var(--tertiary-gray) 0%, var(--primary-navy) 100%);
+  background: linear-gradient(120deg, var(--tertiary-indigo) 0%, var(--primary-purple) 100%);
   box-shadow: var(--shadow-lg);
 }
 

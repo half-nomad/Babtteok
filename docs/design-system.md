@@ -8,48 +8,47 @@
 
 ## 🎨 컬러 시스템
 
-### 기본 컬러 팔레트 (브랜드 맞춤)
+### 기본 컬러 팔레트
 
 ```css
-/* Core Brand Palette */
---primary-navy: #2C3E50;      /* 신뢰감의 네이비 */
---secondary-navy: #34495E;    /* 라이트 네이비 */
---accent-orange: #E67E22;     /* 포인트 오렌지 */
---tertiary-gray: #7F8C8D;     /* 안정감의 그레이 */
+/* Core Palette */
+--primary-purple: #673AB7;    /* Deep Purple */
+--secondary-purple: #9C27B0;  /* Light Purple */
+--accent-purple: #B388FF;     /* Soft Purple */
+--tertiary-indigo: #3F51B5;   /* Indigo */
 
 /* Background & Glass */
---background-white: #FFFFFF;
---background-light: #F8F9FA;
---glass-bg: rgba(44, 62, 80, 0.1);
---glass-border: rgba(44, 62, 80, 0.2);
+--background-black: #000000;
+--background-dark: #1a1a1a;
+--glass-bg: rgba(30, 30, 30, 0.6);
+--glass-border: rgba(255, 255, 255, 0.15);
 
 /* Text Palette */
---text-primary: #2C3E50;      /* 다크 네이비 */
---text-secondary: #7F8C8D;    /* 그레이 */
---text-light: #BDC3C7;        /* 라이트 그레이 */
---text-white: #FFFFFF;        /* 화이트 */
+--text-primary: #FFFFFF;      /* White */
+--text-secondary: #CCCCCC;    /* Gray */
+--text-light: #E0E0E0;        /* Light Gray */
 ```
 
 ### 그라데이션 조합 3가지
 
 #### 1️⃣ 메인 타이틀용 그라데이션
 ```css
-background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 ```
 
 #### 2️⃣ 서브 텍스트용 그라데이션
 ```css
-background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-orange) 100%);
+background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-purple) 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 ```
 
 #### 3️⃣ 강조 박스 및 UI용 그라데이션
 ```css
-background: linear-gradient(120deg, var(--tertiary-gray) 0%, var(--primary-navy) 100%);
-box-shadow: 0 8px 30px rgba(44, 62, 80, 0.2);
+background: linear-gradient(120deg, var(--tertiary-indigo) 0%, var(--primary-purple) 100%);
+box-shadow: 0 8px 30px rgba(103, 58, 183, 0.3);
 ```
 
 ## ✍️ 타이포그래피 시스템
@@ -95,8 +94,8 @@ color: var(--text-secondary);
 ```css
 font-size: 2rem;
 font-weight: 700; /* Bold */
-color: var(--accent-orange);
-text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
+color: var(--accent-purple);
+text-shadow: 0 0 10px rgba(179, 136, 255, 0.4);
 ```
 
 ## 💎 레이아웃 & 이펙트 시스템
@@ -106,7 +105,7 @@ text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
 .slide {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: var(--background-white);
+  background: linear-gradient(135deg, var(--background-black) 0%, var(--background-dark) 100%);
   padding: 4rem; /* 64px */
   display: flex;
   flex-direction: column;
@@ -117,7 +116,7 @@ text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
 }
 ```
 
-### 글래스모피즘 (Glassmorphism) - 브랜드 조정
+### 글래스모피즘 (Glassmorphism)
 ```css
 .glass-card {
   background: var(--glass-bg);
@@ -125,7 +124,7 @@ text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 16px;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   padding: 2rem;
 }
 ```
@@ -154,7 +153,7 @@ text-shadow: 0 0 10px rgba(230, 126, 34, 0.3);
 ```css
 .interactive-element:hover {
   transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 25px rgba(230, 126, 34, 0.3);
+  box-shadow: 0 0 25px rgba(103, 58, 183, 0.5);
 }
 ```
 
