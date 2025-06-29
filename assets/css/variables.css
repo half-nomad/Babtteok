@@ -25,12 +25,18 @@
   --text-secondary: #CCCCCC;
   --text-light: #E0E0E0;
   
+  /* Accent Colors (alias for easy reference) */
+  --accent: #B388FF;           /* Same as accent-purple */
+  --accent-light: #E1BEE7;     /* Lighter purple for accents */
+  --accent-dark: #673AB7;      /* Same as primary-purple */
+  
   /* =================================
      TYPOGRAPHY SYSTEM
      ================================= */
   
   /* Font Family */
   --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   
   /* Font Sizes */
   --font-size-h1: 4rem;      /* 64px - 메인 타이틀 */
@@ -138,6 +144,14 @@
 /* =================================
    GRADIENT PRESETS
    ================================= */
+
+/* 배경 그라데이션 */
+:root {
+  --gradient-bg: radial-gradient(ellipse at top, var(--primary-purple) 0%, var(--background-black) 70%);
+  --gradient-primary: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
+  --gradient-secondary: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-purple) 100%);
+  --gradient-tertiary: linear-gradient(120deg, var(--tertiary-indigo) 0%, var(--primary-purple) 100%);
+}
 
 .gradient-title {
   background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
