@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://half-nomad.github.io/Babtteok/sitemap.xml
+
+# 크롤러 최적화
+Crawl-delay: 1
+
+# 제외할 경로 (없음 - 모든 콘텐츠 공개)
+# Disallow: /private/
