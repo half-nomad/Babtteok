@@ -369,6 +369,380 @@
 }
 
 /* =============================================================================
+   슬라이드 3: 타겟/시장 분석
+   ============================================================================= */
+
+.market-analysis {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+/* 시장 통계 카드들 */
+.market-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.market-stat-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.market-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.market-stat-card:hover::before {
+    left: 100%;
+}
+
+.market-stat-card.primary {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(255, 183, 77, 0.3);
+}
+
+.market-stat-card.success {
+    border-color: #10B981;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+.market-stat-card.warning {
+    border-color: #F59E0B;
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+}
+
+.market-stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.market-stat-card .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.market-stat-card h3 {
+    font-size: 1.2rem;
+    color: var(--accent-light);
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.market-stat-card .stat-number {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    margin: 15px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.market-stat-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* 경쟁사 분석 */
+.competitor-analysis {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.competitor-analysis h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.competitor-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+}
+
+.competitor-section h4 {
+    color: var(--accent-light);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* 경쟁사 바 차트 */
+.competitor-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.competitor-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.competitor-bar:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.competitor-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.brand-name {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.store-count {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.bar-container {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s ease;
+}
+
+.bar-fill[data-brand="shinjeon"] {
+    background: linear-gradient(90deg, #FF6B6B, #FF8E8E);
+}
+
+.bar-fill[data-brand="yupgi"] {
+    background: linear-gradient(90deg, #4ECDC4, #45B7B8);
+}
+
+.bar-fill[data-brand="others"] {
+    background: linear-gradient(90deg, #A8E6CF, #88D8A3);
+}
+
+/* 시장 기회 섹션 */
+.market-opportunity {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.opportunity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.opportunity-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.opportunity-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.opportunity-content strong {
+    color: white;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.opportunity-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.4;
+    font-size: 0.9rem;
+}
+
+/* 타겟 고객 분석 */
+.target-analysis h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.target-segments {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.target-segment {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.target-segment:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.segment-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.segment-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.segment-header h4 {
+    color: white;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.segment-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.segment-need,
+.segment-price,
+.segment-behavior {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.segment-size {
+    text-align: center;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+}
+
+/* 지역별 분석 */
+.regional-analysis h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.region-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.region-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px 25px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.region-card.high-potential {
+    border-color: #EF4444;
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.3);
+}
+
+.region-card.medium-potential {
+    border-color: var(--accent);
+    box-shadow: 0 0 25px rgba(255, 183, 77, 0.3);
+}
+
+.region-card.growth-potential {
+    border-color: #3B82F6;
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+}
+
+.region-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.region-card h4 {
+    color: white;
+    margin: 0 0 20px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.region-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.region-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+}
+
+.potential-score {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+}
+
+/* =============================================================================
    플레이스홀더 스타일 (나중에 제거될 예정)
    ============================================================================= */
 
