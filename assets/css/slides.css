@@ -751,6 +751,618 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* =============================================================================
+   슬라이드 5: 결과/성과 예측
+   ============================================================================= */
+
+.results-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    margin-top: 20px;
+}
+
+/* 투자 회수 시뮬레이션 */
+.investment-recovery {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.recovery-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.recovery-timeline {
+    display: flex;
+    gap: 30px;
+}
+
+.recovery-phase {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.recovery-phase:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.phase-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.phase-header h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.phase-status {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.phase-status.startup {
+    background: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.phase-status.growth {
+    background: rgba(255, 183, 77, 0.2);
+    color: var(--accent-light);
+    border: 1px solid rgba(255, 183, 77, 0.3);
+}
+
+.phase-status.mature {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6EE7B7;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.phase-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metric-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.metric-value {
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* 투자 회수 차트 */
+.recovery-chart {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.recovery-chart h3 {
+    text-align: center;
+    color: var(--accent-light);
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    margin-bottom: 25px;
+}
+
+.chart-bar {
+    display: flex;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.bar-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.bar-segment:hover {
+    filter: brightness(1.2);
+}
+
+.bar-segment.year-1 {
+    background: linear-gradient(135deg, #EF4444, #DC2626);
+}
+
+.bar-segment.year-2 {
+    background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.bar-segment.year-3 {
+    background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.bar-remaining {
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    border-left: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+.chart-milestones {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+.milestone {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.recovery-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.summary-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.summary-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.summary-value {
+    color: var(--accent);
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 브랜드 가치 상승 */
+.brand-value-growth {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.value-growth-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.growth-stages {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.growth-stage {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.growth-stage:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.stage-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.growth-stage h3 {
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 0 20px 0;
+    font-weight: 600;
+}
+
+.stage-value {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.value-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.value-amount {
+    color: var(--accent);
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.growth-stage ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.growth-stage li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.growth-stage li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.growth-arrow {
+    font-size: 2.5rem;
+    color: var(--accent);
+    flex-shrink: 0;
+    align-self: center;
+}
+
+/* 가치 상승 차트 */
+.value-chart {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.value-chart h3 {
+    text-align: center;
+    color: var(--accent-light);
+    margin-bottom: 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.value-bars {
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.value-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+}
+
+.bar-fill {
+    width: 100%;
+    background: linear-gradient(180deg, var(--accent), #D97706);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.8s ease;
+    box-shadow: 0 4px 15px rgba(255, 183, 77, 0.3);
+}
+
+.value-bar.established .bar-fill {
+    background: linear-gradient(180deg, #10B981, #059669);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.value-bar.premium .bar-fill {
+    background: linear-gradient(180deg, #8B5CF6, #7C3AED);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.bar-label {
+    margin-top: 15px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.value-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.value-metric {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+/* 성공 사례 */
+.success-cases {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.case-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px 25px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.case-card.highlight {
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(255, 183, 77, 0.3);
+}
+
+.case-brand {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.case-metrics {
+    margin-bottom: 20px;
+}
+
+.case-metric {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.case-growth {
+    text-align: center;
+    padding: 15px;
+    background: rgba(16, 185, 129, 0.2);
+    border-radius: 12px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.growth-rate {
+    color: #6EE7B7;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+/* 리스크 분석 */
+.risk-analysis {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.analysis-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.risk-comparison h3,
+.risk-mitigation h3 {
+    color: var(--accent-light);
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.investment-option {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.investment-option:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.investment-option.highlight {
+    border-color: var(--accent);
+    box-shadow: 0 0 25px rgba(255, 183, 77, 0.3);
+}
+
+.investment-option h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.option-metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.return-rate {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.return-rate.low {
+    background: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+}
+
+.return-rate.medium {
+    background: rgba(255, 183, 77, 0.2);
+    color: var(--accent-light);
+}
+
+.return-rate.high {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6EE7B7;
+}
+
+.risk-level {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.risk-level.low {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6EE7B7;
+}
+
+.risk-level.medium {
+    background: rgba(255, 183, 77, 0.2);
+    color: var(--accent-light);
+}
+
+.risk-level.high {
+    background: rgba(239, 68, 68, 0.2);
+    color: #FCA5A5;
+}
+
+.investment-option p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.mitigation-factors {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.factor-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.factor-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+}
+
+.factor-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.factor-content h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.factor-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
 /* 경쟁력 비교 섹션 */
 .competitive-advantage {
     margin-top: 50px;
