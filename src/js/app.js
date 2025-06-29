@@ -333,6 +333,11 @@ class ROICalculator {
         this.costInput = document.getElementById('cost-input');
         this.resultDisplay = document.getElementById('roi-result');
         
+        // 값 표시 요소들
+        this.investmentValue = document.getElementById('investment-value');
+        this.revenueValue = document.getElementById('revenue-value');
+        this.costValue = document.getElementById('cost-value');
+        
         this.setupCalculator();
     }
     
@@ -340,15 +345,47 @@ class ROICalculator {
         if (!this.investmentInput || !this.revenueInput || !this.costInput) return;
         
         // 실시간 계산을 위한 이벤트 리스너
-        [this.investmentInput, this.revenueInput, this.costInput].forEach(input => {
-            input.addEventListener('input', () => this.calculateROI());
+        this.investmentInput.addEventListener('input', () => {
+            this.updateValueDisplay();
+            this.calculateROI();
         });
+        
+        this.revenueInput.addEventListener('input', () => {
+            this.updateValueDisplay();
+            this.calculateROI();
+        });
+        
+        this.costInput.addEventListener('input', () => {
+            this.updateValueDisplay();
+            this.calculateROI();
+        });
+        
+        // 초기 계산
+        this.updateValueDisplay();
+        this.calculateROI();
+    }
+    
+    updateValueDisplay() {
+        if (this.investmentValue) {
+            const value = parseInt(this.investmentInput.value);
+            this.investmentValue.textContent = `${Math.round(value / 10000000)}천만원`;
+        }
+        
+        if (this.revenueValue) {
+            const value = parseInt(this.revenueInput.value);
+            this.revenueValue.textContent = `${Math.round(value / 10000000)}천만원`;
+        }
+        
+        if (this.costValue) {
+            const value = parseInt(this.costInput.value);
+            this.costValue.textContent = `${Math.round(value / 10000000)}천만원`;
+        }
     }
     
     calculateROI() {
-        const investment = parseInt(this.investmentInput.value) || 80000000; // 기본값 8천만원
-        const monthlyRevenue = parseInt(this.revenueInput.value) || 60000000; // 기본값 6천만원
-        const monthlyCost = parseInt(this.costInput.value) || 47000000; // 기본값 4천 7백만원
+        const investment = parseInt(this.investmentInput.value) || 80000000;
+        const monthlyRevenue = parseInt(this.revenueInput.value) || 60000000;
+        const monthlyCost = parseInt(this.costInput.value) || 47000000;
         
         const monthlyProfit = monthlyRevenue - monthlyCost;
         const annualProfit = monthlyProfit * 12;
@@ -366,24 +403,31 @@ class ROICalculator {
     displayResults(results) {
         if (!this.resultDisplay) return;
         
-        this.resultDisplay.innerHTML = `
-            <div class="roi-item">
-                <span class="roi-label">월 순익</span>
-                <span class="roi-value">${results.monthlyProfit.toLocaleString()}원</span>
-            </div>
-            <div class="roi-item">
-                <span class="roi-label">연 순익</span>
-                <span class="roi-value">${results.annualProfit.toLocaleString()}원</span>
-            </div>
-            <div class="roi-item">
-                <span class="roi-label">투자회수</span>
-                <span class="roi-value">${results.paybackPeriod.toFixed(1)}개월</span>
-            </div>
-            <div class="roi-item highlight">
-                <span class="roi-label">연간 ROI</span>
-                <span class="roi-value">${results.roiPercent.toFixed(1)}%</span>
-            </div>
-        `;
+        // 애니메이션 효과를 위한 일시적 숨김
+        this.resultDisplay.style.opacity = '0.5';
+        
+        setTimeout(() => {
+            this.resultDisplay.innerHTML = `
+                <div class="roi-item">
+                    <span class="roi-label">월 순익</span>
+                    <span class="roi-value">${results.monthlyProfit.toLocaleString()}원</span>
+                </div>
+                <div class="roi-item">
+                    <span class="roi-label">연 순익</span>
+                    <span class="roi-value">${results.annualProfit.toLocaleString()}원</span>
+                </div>
+                <div class="roi-item">
+                    <span class="roi-label">투자회수</span>
+                    <span class="roi-value">${results.paybackPeriod.toFixed(1)}개월</span>
+                </div>
+                <div class="roi-item highlight">
+                    <span class="roi-label">연간 ROI</span>
+                    <span class="roi-value">${results.roiPercent.toFixed(1)}%</span>
+                </div>
+            `;
+            
+            this.resultDisplay.style.opacity = '1';
+        }, 150);
     }
 }
 

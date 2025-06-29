@@ -184,8 +184,57 @@
                             </div>
                         </div>
 
+                        <!-- ROI 계산기 -->
+                        <div class="roi-calculator">
+                            <h4 class="chart-title">💰 투자 수익률 계산기</h4>
+                            <div class="calculator-container">
+                                <div class="calculator-inputs">
+                                    <div class="input-group">
+                                        <label for="investment-input">초기 투자금</label>
+                                        <div class="input-wrapper">
+                                            <input type="range" id="investment-input" min="60000000" max="120000000" value="80000000" step="10000000">
+                                            <span class="input-value" id="investment-value">8,000만원</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="revenue-input">월 매출 예상</label>
+                                        <div class="input-wrapper">
+                                            <input type="range" id="revenue-input" min="40000000" max="100000000" value="60000000" step="5000000">
+                                            <span class="input-value" id="revenue-value">6,000만원</span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label for="cost-input">월 운영비</label>
+                                        <div class="input-wrapper">
+                                            <input type="range" id="cost-input" min="30000000" max="70000000" value="47000000" step="2000000">
+                                            <span class="input-value" id="cost-value">4,700만원</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="calculator-results" id="roi-result">
+                                    <div class="roi-item">
+                                        <span class="roi-label">월 순익</span>
+                                        <span class="roi-value">1,300만원</span>
+                                    </div>
+                                    <div class="roi-item">
+                                        <span class="roi-label">연 순익</span>
+                                        <span class="roi-value">1억 5,600만원</span>
+                                    </div>
+                                    <div class="roi-item">
+                                        <span class="roi-label">투자회수</span>
+                                        <span class="roi-value">6.2개월</span>
+                                    </div>
+                                    <div class="roi-item highlight">
+                                        <span class="roi-label">연간 ROI</span>
+                                        <span class="roi-value">19.5%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="roi-simulator">
-                            <h4 class="chart-title">손익분기점 달성 시뮬레이션</h4>
+                            <h4 class="chart-title">📈 손익분기점 달성 시뮬레이션</h4>
                             <div class="roi-chart">
                                 <div class="roi-months">
                                     <div class="month-bar" data-month="1" data-value="-2800">
@@ -235,6 +284,6 @@
         <button class="indicator" onclick="goToSlide(6)"></button>
     </div>
 
-    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
