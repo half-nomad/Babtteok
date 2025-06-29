@@ -1,11 +1,11 @@
 # 밥떡한끼 디자인 시스템 가이드
 
 **프로젝트**: 밥버거-떡볶이 세트 브랜드 슬라이드 프레젠테이션  
-**타깃**: 30-50대 예비창업주  
+**타깃**: 현대적이고 임팩트 있는 프레젠테이션  
 **폰트**: Pretendard  
 **제작일**: 2025년 6월 29일  
 **화면 비율**: 16:9  
-**핵심 가치**: 신뢰성, 전문성, 현실적 수익성
+**핵심 가치**: 세련됨, 모던함, 시각적 임팩트
 
 ---
 
@@ -14,52 +14,49 @@
 ### 메인 컬러 팔레트
 
 ```css
-/* 신뢰성을 주는 네이비 계열 */
---primary-navy: #1a365d;        /* Deep Navy - 메인 타이틀 */
---secondary-navy: #2c5282;      /* Medium Navy - 섹션 구분 */
---light-navy: #4299e1;          /* Light Navy - 링크, 강조 */
+/* Core Purple Palette */
+--primary-purple: #673AB7;      /* Deep Purple - 메인 타이틀 */
+--secondary-purple: #9C27B0;    /* Light Purple - 섹션 구분 */
+--accent-purple: #B388FF;       /* Soft Purple - 링크, 강조 */
+--tertiary-indigo: #3F51B5;     /* Indigo - 서브 요소 */
 
-/* 안정감의 그레이 계열 */
---primary-gray: #2d3748;        /* Dark Gray - 본문 텍스트 */  
---secondary-gray: #4a5568;      /* Medium Gray - 서브 텍스트 */
---light-gray: #a0aec0;          /* Light Gray - 보조 정보 */
---background-gray: #f7fafc;     /* Background Gray - 배경 */
+/* Background & Glass */
+--background-black: #000000;    /* 메인 배경 */
+--background-dark: #1a1a1a;     /* 다크 배경 */
+--glass-bg: rgba(30, 30, 30, 0.6);        /* 글래스 배경 */
+--glass-border: rgba(255, 255, 255, 0.15); /* 글래스 테두리 */
 
-/* 수익성을 상징하는 오렌지 계열 */
---accent-orange: #f56500;       /* Primary Orange - 핵심 수치 */
---light-orange: #ff8c00;        /* Light Orange - 호버, 강조 */
---soft-orange: #fed7aa;         /* Soft Orange - 배경 강조 */
-
-/* 보조 컬러 */
---success-green: #38a169;       /* 성공 지표 */
---warning-red: #e53e3e;         /* 위험 요소 */
---neutral-white: #ffffff;       /* 배경, 텍스트 */
---border-light: #e2e8f0;        /* 구분선, 테두리 */
+/* Text Palette */
+--text-primary: #FFFFFF;        /* 메인 텍스트 */
+--text-secondary: #CCCCCC;      /* 서브 텍스트 */
+--text-light: #E0E0E0;          /* 연한 텍스트 */
+--neutral-white: #ffffff;       /* 순백색 */
+--border-light: rgba(255, 255, 255, 0.2);  /* 테두리 */
 ```
 
 ### 그라데이션 조합 3가지
 
-#### 1️⃣ 메인 타이틀용 - 신뢰감 강조
+#### 1️⃣ 메인 타이틀용 - 강력한 임팩트
 
 ```css
-background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-navy) 100%);
+background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 ```
 
-#### 2️⃣ 수치 강조용 - 수익성 부각
+#### 2️⃣ 서브 텍스트용 - 부드러운 강조
 
 ```css
-background: linear-gradient(90deg, var(--accent-orange) 0%, var(--light-orange) 100%);
+background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-purple) 100%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 ```
 
-#### 3️⃣ 박스 및 카드용 - 전문성 표현
+#### 3️⃣ 박스 및 카드용 - 세련된 배경
 
 ```css
-background: linear-gradient(120deg, var(--light-navy) 0%, var(--primary-navy) 100%);
-box-shadow: 0 8px 30px rgba(26, 54, 93, 0.15);
+background: linear-gradient(120deg, var(--tertiary-indigo) 0%, var(--primary-purple) 100%);
+box-shadow: 0 8px 30px rgba(103, 58, 183, 0.3);
 ```
 
 ---
@@ -80,9 +77,10 @@ font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-se
 font-size: 4.5rem;
 font-weight: 800; /* ExtraBold */
 line-height: 1.1;
-color: var(--primary-navy);
+background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 letter-spacing: -0.025em;
-/* 메인 타이틀용 그라데이션 적용 */
 ```
 
 #### 레벨 2: H2 - 섹션 타이틀 (2.5rem / 40px)
@@ -91,7 +89,7 @@ letter-spacing: -0.025em;
 ```css
 font-size: 2.5rem;
 font-weight: 700; /* Bold */
-color: var(--secondary-navy);
+color: var(--text-primary);
 line-height: 1.2;
 margin-bottom: var(--space-md);
 ```
@@ -102,7 +100,9 @@ margin-bottom: var(--space-md);
 ```css
 font-size: 1.5rem;
 font-weight: 600; /* SemiBold */
-color: var(--primary-gray);
+background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent-purple) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 line-height: 1.3;
 ```
 
@@ -113,7 +113,7 @@ line-height: 1.3;
 font-size: 1.125rem;
 font-weight: 400; /* Regular */
 line-height: 1.6;
-color: var(--primary-gray);
+color: var(--text-secondary);
 ```
 
 #### 레벨 5: 핵심 수치 - 임팩트 텍스트 (3.5rem / 56px)
@@ -122,9 +122,9 @@ color: var(--primary-gray);
 ```css
 font-size: 3.5rem;
 font-weight: 900; /* Black */
-color: var(--accent-orange);
+color: var(--accent-purple);
 line-height: 1;
-text-shadow: 0 2px 4px rgba(245, 101, 0, 0.2);
+text-shadow: 0 0 10px rgba(179, 136, 255, 0.4);
 ```
 
 #### 레벨 6: 캡션 - 보조 정보 (0.875rem / 14px)
@@ -133,7 +133,7 @@ text-shadow: 0 2px 4px rgba(245, 101, 0, 0.2);
 ```css
 font-size: 0.875rem;
 font-weight: 400; /* Regular */
-color: var(--secondary-gray);
+color: var(--text-light);
 line-height: 1.4;
 ```
 
@@ -147,14 +147,14 @@ line-height: 1.4;
 .slide {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: var(--neutral-white);
+  background: linear-gradient(135deg, var(--background-black) 0%, var(--background-dark) 100%);
   padding: 4rem 5rem; /* 64px 80px */
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
   position: relative;
-  min-height: 100vh;
 }
 
 .slide::before {
@@ -164,39 +164,21 @@ line-height: 1.4;
   left: 0;
   width: 4px;
   height: 100%;
-  background: var(--accent-orange);
+  background: var(--accent-purple);
 }
 ```
 
-### 정보 카드 (비즈니스 데이터용)
+### 글래스모피즘 (Glassmorphism)
 
 ```css
-.info-card {
-  background: var(--neutral-white);
-  border: 2px solid var(--border-light);
-  border-radius: 8px;
-  padding: 2.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-}
-
-.info-card:hover {
-  border-color: var(--light-navy);
-  box-shadow: 0 8px 30px rgba(26, 54, 93, 0.12);
-}
-
-.info-card-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.info-card-icon {
-  width: 3rem;
-  height: 3rem;
-  background: var(--accent-orange);
-  border-radius: 8px;
-  margin-right: 1rem;
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 2rem;
 }
 ```
 
@@ -261,14 +243,14 @@ line-height: 1.4;
 
 .bar {
   flex: 1;
-  background: linear-gradient(to top, var(--light-navy), var(--primary-navy));
+  background: linear-gradient(to top, var(--tertiary-indigo), var(--primary-purple));
   border-radius: 4px 4px 0 0;
   position: relative;
   transition: all 0.3s ease;
 }
 
 .bar.highlight {
-  background: linear-gradient(to top, var(--light-orange), var(--accent-orange));
+  background: linear-gradient(to top, var(--accent-purple), var(--secondary-purple));
 }
 
 .bar-label {
@@ -277,7 +259,7 @@ line-height: 1.4;
   left: 50%;
   transform: translateX(-50%);
   font-weight: 700;
-  color: var(--primary-gray);
+  color: var(--text-secondary);
   font-size: 0.875rem;
 }
 ```
@@ -286,11 +268,11 @@ line-height: 1.4;
 
 ```css
 .pie-chart-colors {
-  --pie-primary: var(--primary-navy);
-  --pie-secondary: var(--secondary-navy);
-  --pie-tertiary: var(--light-navy);
-  --pie-accent: var(--accent-orange);
-  --pie-neutral: var(--secondary-gray);
+  --pie-primary: var(--primary-purple);
+  --pie-secondary: var(--secondary-purple);
+  --pie-tertiary: var(--accent-purple);
+  --pie-accent: var(--tertiary-indigo);
+  --pie-neutral: var(--text-secondary);
 }
 ```
 
@@ -347,18 +329,18 @@ line-height: 1.4;
 }
 ```
 
-### 호버 효과 (신뢰성 유지)
+### 호버 효과 (세련된 인터랙션)
 
 ```css
 .interactive-element:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(26, 54, 93, 0.15);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px rgba(103, 58, 183, 0.5);
   transition: all 0.2s ease;
 }
 
 .cta-button {
-  background: var(--accent-orange);
-  color: var(--neutral-white);
+  background: var(--accent-purple);
+  color: var(--background-black);
   padding: 1rem 2rem;
   border-radius: 6px;
   font-weight: 600;
@@ -367,9 +349,9 @@ line-height: 1.4;
 }
 
 .cta-button:hover {
-  background: var(--light-orange);
+  background: var(--secondary-purple);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(245, 101, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(156, 39, 176, 0.3);
 }
 ```
 
@@ -570,4 +552,4 @@ const ComparisonTable = ({ data, highlightColumn }) => {
 
 ---
 
-**💡 핵심 원칙**: "30-50대 예비창업주가 신뢰할 수 있는 전문적 디자인으로, 복잡한 비즈니스 정보를 명확하고 설득력 있게 전달한다"
+**💡 핵심 원칙**: "현대적이고 세련된 보라색 계열의 다크 테마로, 인상적이고 감각적인 슬라이드 프레젠테이션을 제작한다"
