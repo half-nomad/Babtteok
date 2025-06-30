@@ -22,26 +22,29 @@
     <style>
         /* 슬라이드 4 전용 스타일 */
         .slide {
-            padding: 2rem 3rem;
-            gap: 1.5rem;
+            padding: 1.5rem 2.5rem;
+            gap: 1rem;
+            justify-content: flex-start;
         }
         
         /* 헤더 섹션 */
         .slide-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
         }
         
         /* 텍스트 설명 섹션 */
         .text-section {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            flex-shrink: 0;
         }
         
         .bullet-points {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: space-between;
-            margin-bottom: 2rem;
+            margin-bottom: 0;
         }
         
         .bullet-point {
@@ -49,7 +52,7 @@
             background: rgba(103, 58, 183, 0.1);
             border: 1px solid rgba(103, 58, 183, 0.2);
             border-radius: 12px;
-            padding: 1rem;
+            padding: 0.8rem;
             backdrop-filter: blur(10px);
             animation: slideInUp 0.6s ease-out forwards;
             opacity: 0;
@@ -75,9 +78,11 @@
         /* 인포그래픽 섹션 */
         .infographic-section {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             justify-content: space-between;
             align-items: flex-start;
+            flex: 1;
+            min-height: 0;
         }
         
         .chart-container {
@@ -85,7 +90,7 @@
             background: rgba(42, 42, 42, 0.8);
             border: 1px solid rgba(103, 58, 183, 0.3);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             text-align: center;
             backdrop-filter: blur(10px);
             opacity: 0;
@@ -98,28 +103,28 @@
         .chart-container:nth-child(3) { animation-delay: 1.2s; }
         
         .chart-title {
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             color: var(--accent-purple);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             text-shadow: 0 0 10px rgba(179, 136, 255, 0.3);
         }
         
         /* 1인 가구 트렌드 차트 */
         .trend-chart {
             position: relative;
-            height: 120px;
-            margin: 1rem 0;
+            height: 180px;
+            margin: 1.5rem 0;
         }
         
         .trend-line {
             position: relative;
             width: 100%;
-            height: 60px;
+            height: 80px;
             background: linear-gradient(90deg, rgba(103, 58, 183, 0.2) 0%, rgba(179, 136, 255, 0.2) 100%);
-            border-radius: 30px;
+            border-radius: 40px;
             overflow: hidden;
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
         
         .trend-progress {
@@ -135,11 +140,11 @@
         .trend-values {
             display: flex;
             justify-content: space-between;
-            margin-top: 0.5rem;
+            margin-top: 1rem;
         }
         
         .trend-value {
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 600;
         }
         
@@ -149,9 +154,9 @@
         /* 떡볶이 시장 도넛 차트 */
         .donut-chart {
             position: relative;
-            width: 120px;
-            height: 120px;
-            margin: 1rem auto;
+            width: 160px;
+            height: 160px;
+            margin: 1.5rem auto;
         }
         
         .donut-svg {
@@ -161,16 +166,16 @@
         .donut-bg {
             fill: none;
             stroke: rgba(103, 58, 183, 0.2);
-            stroke-width: 12;
+            stroke-width: 16;
         }
         
         .donut-progress {
             fill: none;
             stroke: url(#donutGradient);
-            stroke-width: 12;
+            stroke-width: 16;
             stroke-linecap: round;
-            stroke-dasharray: 283;
-            stroke-dashoffset: 283;
+            stroke-dasharray: 377;
+            stroke-dashoffset: 377;
             transition: stroke-dashoffset 2s ease-out;
         }
         
@@ -183,28 +188,28 @@
         }
         
         .donut-value {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-purple);
             text-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
         }
         
         .donut-label {
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             color: var(--text-secondary);
         }
         
         /* 밥버거 공백 비교 차트 */
         .comparison-chart {
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
         
         .comparison-bars {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: end;
-            height: 100px;
-            margin: 1rem 0;
+            height: 140px;
+            margin: 1.5rem 0;
         }
         
         .comparison-bar {
@@ -212,13 +217,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.8rem;
         }
         
         .bar {
             width: 100%;
             background: rgba(103, 58, 183, 0.2);
-            border-radius: 4px 4px 0 0;
+            border-radius: 6px 6px 0 0;
             position: relative;
             transition: height 1.5s ease-out;
         }
@@ -235,17 +240,17 @@
         
         .bar-value {
             position: absolute;
-            top: -1.5rem;
+            top: -2rem;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--accent-purple);
             text-shadow: 0 0 5px rgba(179, 136, 255, 0.3);
         }
         
         .bar-label {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
             text-align: center;
         }
@@ -271,22 +276,26 @@
         /* 반응형 */
         @media (max-width: 768px) {
             .slide {
-                padding: 1.5rem;
-                gap: 1rem;
+                padding: 1rem;
+                gap: 0.8rem;
             }
             
             .bullet-points {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.8rem;
+            }
+            
+            .bullet-point {
+                padding: 0.8rem;
             }
             
             .infographic-section {
                 flex-direction: column;
-                gap: 1.5rem;
+                gap: 1rem;
             }
             
             .chart-container {
-                padding: 1rem;
+                padding: 1.5rem 1rem;
             }
             
             .slide-title {
@@ -295,6 +304,33 @@
             
             .slide-subtitle {
                 font-size: 1.2rem;
+            }
+            
+            .chart-title {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+            
+            /* 모바일에서 차트 크기 조정 */
+            .trend-chart {
+                height: 140px;
+                margin: 1rem 0;
+            }
+            
+            .trend-line {
+                height: 60px;
+                margin: 1.5rem 0;
+            }
+            
+            .donut-chart {
+                width: 140px;
+                height: 140px;
+                margin: 1rem auto;
+            }
+            
+            .comparison-bars {
+                height: 120px;
+                margin: 1rem 0;
             }
         }
     </style>
@@ -361,15 +397,15 @@
             <div class="chart-container">
                 <h3 class="chart-title">떡볶이 프랜차이즈 시장</h3>
                 <div class="donut-chart">
-                    <svg class="donut-svg" width="120" height="120">
+                    <svg class="donut-svg" width="160" height="160">
                         <defs>
                             <linearGradient id="donutGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                                 <stop offset="0%" style="stop-color:#673AB7"/>
                                 <stop offset="100%" style="stop-color:#B388FF"/>
                             </linearGradient>
                         </defs>
-                        <circle class="donut-bg" cx="60" cy="60" r="45"></circle>
-                        <circle class="donut-progress" id="donutProgress" cx="60" cy="60" r="45"></circle>
+                        <circle class="donut-bg" cx="80" cy="80" r="60"></circle>
+                        <circle class="donut-progress" id="donutProgress" cx="80" cy="80" r="60"></circle>
                     </svg>
                     <div class="donut-center">
                         <div class="donut-value">
@@ -442,23 +478,23 @@
                 countUp(trendCountup, 31.7);
             }, 800);
             
-            // 떡볶이 시장 도넛 차트
+            // 떡볶이 시장 도넛 차트 (r=60, circumference=377)
             setTimeout(() => {
                 const donutProgress = document.getElementById('donutProgress');
-                donutProgress.style.strokeDashoffset = '70'; // 75% 채움 (283의 25%)
+                donutProgress.style.strokeDashoffset = '94'; // 75% 채움 (377의 25%)
                 
                 // 카운트업
                 const donutCountup = document.querySelector('[data-target="3000"]');
                 countUp(donutCountup, 3000);
             }, 1000);
             
-            // 밥버거 비교 차트
+            // 밥버거 비교 차트 (새로운 높이: 140px)
             setTimeout(() => {
                 const barBefore = document.getElementById('barBefore');
                 const barAfter = document.getElementById('barAfter');
                 
-                barBefore.style.height = '80px'; // 1100개점 (최대값)
-                barAfter.style.height = '35px';  // 488개점 (약 44% 감소)
+                barBefore.style.height = '110px'; // 1100개점 (최대값)
+                barAfter.style.height = '48px';   // 488개점 (약 44% 감소)
                 
                 // 카운트업
                 const beforeCountup = document.querySelector('[data-target="1100"]');
