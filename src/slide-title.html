@@ -416,6 +416,10 @@
         </a>
     </div>
 
+    <!-- Navigation CSS -->
+    <link rel="stylesheet" href="css/navigation.css">
+    
+    <script src="js/navigation.js"></script>
     <script>
         // ========== INTERACTIVE ANIMATIONS ========== 
         document.addEventListener('DOMContentLoaded', function() {
@@ -483,12 +487,7 @@
                 `;
             });
 
-            // Keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ') {
-                    window.location.href = 'slide-01.html';
-                }
-            });
+            // 기존 키보드 네비게이션은 공통 네비게이션에서 처리
         });
 
         // ========== PERFORMANCE OPTIMIZATION ==========
