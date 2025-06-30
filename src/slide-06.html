@@ -229,13 +229,8 @@
             min-height: 20px;
             box-shadow: 0 0 15px rgba(183, 136, 255, 0.3);
             transition: all 0.8s ease;
+            /* 높이는 JavaScript에서 동적으로 설정 */
         }
-        
-        .bar-fill.year-1 { height: 20%; }  /* 4,200만원 / 21,000만원 = 20% */
-        .bar-fill.year-2 { height: 40%; }  /* 8,400만원 / 21,000만원 = 40% */
-        .bar-fill.year-3 { height: 60%; }  /* 12,600만원 / 21,000만원 = 60% */
-        .bar-fill.year-4 { height: 80%; }  /* 16,800만원 / 21,000만원 = 80% */
-        .bar-fill.year-5 { height: 100%; } /* 21,000만원 / 21,000만원 = 100% */
         
         .bar-value {
             position: absolute;
@@ -513,12 +508,15 @@
             // 수익 바 차트 애니메이션
             const revenueBars = document.querySelectorAll('.bar-fill');
             const targetHeights = ['20%', '40%', '60%', '80%', '100%']; // 정확한 비율
+            const containerHeight = 180; // .revenue-bars의 높이
+            const actualHeights = ['36px', '72px', '108px', '144px', '180px']; // 실제 픽셀 값
             
             revenueBars.forEach((bar, index) => {
-                bar.style.height = '0';
+                bar.style.height = '0px';
+                bar.style.transition = 'none'; // 초기 설정 시 애니메이션 없음
                 
                 setTimeout(() => {
-                    bar.style.height = targetHeights[index];
+                    bar.style.height = actualHeights[index];
                     bar.style.transition = 'height 1s ease';
                 }, 2000 + (index * 200));
             });
@@ -589,8 +587,21 @@
             });
         }
         
+        // 수익 바 높이 즉시 설정 함수
+        function setBarHeights() {
+            const revenueBars = document.querySelectorAll('.bar-fill');
+            const actualHeights = ['36px', '72px', '108px', '144px', '180px'];
+            
+            revenueBars.forEach((bar, index) => {
+                bar.style.height = actualHeights[index];
+            });
+        }
+        
         // 페이지 로드 시 실행
         document.addEventListener('DOMContentLoaded', function() {
+            // 바 높이 즉시 설정 (애니메이션 전에)
+            setBarHeights();
+            
             // 파이 차트 호버 인터랙션 설정
             setupPieChartInteraction();
             
