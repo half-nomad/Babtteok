@@ -62,8 +62,8 @@
             aspect-ratio: 16 / 9;
             background: var(--background-black);
             background-image: 
-                radial-gradient(circle at 30% 30%, rgba(76, 175, 80, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 70% 70%, rgba(179, 136, 255, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 20% 20%, rgba(103, 58, 183, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(179, 136, 255, 0.15) 0%, transparent 50%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -73,7 +73,7 @@
             overflow: hidden;
         }
         
-        /* 슬라이드 장식 요소 - 성공을 나타내는 그린 */
+        /* 슬라이드 장식 요소 - 보라색 테마 */
         .slide::before {
             content: '';
             position: absolute;
@@ -81,8 +81,8 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--success-green), var(--accent-purple));
-            box-shadow: 0 0 12px rgba(76, 175, 80, 0.6);
+            background: linear-gradient(to bottom, var(--primary-purple), var(--accent-purple));
+            box-shadow: 0 0 10px var(--glow-purple);
         }
         
         /* 슬라이드 헤더 */
@@ -92,23 +92,23 @@
         }
         
         .slide-number {
-            color: var(--success-green);
+            color: var(--accent-purple);
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: var(--space-sm);
-            text-shadow: 0 0 8px rgba(76, 175, 80, 0.6);
+            text-shadow: 0 0 8px var(--glow-accent);
         }
         
         .slide-title {
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--success-green), var(--accent-purple));
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1.1;
             margin-bottom: var(--space-sm);
-            text-shadow: 0 0 25px rgba(76, 175, 80, 0.4);
+            text-shadow: 0 0 20px var(--glow-purple);
         }
         
         .slide-subtitle {
@@ -129,12 +129,12 @@
         .price-impact {
             font-size: 6rem;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--text-primary), var(--success-green));
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1;
-            text-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+            text-shadow: 0 0 30px var(--glow-accent);
             margin-bottom: var(--space-sm);
             animation: pulseGlow 3s ease-in-out infinite;
             position: relative;
@@ -147,12 +147,12 @@
             right: -2rem;
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--success-green);
-            background: rgba(76, 175, 80, 0.2);
+            color: var(--accent-purple);
+            background: rgba(179, 136, 255, 0.2);
             padding: 0.5rem 1rem;
             border-radius: 20px;
-            border: 1px solid var(--success-green);
-            box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+            border: 1px solid var(--accent-purple);
+            box-shadow: 0 0 15px var(--glow-accent);
         }
         
         .impact-description {
@@ -177,7 +177,7 @@
             background: rgba(42, 42, 42, 0.4);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(76, 175, 80, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: var(--space-md);
             text-align: center;
@@ -189,7 +189,7 @@
             flex-direction: column;
             justify-content: center;
             box-shadow: 
-                0 8px 32px rgba(76, 175, 80, 0.2),
+                0 8px 32px rgba(103, 58, 183, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         
@@ -199,24 +199,24 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--success-green), transparent);
-            opacity: 0.8;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+            opacity: 0.6;
         }
         
         .solution-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px);
             box-shadow: 
-                0 16px 48px rgba(76, 175, 80, 0.3),
+                0 16px 48px rgba(103, 58, 183, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.15);
-            border-color: var(--success-green);
+            border-color: rgba(179, 136, 255, 0.3);
         }
         
         .solution-icon {
             font-size: 2.5rem;
             margin-bottom: var(--space-sm);
-            color: var(--success-green);
-            text-shadow: 0 0 15px rgba(76, 175, 80, 0.6);
+            color: var(--accent-purple);
+            text-shadow: 0 0 15px var(--glow-accent);
         }
         
         .solution-title {
@@ -237,23 +237,23 @@
         }
         
         .solution-highlight {
-            color: var(--success-green);
+            color: var(--accent-purple);
             font-weight: 700;
         }
         
         /* 특별 강조 카드 (중앙) */
         .solution-card.highlight {
-            background: rgba(76, 175, 80, 0.15);
-            border-color: var(--success-green);
+            background: rgba(103, 58, 183, 0.2);
+            border-color: var(--primary-purple);
             transform: scale(1.05);
             box-shadow: 
-                0 12px 40px rgba(76, 175, 80, 0.4),
+                0 12px 40px rgba(103, 58, 183, 0.4),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
         
         .solution-card.highlight .solution-icon {
             color: var(--text-primary);
-            text-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+            text-shadow: 0 0 20px var(--glow-accent);
         }
         
         /* 반응형 대응 */
@@ -344,12 +344,12 @@
         /* 글로우 펄스 애니메이션 */
         @keyframes pulseGlow {
             0%, 100% {
-                text-shadow: 0 0 30px rgba(76, 175, 80, 0.6);
+                text-shadow: 0 0 30px var(--glow-accent);
             }
             50% {
                 text-shadow: 
-                    0 0 40px rgba(76, 175, 80, 0.8),
-                    0 0 60px rgba(179, 136, 255, 0.4);
+                    0 0 40px var(--glow-accent),
+                    0 0 60px var(--glow-purple);
             }
         }
         
