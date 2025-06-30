@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 1: 문제 정의 - 밥떡한끼 프랜차이즈</title>
+    
+    <!-- 폰트 로드 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+    
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/slide-01.css">
+    
+    <style>
+        /* 임시 CSS 변수 (variables.css가 없을 때 대비) */
+        :root {
+            --primary-purple: #673AB7;
+            --secondary-purple: #9C27B0;
+            --accent-purple: #B388FF;
+            --tertiary-indigo: #3F51B5;
+            --background-black: #000000;
+            --background-dark: #1a1a1a;
+            --background-card: #2a2a2a;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --text-tertiary: #999999;
+            --text-muted: #666666;
+            --glow-purple: #673AB780;
+            --glow-accent: #B388FF60;
+            --border-light: #333333;
+            --border-accent: #673AB7;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+        }
+        
+        /* 기본 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+            background: var(--background-black);
+            color: var(--text-primary);
+            overflow: hidden; /* 스크롤 방지 */
+        }
+        
+        /* 16:9 비율 고정 슬라이드 */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            aspect-ratio: 16 / 9;
+            background: var(--background-black);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(103, 58, 183, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(63, 81, 181, 0.15) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 슬라이드 장식 요소 */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-purple), var(--accent-purple));
+            box-shadow: 0 0 10px var(--glow-purple);
+        }
+        
+        /* 슬라이드 헤더 */
+        .slide-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .slide-number {
+            color: var(--accent-purple);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 0 8px var(--glow-accent);
+        }
+        
+        .slide-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 0 20px var(--glow-purple);
+        }
+        
+        .slide-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: var(--space-md);
+            text-shadow: 0 0 15px var(--glow-accent);
+        }
+        
+        /* 문제점 카드 컨테이너 */
+        .problems-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* 글래스모피즘 문제점 카드 */
+        .problem-card {
+            background: rgba(42, 42, 42, 0.4);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: var(--space-md);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 
+                0 8px 32px rgba(103, 58, 183, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+            opacity: 0.6;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 16px 48px rgba(103, 58, 183, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border-color: rgba(179, 136, 255, 0.3);
+        }
+        
+        .problem-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+            color: var(--accent-purple);
+            text-shadow: 0 0 15px var(--glow-accent);
+        }
+        
+        .problem-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+            line-height: 1.3;
+        }
+        
+        .problem-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* 특별 강조 카드 (중앙) */
+        .problem-card.highlight {
+            background: rgba(103, 58, 183, 0.2);
+            border-color: var(--primary-purple);
+            transform: scale(1.05);
+        }
+        
+        .problem-card.highlight .problem-icon {
+            color: var(--text-primary);
+            text-shadow: 0 0 20px var(--glow-accent);
+        }
+        
+        /* 반응형 대응 */
+        @media (max-width: 1024px) {
+            .slide {
+                padding: var(--space-lg);
+            }
+            
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .problems-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+                max-width: 600px;
+            }
+            
+            .problem-card {
+                min-height: 200px;
+                padding: var(--space-sm);
+            }
+            
+            .problem-icon {
+                font-size: 2.5rem;
+            }
+            
+            .problem-title {
+                font-size: 1.125rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: var(--space-md);
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .problem-card {
+                min-height: 160px;
+                padding: var(--space-sm);
+            }
+            
+            .problem-icon {
+                font-size: 2rem;
+            }
+            
+            .problem-title {
+                font-size: 1rem;
+            }
+            
+            .problem-description {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* 진입 애니메이션 */
+        .slide-enter {
+            animation: slideEnter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        @keyframes slideEnter {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+                filter: blur(4px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+        
+        .problem-card {
+            animation: cardEnter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            opacity: 0;
+        }
+        
+        .problem-card:nth-child(1) { animation-delay: 0.2s; }
+        .problem-card:nth-child(2) { animation-delay: 0.4s; }
+        .problem-card:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes cardEnter {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="slide slide-enter">
+        <!-- 슬라이드 헤더 -->
+        <header class="slide-header">
+            <div class="slide-number">SLIDE 1</div>
+            <h1 class="slide-title">경기 침체기, 고물가 시대의<br>소자본 창업 딜레마</h1>
+            <p class="slide-subtitle">불안한 경제 상황에서도 버틸 수 있는 검증된 아이템 부족</p>
+        </header>
+        
+        <!-- 문제점 카드들 -->
+        <section class="problems-container">
+            <div class="problem-card">
+                <div class="problem-icon">📈</div>
+                <h3 class="problem-title">고물가·고금리<br>창업 리스크 급증</h3>
+                <p class="problem-description">기존 고가 업종들은 매출 급감으로 창업 위험성이 크게 증가</p>
+            </div>
+            
+            <div class="problem-card highlight">
+                <div class="problem-icon">🎯</div>
+                <h3 class="problem-title">필수 소비재급<br>메뉴의 중요성 대두</h3>
+                <p class="problem-description">경기 불황에도 꾸준한 수요가 있는 검증된 아이템의 필요성</p>
+            </div>
+            
+            <div class="problem-card">
+                <div class="problem-icon">🍔</div>
+                <h3 class="problem-title">밥버거 시장 공백<br>떡볶이는 안정 성장</h3>
+                <p class="problem-description">봉구스 실패로 밥버거 공백, 떡볶이는 불황에도 안정적 성장</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 네비게이션 JS 자동 로드 -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>
