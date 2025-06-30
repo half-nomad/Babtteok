@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밥떡한끼 프랜차이즈 사업설명회</title>
+    
+    <!-- Google Fonts - Pretendard -->
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== CSS VARIABLES ========== */
+        :root {
+            /* Colors - Purple Dark Theme */
+            --primary-purple: #673AB7;
+            --secondary-purple: #9C27B0;
+            --accent-purple: #B388FF;
+            --tertiary-indigo: #3F51B5;
+            --background-black: #000000;
+            --background-dark: #1a1a1a;
+            --background-card: rgba(26, 26, 26, 0.6);
+            --text-white: #FFFFFF;
+            --text-gray: #CCCCCC;
+            --text-light-gray: #999999;
+            
+            /* Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            
+            /* Neon Glow */
+            --neon-purple: 0 0 20px var(--accent-purple), 0 0 40px var(--accent-purple);
+            --neon-blue: 0 0 20px var(--tertiary-indigo), 0 0 40px var(--tertiary-indigo);
+            
+            /* Typography */
+            --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-hero: clamp(2.5rem, 5vw, 4rem);
+            --font-size-title: clamp(1.5rem, 3vw, 2.5rem);
+            --font-size-subtitle: clamp(1rem, 2vw, 1.5rem);
+            --font-size-body: clamp(0.9rem, 1.5vw, 1.2rem);
+            
+            /* Spacing */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 3rem;
+            --spacing-xl: 4rem;
+        }
+
+        /* ========== BASE STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, var(--background-black) 0%, #1a0033 50%, var(--background-black) 100%);
+            color: var(--text-white);
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background Animated Particles */
+        .bg-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-purple);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.3;
+        }
+
+        .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 80%; left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { top: 40%; left: 90%; animation-delay: 2s; }
+        .particle:nth-child(4) { top: 60%; left: 70%; animation-delay: 3s; }
+        .particle:nth-child(5) { top: 10%; left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { top: 90%; left: 80%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-20px) scale(1.2); }
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .slide-container {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-lg);
+            text-align: center;
+        }
+
+        /* ========== GLASSMORPHISM CARD ========== */
+        .title-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: var(--spacing-xl);
+            box-shadow: var(--glass-shadow);
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            animation: cardFadeIn 1.2s ease-out;
+        }
+
+        /* Card Glow Effect */
+        .title-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple), var(--accent-purple));
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(8px);
+            animation: glowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes cardFadeIn {
+            0% { 
+                opacity: 0; 
+                transform: translateY(50px) scale(0.9); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* ========== TYPOGRAPHY ========== */
+        .brand-title {
+            font-size: var(--font-size-hero);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-purple), var(--primary-purple), var(--secondary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 10px var(--accent-purple)); 
+            }
+            50% { 
+                filter: drop-shadow(0 0 20px var(--accent-purple)) drop-shadow(0 0 30px var(--primary-purple)); 
+            }
+        }
+
+        .brand-slogan {
+            font-size: var(--font-size-title);
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 0 15px var(--tertiary-indigo);
+            animation: sloganFadeIn 1.5s ease-out 0.5s both;
+        }
+
+        @keyframes sloganFadeIn {
+            0% { 
+                opacity: 0; 
+                transform: translateY(20px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* ========== INFO SECTION ========== */
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            animation: infoFadeIn 1.8s ease-out 1s both;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: var(--spacing-md);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(179, 136, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .info-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(103, 58, 183, 0.3);
+            border-color: var(--accent-purple);
+        }
+
+        .info-item:hover::before {
+            left: 100%;
+        }
+
+        .info-label {
+            font-size: var(--font-size-body);
+            color: var(--accent-purple);
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            font-size: var(--font-size-subtitle);
+            font-weight: 500;
+            color: var(--text-white);
+            line-height: 1.4;
+        }
+
+        .info-highlight {
+            color: var(--accent-purple);
+            font-weight: 700;
+            text-shadow: 0 0 10px var(--accent-purple);
+        }
+
+        @keyframes infoFadeIn {
+            0% { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            100% { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* ========== NAVIGATION ========== */
+        .nav-footer {
+            position: fixed;
+            bottom: var(--spacing-md);
+            right: var(--spacing-md);
+            z-index: 100;
+        }
+
+        .nav-button {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .nav-button:hover {
+            background: var(--accent-purple);
+            box-shadow: var(--neon-purple);
+            transform: translateY(-2px);
+        }
+
+        .nav-arrow {
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-button:hover .nav-arrow {
+            transform: translateX(4px);
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            .slide-container {
+                padding: var(--spacing-md);
+            }
+            
+            .title-card {
+                padding: var(--spacing-md);
+                border-radius: 16px;
+            }
+            
+            .info-section {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-sm);
+            }
+            
+            .nav-footer {
+                bottom: var(--spacing-sm);
+                right: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-card {
+                margin: var(--spacing-sm);
+                padding: var(--spacing-md);
+            }
+            
+            .brand-title {
+                font-size: 2rem;
+            }
+            
+            .brand-slogan {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ========== ACCESSIBILITY ========== */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .title-card {
+                border: 2px solid var(--text-white);
+            }
+            
+            .brand-title {
+                -webkit-text-fill-color: var(--text-white);
+                color: var(--text-white);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Particles -->
+    <div class="bg-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Main Slide Container -->
+    <div class="slide-container">
+        <div class="title-card">
+            <!-- Brand Title -->
+            <h1 class="brand-title">밥떡한끼</h1>
+            <h2 class="brand-slogan">"든든하게, 부담 없게"</h2>
+            
+            <!-- Info Section -->
+            <div class="info-section">
+                <div class="info-item">
+                    <div class="info-label">브랜드 컨셉</div>
+                    <div class="info-value">불황에 강한<br><span class="info-highlight">서민 외식 브랜드</span></div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">타깃 고객</div>
+                    <div class="info-value"><span class="info-highlight">30-50대</span><br>예비창업주</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">창업 투자금</div>
+                    <div class="info-value"><span class="info-highlight">1억 5천만원</span><br>소자본 창업</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav-footer">
+        <a href="slide-01.html" class="nav-button">
+            시작하기
+            <span class="nav-arrow">→</span>
+        </a>
+    </div>
+
+    <script>
+        // ========== INTERACTIVE ANIMATIONS ========== 
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add dynamic particle movement
+            const particles = document.querySelectorAll('.particle');
+            
+            particles.forEach((particle, index) => {
+                // Random starting position
+                const randomX = Math.random() * window.innerWidth;
+                const randomY = Math.random() * window.innerHeight;
+                
+                particle.style.left = randomX + 'px';
+                particle.style.top = randomY + 'px';
+                
+                // Continuous floating animation
+                setInterval(() => {
+                    const newX = Math.random() * window.innerWidth;
+                    const newY = Math.random() * window.innerHeight;
+                    
+                    particle.style.transition = 'all 8s ease-in-out';
+                    particle.style.left = newX + 'px';
+                    particle.style.top = newY + 'px';
+                }, 8000 + (index * 2000));
+            });
+
+            // Title typing effect (subtle)
+            const title = document.querySelector('.brand-title');
+            const titleText = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typingInterval = setInterval(() => {
+                title.textContent += titleText.charAt(i);
+                i++;
+                if (i >= titleText.length) {
+                    clearInterval(typingInterval);
+                }
+            }, 150);
+
+            // Info cards stagger animation
+            const infoItems = document.querySelectorAll('.info-item');
+            infoItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    item.style.transition = 'all 0.6s ease-out';
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 1500 + (index * 200));
+            });
+
+            // Mouse parallax effect for title card
+            const titleCard = document.querySelector('.title-card');
+            
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX / window.innerWidth) * 100;
+                const y = (e.clientY / window.innerHeight) * 100;
+                
+                titleCard.style.transform = `
+                    translate(${(x - 50) * 0.1}px, ${(y - 50) * 0.1}px)
+                    perspective(1000px)
+                    rotateX(${(y - 50) * 0.1}deg)
+                    rotateY(${(x - 50) * 0.1}deg)
+                `;
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === 'Enter' || e.key === ' ') {
+                    window.location.href = 'slide-01.html';
+                }
+            });
+        });
+
+        // ========== PERFORMANCE OPTIMIZATION ==========
+        // Reduce animations on low-end devices
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (reduceMotion.matches) {
+            document.body.classList.add('reduce-motion');
+        }
+
+        // Battery optimization
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(battery => {
+                if (battery.level < 0.2) {
+                    document.body.classList.add('low-battery');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
