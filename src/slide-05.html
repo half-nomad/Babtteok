@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 5: 실행 계획/프로세스 - 밥떡한끼 프랜차이즈</title>
+    
+    <!-- Pretendard 웹폰트 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+    
+    <!-- 공통 CSS (필수) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- 네비게이션 시스템 -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <script src="js/navigation.js" defer></script>
+</head>
+<body>
+    <main class="slide slide-enter">
+        <!-- 네비게이션 -->
+        <nav class="slide-nav" aria-label="슬라이드 네비게이션">
+            <button class="nav-btn nav-prev" aria-label="이전 슬라이드">
+                <span class="nav-icon">←</span>
+            </button>
+            <div class="nav-info">
+                <span class="nav-progress">5 / 8</span>
+            </div>
+            <button class="nav-btn nav-next" aria-label="다음 슬라이드">
+                <span class="nav-icon">→</span>
+            </button>
+        </nav>
+
+        <header class="slide-header">
+            <div class="slide-number">SLIDE 5</div>
+            <h1 class="slide-title">실행 계획/프로세스</h1>
+            <p class="slide-subtitle">창업 리스크 최소화 3단계 지원 시스템</p>
+        </header>
+        
+        <section class="impact-section">
+            <div class="main-impact main-impact-small">검증→교육→동반성장으로<br><span class="highlight-text">안정적 창업 성공 보장</span></div>
+            <p class="impact-description">체계적인 3단계 프로세스를 통해 창업 실패 리스크를 최소화하고 지속 성장을 지원</p>
+        </section>
+        
+        <section class="cards-container">
+            <div class="glass-card animate-card" style="animation-delay: 0.2s;">
+                <div class="card-step">STEP 1</div>
+                <div class="card-icon">🔍</div>
+                <h3 class="card-title">1단계<br><span class="card-highlight">검증</span></h3>
+                <p class="card-description">20개 직영점 운영 데이터로 최적 입지, 메뉴믹스, 운영방식을 완전 검증 후 가맹 시작</p>
+            </div>
+            
+            <div class="glass-card animate-card" style="animation-delay: 0.4s;">
+                <div class="card-step">STEP 2</div>
+                <div class="card-icon">🎓</div>
+                <h3 class="card-title">2단계<br><span class="card-highlight">교육</span></h3>
+                <p class="card-description">2주 실무교육 + 현장 멘토링 3개월 + 24시간 본부 상담으로 초보자도 안전한 창업</p>
+            </div>
+            
+            <div class="glass-card animate-card" style="animation-delay: 0.6s;">
+                <div class="card-step">STEP 3</div>
+                <div class="card-icon">🚀</div>
+                <h3 class="card-title">3단계<br><span class="card-highlight">성장</span></h3>
+                <p class="card-description">지역별 공동마케팅, 신메뉴 무료 제공, 매출 부진 점포 집중 케어로 지속 성장 지원</p>
+            </div>
+        </section>
+
+        <!-- 접근성 안내 -->
+        <div class="accessibility-info" aria-live="polite">
+            키보드 단축키: 스페이스바(다음), 좌우 화살표(이동), ESC(메뉴)
+        </div>
+    </main>
+
+    <style>
+        /* 슬라이드 5 전용 스타일 */
+        .card-step {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 8px 14px;
+            border-radius: 25px;
+            box-shadow: 
+                0 4px 15px rgba(103, 58, 183, 0.4),
+                0 2px 8px rgba(179, 136, 255, 0.3);
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover .card-step {
+            transform: scale(1.05);
+            box-shadow: 
+                0 6px 20px rgba(103, 58, 183, 0.5),
+                0 3px 12px rgba(179, 136, 255, 0.4);
+        }
+
+        .glass-card {
+            position: relative;
+        }
+
+        /* 프로세스 연결 화살표 (데스크톱에서만) */
+        @media (min-width: 1024px) {
+            .cards-container {
+                position: relative;
+            }
+            
+            .cards-container::before,
+            .cards-container::after {
+                content: '→';
+                position: absolute;
+                top: 45%;
+                transform: translateY(-50%);
+                font-size: 1.8rem;
+                color: var(--color-accent);
+                z-index: 1;
+                opacity: 0.7;
+                text-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
+                animation: pulse-arrow 2s ease-in-out infinite;
+            }
+            
+            .cards-container::before {
+                left: 28%;
+            }
+            
+            .cards-container::after {
+                right: 28%;
+            }
+        }
+
+        @keyframes pulse-arrow {
+            0%, 100% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1.1); }
+        }
+
+        /* 모바일에서 화살표 숨김 */
+        @media (max-width: 767px) {
+            .cards-container::before,
+            .cards-container::after {
+                display: none;
+            }
+        }
+    </style>
+</body>
+</html>
