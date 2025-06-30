@@ -149,7 +149,12 @@
         
         /* 밥버거 공백 비교 차트 */
         .comparison-chart {
-            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 220px;
+            margin: 2rem auto;
         }
         
         .comparison-bars {
@@ -157,7 +162,7 @@
             gap: 2rem;
             align-items: end;
             height: 160px;
-            margin: 2rem 0;
+            margin: 1rem 0;
         }
         
         .comparison-bar {
@@ -279,9 +284,14 @@
                 font-size: 2.5rem;
             }
             
+            .comparison-chart {
+                height: 140px;
+                margin: 1rem auto;
+            }
+            
             .comparison-bars {
-                height: 120px;
-                margin: 1rem 0;
+                height: 100px;
+                margin: 0.5rem 0;
             }
         }
     </style>
