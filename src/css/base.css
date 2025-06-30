@@ -1,0 +1,134 @@
+/* ========================================
+   기본 스타일 (Base Styles)
+   ======================================== */
+
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 전역 설정 */
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+    background: var(--background-black);
+    color: var(--text-primary);
+    overflow: hidden; /* 슬라이드 전용 - 스크롤 방지 */
+    line-height: var(--leading-normal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 16:9 비율 고정 슬라이드 기본 구조 */
+.slide {
+    width: 100vw;
+    height: 100vh;
+    aspect-ratio: 16 / 9;
+    background: var(--background-black);
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(103, 58, 183, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(179, 136, 255, 0.15) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 슬라이드 장식 요소 - 보라색 테마 */
+.slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-purple), var(--accent-purple));
+    box-shadow: 0 0 10px var(--glow-purple);
+}
+
+/* 슬라이드 진입 애니메이션 */
+.slide-enter {
+    animation: slideEnter var(--duration-slower) var(--ease-bounce) forwards;
+}
+
+@keyframes slideEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+        filter: blur(4px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+/* 기본 텍스트 스타일 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+}
+
+p {
+    line-height: var(--leading-normal);
+}
+
+/* 링크 스타일 */
+a {
+    color: var(--accent-purple);
+    text-decoration: none;
+    transition: color var(--duration-normal) var(--ease-out);
+}
+
+a:hover {
+    color: var(--primary-purple);
+}
+
+/* 버튼 기본 스타일 */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+/* 포커스 스타일 */
+*:focus-visible {
+    outline: 2px solid var(--accent-purple);
+    outline-offset: 2px;
+}
+
+/* 선택 스타일 */
+::selection {
+    background: var(--accent-purple);
+    color: var(--background-black);
+}
+
+/* 스크롤바 스타일 (필요시) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-purple);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-purple);
+}

@@ -1,0 +1,279 @@
+/* ========================================
+   공통 컴포넌트 (Components)
+   ======================================== */
+
+/* 슬라이드 헤더 */
+.slide-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.slide-number {
+    color: var(--accent-purple);
+    font-size: var(--font-base);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 0 8px var(--glow-accent);
+}
+
+.slide-title {
+    font-size: var(--font-5xl);
+    font-weight: var(--font-extrabold);
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-sm);
+    text-shadow: 0 0 20px var(--glow-purple);
+}
+
+.slide-subtitle {
+    font-size: var(--font-2xl);
+    font-weight: var(--font-semibold);
+    color: var(--accent-purple);
+    margin-bottom: var(--space-xl);
+    text-shadow: 0 0 15px var(--glow-accent);
+}
+
+/* 중앙 임팩트 섹션 */
+.impact-section {
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    position: relative;
+}
+
+.main-impact {
+    font-size: var(--font-8xl);
+    font-weight: var(--font-black);
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    text-shadow: 0 0 30px var(--glow-accent);
+    margin-bottom: var(--space-sm);
+    animation: pulseGlow 3s ease-in-out infinite;
+    position: relative;
+}
+
+.impact-description {
+    font-size: var(--font-xl);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    font-weight: var(--font-medium);
+}
+
+/* 임팩트 섹션 애니메이션 */
+.impact-section {
+    animation: impactEnter 1s var(--ease-bounce) forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+
+@keyframes impactEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    60% {
+        transform: scale(1.1) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* 글로우 펄스 애니메이션 */
+@keyframes pulseGlow {
+    0%, 100% {
+        text-shadow: 0 0 30px var(--glow-accent);
+    }
+    50% {
+        text-shadow: 
+            0 0 40px var(--glow-accent),
+            0 0 60px var(--glow-purple);
+    }
+}
+
+/* 카드 컨테이너 */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 글래스모피즘 카드 */
+.glass-card {
+    background: rgba(42, 42, 42, 0.4);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--space-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--duration-normal) var(--ease-out);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 
+        0 8px 32px rgba(103, 58, 183, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+    opacity: 0.6;
+}
+
+.glass-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 16px 48px rgba(103, 58, 183, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(179, 136, 255, 0.3);
+}
+
+/* 특별 강조 카드 (중앙) */
+.glass-card.highlight {
+    background: rgba(103, 58, 183, 0.2);
+    border-color: var(--primary-purple);
+    transform: scale(1.05);
+    box-shadow: 
+        0 12px 40px rgba(103, 58, 183, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-card.highlight .card-icon {
+    color: var(--text-primary);
+    text-shadow: 0 0 20px var(--glow-accent);
+}
+
+/* 카드 내부 요소 */
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+    color: var(--accent-purple);
+    text-shadow: 0 0 15px var(--glow-accent);
+}
+
+.card-title {
+    font-size: var(--font-xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+    line-height: var(--leading-tight);
+}
+
+.card-description {
+    font-size: var(--font-base);
+    color: var(--text-secondary);
+    line-height: var(--leading-normal);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.card-highlight {
+    color: var(--accent-purple);
+    font-weight: var(--font-bold);
+}
+
+/* 카드 진입 애니메이션 */
+.glass-card {
+    animation: cardEnter 0.6s var(--ease-bounce) forwards;
+    opacity: 0;
+}
+
+.glass-card:nth-child(1) { animation-delay: 0.6s; }
+.glass-card:nth-child(2) { animation-delay: 0.8s; }
+.glass-card:nth-child(3) { animation-delay: 1s; }
+
+@keyframes cardEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* 인포그래픽 요소 */
+.infographic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: var(--space-md);
+    background: rgba(103, 58, 183, 0.1);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(179, 136, 255, 0.3);
+}
+
+.stat-number {
+    font-size: var(--font-4xl);
+    font-weight: var(--font-extrabold);
+    color: var(--accent-purple);
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+    font-size: var(--font-sm);
+    color: var(--text-secondary);
+    font-weight: var(--font-medium);
+}
+
+/* 버튼 컴포넌트 */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+    color: var(--text-primary);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-semibold);
+    font-size: var(--font-lg);
+    transition: all var(--duration-normal) var(--ease-out);
+    box-shadow: 0 4px 20px rgba(103, 58, 183, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(103, 58, 183, 0.4);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--accent-purple);
+    border: 2px solid var(--accent-purple);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--radius-lg);
+    font-weight: var(--font-semibold);
+    font-size: var(--font-lg);
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.btn-secondary:hover {
+    background: var(--accent-purple);
+    color: var(--background-black);
+    transform: translateY(-2px);
+}

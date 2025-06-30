@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 [NUMBER]: [TITLE] - 밥떡한끼 프랜차이즈</title>
+    
+    <!-- 폰트 로드 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+    
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/slide-[NUMBER].css">
+    
+    <style>
+        /* 임시 CSS 변수 (variables.css가 없을 때 대비) */
+        :root {
+            --primary-purple: #673AB7;
+            --secondary-purple: #9C27B0;
+            --accent-purple: #B388FF;
+            --tertiary-indigo: #3F51B5;
+            --background-black: #000000;
+            --background-dark: #1a1a1a;
+            --background-card: #2a2a2a;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --text-tertiary: #999999;
+            --text-muted: #666666;
+            --glow-purple: #673AB780;
+            --glow-accent: #B388FF60;
+            --border-light: #333333;
+            --border-accent: #673AB7;
+            --success-green: #4CAF50;
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+        }
+        
+        /* 기본 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Pretendard', system-ui, -apple-system, sans-serif;
+            background: var(--background-black);
+            color: var(--text-primary);
+            overflow: hidden; /* 스크롤 방지 */
+        }
+        
+        /* 16:9 비율 고정 슬라이드 */
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            aspect-ratio: 16 / 9;
+            background: var(--background-black);
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(103, 58, 183, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(179, 136, 255, 0.15) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--space-xl);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 슬라이드 장식 요소 - 보라색 테마 */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-purple), var(--accent-purple));
+            box-shadow: 0 0 10px var(--glow-purple);
+        }
+        
+        /* 슬라이드 헤더 */
+        .slide-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .slide-number {
+            color: var(--accent-purple);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 0 8px var(--glow-accent);
+        }
+        
+        .slide-title {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 0 20px var(--glow-purple);
+        }
+        
+        .slide-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: var(--space-xl);
+            text-shadow: 0 0 15px var(--glow-accent);
+        }
+        
+        /* 중앙 임팩트 섹션 */
+        .impact-section {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            position: relative;
+        }
+        
+        .main-impact {
+            font-size: 6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            text-shadow: 0 0 30px var(--glow-accent

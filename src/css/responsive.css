@@ -1,0 +1,278 @@
+/* ========================================
+   반응형 스타일 (Responsive Styles)
+   ======================================== */
+
+/* 태블릿 (1024px 이하) */
+@media (max-width: 1024px) {
+    .slide {
+        padding: var(--space-lg);
+    }
+    
+    .slide-title {
+        font-size: var(--font-4xl);
+    }
+    
+    .main-impact {
+        font-size: var(--font-7xl);
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+        max-width: 600px;
+    }
+    
+    .glass-card {
+        min-height: 160px;
+        padding: var(--space-sm);
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+    }
+    
+    .card-title {
+        font-size: var(--font-lg);
+    }
+    
+    .infographic-container {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .stat-number {
+        font-size: var(--font-3xl);
+    }
+}
+
+/* 모바일 (768px 이하) */
+@media (max-width: 768px) {
+    .slide {
+        padding: var(--space-md);
+    }
+    
+    .slide-title {
+        font-size: var(--font-3xl);
+    }
+    
+    .slide-subtitle {
+        font-size: var(--font-xl);
+    }
+    
+    .main-impact {
+        font-size: var(--font-6xl);
+    }
+    
+    .impact-description {
+        font-size: var(--font-lg);
+    }
+    
+    .glass-card {
+        min-height: 140px;
+    }
+    
+    .card-icon {
+        font-size: 1.75rem;
+    }
+    
+    .card-title {
+        font-size: var(--font-base);
+    }
+    
+    .card-description {
+        font-size: var(--font-sm);
+    }
+    
+    .stat-number {
+        font-size: var(--font-2xl);
+    }
+    
+    .stat-label {
+        font-size: var(--font-xs);
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        padding: var(--space-sm) var(--space-lg);
+        font-size: var(--font-base);
+    }
+}
+
+/* 작은 모바일 (480px 이하) */
+@media (max-width: 480px) {
+    .slide {
+        padding: var(--space-sm);
+    }
+    
+    .slide-title {
+        font-size: var(--font-2xl);
+    }
+    
+    .slide-subtitle {
+        font-size: var(--font-lg);
+    }
+    
+    .main-impact {
+        font-size: var(--font-5xl);
+    }
+    
+    .impact-description {
+        font-size: var(--font-base);
+    }
+    
+    .glass-card {
+        min-height: 120px;
+        padding: var(--space-sm);
+    }
+    
+    .card-icon {
+        font-size: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: var(--font-sm);
+    }
+    
+    .card-description {
+        font-size: var(--font-xs);
+    }
+}
+
+/* 큰 화면 (1440px 이상) */
+@media (min-width: 1440px) {
+    .slide-title {
+        font-size: var(--font-6xl);
+    }
+    
+    .main-impact {
+        font-size: var(--font-9xl);
+    }
+    
+    .cards-container {
+        max-width: 1400px;
+    }
+    
+    .glass-card {
+        min-height: 240px;
+        padding: var(--space-lg);
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+    }
+    
+    .card-title {
+        font-size: var(--font-2xl);
+    }
+    
+    .card-description {
+        font-size: var(--font-lg);
+    }
+}
+
+/* 초대형 화면 (1920px 이상) */
+@media (min-width: 1920px) {
+    .slide {
+        padding: var(--space-xxl);
+    }
+    
+    .slide-title {
+        font-size: var(--font-7xl);
+    }
+    
+    .main-impact {
+        font-size: 10rem;
+    }
+    
+    .cards-container {
+        max-width: 1600px;
+    }
+    
+    .glass-card {
+        min-height: 280px;
+    }
+}
+
+/* 세로 모드 (portrait) */
+@media (orientation: portrait) {
+    .slide {
+        height: 100vh;
+        width: 100vw;
+        aspect-ratio: unset;
+    }
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .infographic-container {
+        flex-direction: column;
+    }
+}
+
+/* 가로 모드 (landscape) */
+@media (orientation: landscape) and (max-height: 600px) {
+    .slide {
+        padding: var(--space-md);
+    }
+    
+    .slide-header {
+        margin-bottom: var(--space-md);
+    }
+    
+    .impact-section {
+        margin-bottom: var(--space-md);
+    }
+    
+    .slide-title {
+        font-size: var(--font-3xl);
+    }
+    
+    .main-impact {
+        font-size: var(--font-5xl);
+    }
+    
+    .glass-card {
+        min-height: 120px;
+        padding: var(--space-sm);
+    }
+}
+
+/* 고해상도 디스플레이 (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .slide-title,
+    .main-impact {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* 다크 모드 선호 */
+@media (prefers-color-scheme: dark) {
+    /* 이미 다크 테마이므로 추가 조정 불필요 */
+}
+
+/* 모션 감소 선호 */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* 고대비 모드 */
+@media (prefers-contrast: high) {
+    .slide-title {
+        color: var(--text-primary);
+        background: none;
+        -webkit-text-fill-color: var(--text-primary);
+    }
+    
+    .glass-card {
+        border-color: var(--accent-purple);
+        background: var(--background-card);
+    }
+}
