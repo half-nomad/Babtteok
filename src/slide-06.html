@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 6: 성과 예측 - 밥떡한끼 프랜차이즈</title>
+    
+    <!-- 공통 CSS (필수) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <style>
+        /* 슬라이드 6 전용 스타일 - 인포그래픽 최적화 */
+        .infographic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1rem;
+            align-items: start;
+        }
+        
+        /* 손익 구조 파이 차트 */
+        .profit-structure {
+            background: var(--glass-background);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            position: relative;
+            height: 320px;
+        }
+        
+        .profit-pie-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+        }
+        
+        .profit-pie {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                var(--accent-purple) 0deg 126deg,        /* 재료비 35% */
+                var(--primary-purple) 126deg 252deg,     /* 고정비 35% */
+                var(--color-white) 252deg 360deg         /* 순익 30% */
+            );
+            position: relative;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 30px rgba(183, 136, 255, 0.3);
+        }
+        
+        .profit-pie::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: var(--background-black);
+            border-radius: 50%;
+            border: 2px solid var(--glass-border);
+        }
+        
+        .profit-center-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: var(--color-white);
+            font-weight: 700;
+            z-index: 10;
+        }
+        
+        .profit-amount {
+            font-size: 1.4rem;
+            background: linear-gradient(135deg, var(--color-white), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+        
+        .profit-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 2px;
+        }
+        
+        .legend-color.materials { background: var(--accent-purple); }
+        .legend-color.fixed { background: var(--primary-purple); }
+        .legend-color.profit { background: var(--color-white); }
+        
+        /* 투자 회수 기간 차트 */
+        .recovery-timeline {
+            background: var(--glass-background);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            height: 320px;
+        }
+        
+        .timeline-container {
+            height: 200px;
+            position: relative;
+            margin: 1rem 0;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            bottom: 40px;
+            left: 20px;
+            right: 20px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-purple), var(--primary-purple));
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(183, 136, 255, 0.4);
+        }
+        
+        .timeline-point {
+            position: absolute;
+            bottom: 32px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-white);
+            border: 3px solid var(--primary-purple);
+            box-shadow: 0 0 15px rgba(183, 136, 255, 0.6);
+        }
+        
+        .timeline-point.recovery { right: 30%; }
+        
+        .timeline-label {
+            position: absolute;
+            bottom: 5px;
+            font-size: 0.8rem;
+            color: var(--color-white);
+            text-align: center;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-label.start { left: 30px; }
+        .timeline-label.recovery { right: 30%; }
+        .timeline-label.end { right: 30px; }
+        
+        .recovery-highlight {
+            position: absolute;
+            top: 40px;
+            right: 30%;
+            transform: translateX(50%);
+            background: var(--glass-background);
+            border: 1px solid var(--accent-purple);
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .recovery-year {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+            display: block;
+        }
+        
+        /* 연도별 수익 차트 */
+        .cumulative-revenue {
+            background: var(--glass-background);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(20px);
+            height: 320px;
+        }
+        
+        .revenue-bars {
+            display: flex;
+            align-items: end;
+            gap: 1rem;
+            height: 180px;
+            margin: 1rem 0;
+            padding: 0 1rem;
+        }
+        
+        .revenue-bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .bar-fill {
+            width: 100%;
+            background: linear-gradient(180deg, var(--color-white), var(--accent-purple));
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            min-height: 20px;
+            box-shadow: 0 0 15px rgba(183, 136, 255, 0.3);
+            transition: all 0.8s ease;
+        }
+        
+        .bar-fill.year-1 { height: 30%; }
+        .bar-fill.year-2 { height: 60%; }
+        .bar-fill.year-3 { height: 85%; }
+        .bar-fill.year-4 { height: 100%; }
+        .bar-fill.year-5 { height: 100%; }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--color-white);
+            white-space: nowrap;
+        }
+        
+        .bar-label {
+            font-size: 0.8rem;
+            color: var(--color-gray-300);
+            text-align: center;
+        }
+        
+        .revenue-summary {
+            text-align: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--glass-border);
+        }
+        
+        .total-revenue {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+        }
+        
+        /* 반응형 대응 */
+        @media (max-width: 1024px) {
+            .infographic-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .profit-structure,
+            .recovery-timeline,
+            .cumulative-revenue {
+                height: 280px;
+            }
+            
+            .profit-pie {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .profit-pie::after {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .timeline-container {
+                height: 150px;
+            }
+            
+            .revenue-bars {
+                height: 140px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .infographic-grid {
+                gap: 1rem;
+            }
+            
+            .profit-structure,
+            .recovery-timeline,
+            .cumulative-revenue {
+                height: 250px;
+                padding: 1rem;
+            }
+            
+            .profit-pie {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profit-pie::after {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .profit-amount {
+                font-size: 1.1rem;
+            }
+            
+            .revenue-bars {
+                height: 120px;
+                gap: 0.5rem;
+                padding: 0 0.5rem;
+            }
+        }
+        
+        /* 애니메이션 효과 */
+        .infographic-grid > * {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s ease forwards;
+        }
+        
+        .profit-structure { animation-delay: 0.2s; }
+        .recovery-timeline { animation-delay: 0.4s; }
+        .cumulative-revenue { animation-delay: 0.6s; }
+        
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 호버 효과 */
+        .profit-structure:hover,
+        .recovery-timeline:hover,
+        .cumulative-revenue:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 8px 32px rgba(183, 136, 255, 0.2);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <main class="slide slide-enter">
+        <header class="slide-header">
+            <div class="slide-number">SLIDE 6</div>
+            <h1 class="slide-title">결과/성과 예측</h1>
+            <p class="slide-subtitle">안정적 생존과 꾸준한 수익 구조</p>
+        </header>
+        
+        <section class="impact-section">
+            <div class="main-impact">월매출 2,000만원 기준 <span class="highlight-text">월 순익 700만원</span></div>
+            <p class="impact-description">경기 변동에 관계없이 지속 가능한 수익 구조</p>
+        </section>
+        
+        <section class="infographic-grid">
+            <!-- 월별 손익 구조 파이 차트 -->
+            <div class="profit-structure">
+                <h3 class="chart-title">월별 손익 구조</h3>
+                <div class="profit-pie-container">
+                    <div class="profit-pie">
+                        <div class="profit-center-text">
+                            <div class="profit-amount">700만원</div>
+                            <div style="font-size: 0.8rem; margin-top: 0.2rem;">순익</div>
+                        </div>
+                    </div>
+                    <div class="profit-legend">
+                        <div class="legend-item">
+                            <div class="legend-color materials"></div>
+                            <span>재료비 600만원 (30%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color fixed"></div>
+                            <span>고정비 700만원 (35%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color profit"></div>
+                            <span>순익 700만원 (35%)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 투자 회수 기간 타임라인 -->
+            <div class="recovery-timeline">
+                <h3 class="chart-title">투자 회수 기간</h3>
+                <div class="timeline-container">
+                    <div class="recovery-highlight">
+                        <span class="recovery-year">1.8년</span>
+                        <div>회수 완료</div>
+                    </div>
+                    <div class="timeline-line"></div>
+                    <div class="timeline-point start" style="left: 20px;"></div>
+                    <div class="timeline-point recovery"></div>
+                    <div class="timeline-point end" style="right: 20px;"></div>
+                    <div class="timeline-label start">창업</div>
+                    <div class="timeline-label recovery">투자 회수</div>
+                    <div class="timeline-label end">3년차</div>
+                </div>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <div style="font-size: 0.9rem; color: var(--color-gray-300);">
+                        투자금 1억 5천만원 기준<br>
+                        이후 꾸준한 현금흐름 창출
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 연도별 누적 수익 차트 -->
+            <div class="cumulative-revenue">
+                <h3 class="chart-title">연도별 누적 수익</h3>
+                <div class="revenue-bars">
+                    <div class="revenue-bar">
+                        <div class="bar-fill year-1">
+                            <div class="bar-value">4,200만원</div>
+                        </div>
+                        <div class="bar-label">1년차</div>
+                    </div>
+                    <div class="revenue-bar">
+                        <div class="bar-fill year-2">
+                            <div class="bar-value">8,400만원</div>
+                        </div>
+                        <div class="bar-label">2년차</div>
+                    </div>
+                    <div class="revenue-bar">
+                        <div class="bar-fill year-3">
+                            <div class="bar-value">1억2,600만원</div>
+                        </div>
+                        <div class="bar-label">3년차</div>
+                    </div>
+                    <div class="revenue-bar">
+                        <div class="bar-fill year-4">
+                            <div class="bar-value">1억6,800만원</div>
+                        </div>
+                        <div class="bar-label">4년차</div>
+                    </div>
+                    <div class="revenue-bar">
+                        <div class="bar-fill year-5">
+                            <div class="bar-value">2억1,000만원</div>
+                        </div>
+                        <div class="bar-label">5년차</div>
+                    </div>
+                </div>
+                <div class="revenue-summary">
+                    <div class="total-revenue">연간 8,400만원 순익</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // 네비게이션 시스템 로드
+        function loadNavigationSystem() {
+            if (typeof window.SlideNavigation === 'undefined') {
+                const script = document.createElement('script');
+                script.src = 'js/navigation.js';
+                script.onload = function() {
+                    window.slideNav = new window.SlideNavigation();
+                };
+                document.head.appendChild(script);
+            } else {
+                window.slideNav = new window.SlideNavigation();
+            }
+        }
+        
+        // 차트 애니메이션
+        function animateCharts() {
+            // 파이 차트 애니메이션
+            const profitPie = document.querySelector('.profit-pie');
+            if (profitPie) {
+                profitPie.style.background = 'conic-gradient(from 0deg, transparent 0deg 360deg)';
+                
+                setTimeout(() => {
+                    profitPie.style.background = `conic-gradient(
+                        from 0deg,
+                        var(--accent-purple) 0deg 108deg,
+                        var(--primary-purple) 108deg 234deg,
+                        var(--color-white) 234deg 360deg
+                    )`;
+                    profitPie.style.transition = 'background 2s ease';
+                }, 500);
+            }
+            
+            // 타임라인 애니메이션
+            const timelineLine = document.querySelector('.timeline-line');
+            const timelinePoints = document.querySelectorAll('.timeline-point');
+            
+            if (timelineLine) {
+                timelineLine.style.width = '0';
+                setTimeout(() => {
+                    timelineLine.style.width = 'calc(100% - 40px)';
+                    timelineLine.style.transition = 'width 2s ease';
+                }, 1000);
+                
+                timelinePoints.forEach((point, index) => {
+                    point.style.opacity = '0';
+                    setTimeout(() => {
+                        point.style.opacity = '1';
+                        point.style.transition = 'opacity 0.5s ease';
+                    }, 1500 + (index * 300));
+                });
+            }
+            
+            // 수익 바 차트 애니메이션
+            const revenueBars = document.querySelectorAll('.bar-fill');
+            revenueBars.forEach((bar, index) => {
+                const originalHeight = bar.style.height || getComputedStyle(bar).height;
+                bar.style.height = '0';
+                
+                setTimeout(() => {
+                    bar.style.height = originalHeight;
+                    bar.style.transition = 'height 1s ease';
+                }, 2000 + (index * 200));
+            });
+        }
+        
+        // 카운트업 애니메이션
+        function countUpAnimation(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            
+            function updateCount() {
+                start += increment;
+                if (start < target) {
+                    element.textContent = Math.floor(start).toLocaleString() + '만원';
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = target.toLocaleString() + '만원';
+                }
+            }
+            
+            updateCount();
+        }
+        
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            loadNavigationSystem();
+            
+            // 잠시 후 차트 애니메이션 시작
+            setTimeout(animateCharts, 800);
+            
+            // 중앙 텍스트 카운트업
+            const profitAmount = document.querySelector('.profit-amount');
+            if (profitAmount) {
+                setTimeout(() => {
+                    countUpAnimation(profitAmount, 700, 1500);
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
