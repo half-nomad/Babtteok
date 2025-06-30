@@ -1,0 +1,125 @@
+import re
+
+# 기존 파일 읽기
+with open("C:/Users/mokka/Claude-project/Babtteok/index.html", "r", encoding="utf-8") as f:
+    content = f.read()
+
+# 새로운 슬라이드 3 내용
+new_slide3 = """        <!-- 슬라이드 3: 경쟁환경 분석 & 핵심 타깃 -->
+        <section id="slide-3" class="slide" data-slide="3">
+            <div class="slide-content">
+                <header class="slide-header">
+                    <h1 class="slide-title">시장 기회 분석</h1>
+                    <p class="slide-subtitle">경쟁환경 분석과 핵심 타깃 고객층</p>
+                </header>
+                
+                <div class="market-opportunity-analysis">
+                    <!-- 경쟁환경 분석 -->
+                    <div class="competitive-landscape">
+                        <h2 class="analysis-title">경쟁환경 분석</h2>
+                        <div class="competition-grid">
+                            <div class="market-section">
+                                <div class="market-header">
+                                    <h3>🍲 떡볶이 시장</h3>
+                                    <div class="market-size">연 3,000억원</div>
+                                </div>
+                                <div class="competitor-status">
+                                    <div class="competitor-item dominated">
+                                        <span class="brand">신전떡볶이</span>
+                                        <span class="stores">800개점</span>
+                                    </div>
+                                    <div class="competitor-item dominated">
+                                        <span class="brand">엽기떡볶이</span>
+                                        <span class="stores">600개점</span>
+                                    </div>
+                                    <div class="market-insight">
+                                        <strong>대기업 독과점 구조</strong><br>
+                                        신규 진입 장벽 높음
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="market-section">
+                                <div class="market-header">
+                                    <h3>🍔 밥버거 시장</h3>
+                                    <div class="market-size opportunity">시장 공백</div>
+                                </div>
+                                <div class="market-opportunity-box">
+                                    <div class="opportunity-icon">🔥</div>
+                                    <div class="opportunity-content">
+                                        <h4>봉구스 실패 후 브랜드 공백</h4>
+                                        <p>2019년 매각 이후 대표 브랜드 부재<br>
+                                        <strong>새로운 브랜드의 시장 재편 기회</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 핵심 타깃 고객 -->
+                    <div class="target-customers">
+                        <h2 class="analysis-title">핵심 타깃 고객</h2>
+                        <div class="target-grid">
+                            <div class="target-segment primary">
+                                <div class="segment-header">
+                                    <div class="segment-icon">👨‍💼</div>
+                                    <h3>MZ세대 직장인</h3>
+                                </div>
+                                <div class="segment-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">연령대</span>
+                                        <span class="stat-value">23-35세</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">가격 니즈</span>
+                                        <span class="stat-value">8,000원대</span>
+                                    </div>
+                                </div>
+                                <div class="segment-insight">
+                                    <strong>런치플레이션 대응</strong><br>
+                                    가성비 좋은 든든한 한 끼 수요 증가
+                                </div>
+                            </div>
+                            
+                            <div class="target-segment secondary">
+                                <div class="segment-header">
+                                    <div class="segment-icon">🏠</div>
+                                    <h3>1인 가구</h3>
+                                </div>
+                                <div class="segment-stats">
+                                    <div class="stat-item">
+                                        <span class="stat-label">비율</span>
+                                        <span class="stat-value">31.7%</span>
+                                    </div>
+                                    <div class="stat-item">  
+                                        <span class="stat-label">성장률</span>
+                                        <span class="stat-value">+42%</span>
+                                    </div>
+                                </div>
+                                <div class="segment-insight">
+                                    <strong>배달 중심 소비</strong><br>
+                                    소량 주문, 1인분 적정량 선호
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>"""
+
+# 정규식으로 슬라이드 3 부분 찾기 및 교체
+pattern = r'(.*?)(\s*<!-- 슬라이드 3:.*?</section>\s*)(.*)'
+match = re.search(pattern, content, re.DOTALL)
+
+if match:
+    before = match.group(1)
+    after = match.group(3)
+    new_content = before + "\n" + new_slide3 + "\n" + after
+    
+    # 파일 저장
+    with open("C:/Users/mokka/Claude-project/Babtteok/index.html", "w", encoding="utf-8") as f:
+        f.write(new_content)
+    
+    print("✅ 슬라이드 3 성공적으로 교체 완료!")
+else:
+    print("❌ 슬라이드 3을 찾을 수 없습니다.")
