@@ -57,9 +57,9 @@
     position: relative;
 }
 
-/* 40% 크기 버전 - !important로 responsive.css 덮어쓰기 */
+/* 70% 크기 버전 - !important로 responsive.css 덮어쓰기 */
 .main-impact-small {
-    font-size: 2.4rem !important; /* var(--font-8xl)의 40% */
+    font-size: 4.2rem !important; /* var(--font-8xl)의 70% */
 }
 
 .impact-description {
