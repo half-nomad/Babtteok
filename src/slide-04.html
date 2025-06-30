@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 4: 시장 분석 - 밥떡한끼 프랜차이즈</title>
+    
+    <!-- Pretendard 웹폰트 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+    
+    <!-- 공통 CSS (필수) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- 네비게이션 시스템 -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <script src="js/navigation.js" defer></script>
+    
+    <style>
+        /* 슬라이드 4 전용 스타일 */
+        .slide {
+            padding: 2rem 3rem;
+            gap: 1.5rem;
+        }
+        
+        /* 헤더 섹션 */
+        .slide-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        /* 텍스트 설명 섹션 */
+        .text-section {
+            margin-bottom: 2rem;
+        }
+        
+        .bullet-points {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+        
+        .bullet-point {
+            flex: 1;
+            background: rgba(103, 58, 183, 0.1);
+            border: 1px solid rgba(103, 58, 183, 0.2);
+            border-radius: 12px;
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            animation: slideInUp 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .bullet-point:nth-child(1) { animation-delay: 0.2s; }
+        .bullet-point:nth-child(2) { animation-delay: 0.4s; }
+        .bullet-point:nth-child(3) { animation-delay: 0.6s; }
+        
+        .bullet-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .bullet-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            color: var(--text-secondary);
+        }
+        
+        /* 인포그래픽 섹션 */
+        .infographic-section {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .chart-container {
+            flex: 1;
+            background: rgba(42, 42, 42, 0.8);
+            border: 1px solid rgba(103, 58, 183, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+        
+        .chart-container:nth-child(1) { animation-delay: 0.8s; }
+        .chart-container:nth-child(2) { animation-delay: 1.0s; }
+        .chart-container:nth-child(3) { animation-delay: 1.2s; }
+        
+        .chart-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px rgba(179, 136, 255, 0.3);
+        }
+        
+        /* 1인 가구 트렌드 차트 */
+        .trend-chart {
+            position: relative;
+            height: 120px;
+            margin: 1rem 0;
+        }
+        
+        .trend-line {
+            position: relative;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(90deg, rgba(103, 58, 183, 0.2) 0%, rgba(179, 136, 255, 0.2) 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .trend-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-purple), var(--accent-purple));
+            border-radius: 30px;
+            width: 0%;
+            transition: width 2s ease-out;
+            position: relative;
+            box-shadow: 0 0 20px rgba(179, 136, 255, 0.5);
+        }
+        
+        .trend-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+        
+        .trend-value {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .trend-value.start { color: var(--text-secondary); }
+        .trend-value.end { color: var(--accent-purple); }
+        
+        /* 떡볶이 시장 도넛 차트 */
+        .donut-chart {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 1rem auto;
+        }
+        
+        .donut-svg {
+            transform: rotate(-90deg);
+        }
+        
+        .donut-bg {
+            fill: none;
+            stroke: rgba(103, 58, 183, 0.2);
+            stroke-width: 12;
+        }
+        
+        .donut-progress {
+            fill: none;
+            stroke: url(#donutGradient);
+            stroke-width: 12;
+            stroke-linecap: round;
+            stroke-dasharray: 283;
+            stroke-dashoffset: 283;
+            transition: stroke-dashoffset 2s ease-out;
+        }
+        
+        .donut-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .donut-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-purple);
+            text-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
+        }
+        
+        .donut-label {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+        
+        /* 밥버거 공백 비교 차트 */
+        .comparison-chart {
+            margin: 1rem 0;
+        }
+        
+        .comparison-bars {
+            display: flex;
+            gap: 1rem;
+            align-items: end;
+            height: 100px;
+            margin: 1rem 0;
+        }
+        
+        .comparison-bar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .bar {
+            width: 100%;
+            background: rgba(103, 58, 183, 0.2);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: height 1.5s ease-out;
+        }
+        
+        .bar.before {
+            height: 0px;
+            background: linear-gradient(to top, var(--primary-purple), var(--secondary-purple));
+        }
+        
+        .bar.after {
+            height: 0px;
+            background: linear-gradient(to top, rgba(103, 58, 183, 0.5), rgba(156, 39, 176, 0.5));
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            text-shadow: 0 0 5px rgba(179, 136, 255, 0.3);
+        }
+        
+        .bar-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        
+        /* 카운트업 애니메이션 */
+        .countup {
+            display: inline-block;
+        }
+        
+        /* 애니메이션 */
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+            
+            .bullet-points {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .infographic-section {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .chart-container {
+                padding: 1rem;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="slide slide-enter">
+        <!-- 네비게이션 -->
+        <nav class="slide-nav" aria-label="슬라이드 네비게이션">
+            <button class="nav-btn nav-prev" aria-label="이전 슬라이드">
+                <span class="nav-icon">←</span>
+            </button>
+            <div class="nav-info">
+                <span class="nav-progress">4 / 8</span>
+            </div>
+            <button class="nav-btn nav-next" aria-label="다음 슬라이드">
+                <span class="nav-icon">→</span>
+            </button>
+        </nav>
+
+        <!-- 헤더 -->
+        <header class="slide-header">
+            <div class="slide-number">SLIDE 4</div>
+            <h1 class="slide-title">타깃/시장 분석</h1>
+            <p class="slide-subtitle">경기 침체기에도 견고한 서민 외식 시장</p>
+        </header>
+        
+        <!-- 텍스트 설명 섹션 -->
+        <section class="text-section">
+            <div class="bullet-points">
+                <div class="bullet-point">
+                    <span class="bullet-icon">📈</span>
+                    <p class="bullet-text">물가 상승으로 외식비 부담 증가하지만 7,000원대 가성비 메뉴에 대한 수요는 오히려 증가</p>
+                </div>
+                
+                <div class="bullet-point">
+                    <span class="bullet-icon">💪</span>
+                    <p class="bullet-text">떡볶이 시장은 IMF, 코로나 등 경제 위기 때마다 오히려 성장한 대표적 불황형 업종</p>
+                </div>
+                
+                <div class="bullet-point">
+                    <span class="bullet-icon">🎯</span>
+                    <p class="bullet-text">1인 가구 증가와 배달 문화로 소량 주문 시장은 경기와 무관하게 지속 확대</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 인포그래픽 섹션 -->
+        <section class="infographic-section">
+            <!-- 1인 가구 증가 트렌드 -->
+            <div class="chart-container">
+                <h3 class="chart-title">1인 가구 증가 트렌드</h3>
+                <div class="trend-chart">
+                    <div class="trend-line">
+                        <div class="trend-progress" id="trendProgress"></div>
+                    </div>
+                    <div class="trend-values">
+                        <span class="trend-value start">2020년 29.8%</span>
+                        <span class="trend-value end">2025년 <span class="countup" data-target="31.7">0</span>%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 떡볶이 시장 규모 -->
+            <div class="chart-container">
+                <h3 class="chart-title">떡볶이 프랜차이즈 시장</h3>
+                <div class="donut-chart">
+                    <svg class="donut-svg" width="120" height="120">
+                        <defs>
+                            <linearGradient id="donutGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#673AB7"/>
+                                <stop offset="100%" style="stop-color:#B388FF"/>
+                            </linearGradient>
+                        </defs>
+                        <circle class="donut-bg" cx="60" cy="60" r="45"></circle>
+                        <circle class="donut-progress" id="donutProgress" cx="60" cy="60" r="45"></circle>
+                    </svg>
+                    <div class="donut-center">
+                        <div class="donut-value">
+                            <span class="countup" data-target="3000">0</span>억원
+                        </div>
+                        <div class="donut-label">연 시장 규모</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 밥버거 시장 공백 -->
+            <div class="chart-container">
+                <h3 class="chart-title">밥버거 시장 공백 현황</h3>
+                <div class="comparison-chart">
+                    <div class="comparison-bars">
+                        <div class="comparison-bar">
+                            <div class="bar before" id="barBefore">
+                                <span class="bar-value"><span class="countup" data-target="1100">0</span>개점</span>
+                            </div>
+                            <div class="bar-label">과거<br>봉구스</div>
+                        </div>
+                        <div class="comparison-bar">
+                            <div class="bar after" id="barAfter">
+                                <span class="bar-value"><span class="countup" data-target="488">0</span>개점</span>
+                            </div>
+                            <div class="bar-label">현재<br>봉구스</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // 카운트업 애니메이션 함수
+        function countUp(element, target, duration = 2000) {
+            const start = 0;
+            const range = target - start;
+            const startTime = Date.now();
+            
+            function updateCount() {
+                const elapsed = Date.now() - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                
+                // easeOutCubic 이징 함수
+                const easeProgress = 1 - Math.pow(1 - progress, 3);
+                const currentCount = Math.floor(start + (range * easeProgress));
+                
+                element.textContent = currentCount.toLocaleString();
+                
+                if (progress < 1) {
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = target.toLocaleString();
+                }
+            }
+            
+            updateCount();
+        }
+        
+        // 차트 애니메이션 초기화
+        function initializeCharts() {
+            // 1인 가구 트렌드 (29.8% → 31.7% = 약 6% 증가)
+            setTimeout(() => {
+                const trendProgress = document.getElementById('trendProgress');
+                trendProgress.style.width = '65%'; // 시각적 임팩트를 위해 65%로 설정
+                
+                // 카운트업
+                const trendCountup = document.querySelector('[data-target="31.7"]');
+                countUp(trendCountup, 31.7);
+            }, 800);
+            
+            // 떡볶이 시장 도넛 차트
+            setTimeout(() => {
+                const donutProgress = document.getElementById('donutProgress');
+                donutProgress.style.strokeDashoffset = '70'; // 75% 채움 (283의 25%)
+                
+                // 카운트업
+                const donutCountup = document.querySelector('[data-target="3000"]');
+                countUp(donutCountup, 3000);
+            }, 1000);
+            
+            // 밥버거 비교 차트
+            setTimeout(() => {
+                const barBefore = document.getElementById('barBefore');
+                const barAfter = document.getElementById('barAfter');
+                
+                barBefore.style.height = '80px'; // 1100개점 (최대값)
+                barAfter.style.height = '35px';  // 488개점 (약 44% 감소)
+                
+                // 카운트업
+                const beforeCountup = document.querySelector('[data-target="1100"]');
+                const afterCountup = document.querySelector('[data-target="488"]');
+                
+                setTimeout(() => countUp(beforeCountup, 1100), 200);
+                setTimeout(() => countUp(afterCountup, 488), 600);
+            }, 1200);
+        }
+        
+        // 페이지 로드 시 애니메이션 시작
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeCharts();
+        });
+        
+        // 화면 크기 변경 시 차트 재조정
+        window.addEventListener('resize', () => {
+            // 모바일 전환 시 필요한 조정사항이 있다면 여기에 추가
+        });
+    </script>
+</body>
+</html>
