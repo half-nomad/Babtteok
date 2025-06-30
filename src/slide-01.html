@@ -118,6 +118,39 @@
             text-shadow: 0 0 15px var(--glow-accent);
         }
         
+        /* Impact Section */
+        .impact-section {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .main-impact {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.3;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .main-impact-small {
+            font-size: 2rem;
+        }
+        
+        .highlight-text {
+            background: linear-gradient(135deg, var(--accent-purple), var(--secondary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px var(--glow-accent);
+        }
+        
+        .impact-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
         /* 문제점 카드 컨테이너 */
         .problems-container {
             display: grid;
@@ -309,9 +342,14 @@
         <!-- 슬라이드 헤더 -->
         <header class="slide-header">
             <div class="slide-number">SLIDE 1</div>
-            <h1 class="slide-title">경기 침체기, 고물가 시대의<br>소자본 창업 딜레마</h1>
-            <p class="slide-subtitle">불안한 경제 상황에서도 버틸 수 있는 검증된 아이템 부족</p>
+            <h1 class="slide-title">현재 시장 문제점</h1>
+            <p class="slide-subtitle">고물가·고금리 창업 딜레마</p>
         </header>
+        
+        <section class="impact-section">
+            <div class="main-impact main-impact-small">경기 침체기, 고물가 시대의<br><span class="highlight-text">소자본 창업 딜레마</span></div>
+            <p class="impact-description">불안한 경제 상황에서도 버틸 수 있는 검증된 아이템 부족</p>
+        </section>
         
         <!-- 문제점 카드들 -->
         <section class="problems-container">
