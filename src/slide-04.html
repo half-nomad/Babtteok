@@ -23,62 +23,21 @@
         /* 슬라이드 4 전용 스타일 */
         .slide {
             padding: 1.5rem 2.5rem;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: flex-start;
         }
         
         /* 헤더 섹션 */
         .slide-header {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             flex-shrink: 0;
         }
         
-        /* 텍스트 설명 섹션 */
-        .text-section {
-            margin-bottom: 1rem;
-            flex-shrink: 0;
-        }
-        
-        .bullet-points {
-            display: flex;
-            gap: 1rem;
-            justify-content: space-between;
-            margin-bottom: 0;
-        }
-        
-        .bullet-point {
-            flex: 1;
-            background: rgba(103, 58, 183, 0.1);
-            border: 1px solid rgba(103, 58, 183, 0.2);
-            border-radius: 12px;
-            padding: 0.8rem;
-            backdrop-filter: blur(10px);
-            animation: slideInUp 0.6s ease-out forwards;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
-        .bullet-point:nth-child(1) { animation-delay: 0.2s; }
-        .bullet-point:nth-child(2) { animation-delay: 0.4s; }
-        .bullet-point:nth-child(3) { animation-delay: 0.6s; }
-        
-        .bullet-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-        
-        .bullet-text {
-            font-size: 0.9rem;
-            line-height: 1.4;
-            color: var(--text-secondary);
-        }
-        
-        /* 인포그래픽 섹션 */
+        /* 인포그래픽 섹션 - 전체 공간 활용 */
         .infographic-section {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             justify-content: space-between;
             align-items: flex-start;
             flex: 1;
@@ -90,7 +49,7 @@
             background: rgba(42, 42, 42, 0.8);
             border: 1px solid rgba(103, 58, 183, 0.3);
             border-radius: 16px;
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 2rem;
             text-align: center;
             backdrop-filter: blur(10px);
             opacity: 0;
@@ -98,53 +57,53 @@
             animation: slideInUp 0.8s ease-out forwards;
         }
         
-        .chart-container:nth-child(1) { animation-delay: 0.8s; }
-        .chart-container:nth-child(2) { animation-delay: 1.0s; }
-        .chart-container:nth-child(3) { animation-delay: 1.2s; }
+        .chart-container:nth-child(1) { animation-delay: 0.3s; }
+        .chart-container:nth-child(2) { animation-delay: 0.5s; }
+        .chart-container:nth-child(3) { animation-delay: 0.7s; }
         
         .chart-title {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--accent-purple);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             text-shadow: 0 0 10px rgba(179, 136, 255, 0.3);
         }
         
         /* 1인 가구 트렌드 차트 */
         .trend-chart {
             position: relative;
-            height: 180px;
-            margin: 1.5rem 0;
+            height: 220px;
+            margin: 2rem 0;
         }
         
         .trend-line {
             position: relative;
             width: 100%;
-            height: 80px;
+            height: 100px;
             background: linear-gradient(90deg, rgba(103, 58, 183, 0.2) 0%, rgba(179, 136, 255, 0.2) 100%);
-            border-radius: 40px;
+            border-radius: 50px;
             overflow: hidden;
-            margin: 2rem 0;
+            margin: 2.5rem 0;
         }
         
         .trend-progress {
             height: 100%;
             background: linear-gradient(90deg, var(--primary-purple), var(--accent-purple));
-            border-radius: 30px;
+            border-radius: 40px;
             width: 0%;
             transition: width 2s ease-out;
             position: relative;
-            box-shadow: 0 0 20px rgba(179, 136, 255, 0.5);
+            box-shadow: 0 0 30px rgba(179, 136, 255, 0.6);
         }
         
         .trend-values {
             display: flex;
             justify-content: space-between;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
         
         .trend-value {
-            font-size: 1rem;
+            font-size: 1.2rem;
             font-weight: 600;
         }
         
@@ -157,28 +116,28 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 180px;
-            margin: 1.5rem auto;
+            height: 220px;
+            margin: 2rem auto;
         }
         
         .market-value {
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 900;
             background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(179, 136, 255, 0.5);
+            text-shadow: 0 0 40px rgba(179, 136, 255, 0.6);
             line-height: 1;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             animation: pulse 2s ease-in-out infinite;
         }
         
         .market-unit {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: var(--accent-purple);
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
         
         .market-label {
@@ -190,15 +149,15 @@
         
         /* 밥버거 공백 비교 차트 */
         .comparison-chart {
-            margin: 1.5rem 0;
+            margin: 2rem 0;
         }
         
         .comparison-bars {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
             align-items: end;
-            height: 140px;
-            margin: 1.5rem 0;
+            height: 160px;
+            margin: 2rem 0;
         }
         
         .comparison-bar {
@@ -345,29 +304,9 @@
         <!-- 헤더 -->
         <header class="slide-header">
             <div class="slide-number">SLIDE 4</div>
-            <h1 class="slide-title">타깃/시장 분석</h1>
-            <p class="slide-subtitle">경기 침체기에도 견고한 서민 외식 시장</p>
+            <h1 class="slide-title">시장 분석 인포그래픽</h1>
+            <p class="slide-subtitle">데이터로 증명하는 시장 기회</p>
         </header>
-        
-        <!-- 텍스트 설명 섹션 -->
-        <section class="text-section">
-            <div class="bullet-points">
-                <div class="bullet-point">
-                    <span class="bullet-icon">📈</span>
-                    <p class="bullet-text">물가 상승으로 외식비 부담 증가하지만 7,000원대 가성비 메뉴에 대한 수요는 오히려 증가</p>
-                </div>
-                
-                <div class="bullet-point">
-                    <span class="bullet-icon">💪</span>
-                    <p class="bullet-text">떡볶이 시장은 IMF, 코로나 등 경제 위기 때마다 오히려 성장한 대표적 불황형 업종</p>
-                </div>
-                
-                <div class="bullet-point">
-                    <span class="bullet-icon">🎯</span>
-                    <p class="bullet-text">1인 가구 증가와 배달 문화로 소량 주문 시장은 경기와 무관하게 지속 확대</p>
-                </div>
-            </div>
-        </section>
         
         <!-- 인포그래픽 섹션 -->
         <section class="infographic-section">
@@ -457,22 +396,21 @@
                 // 카운트업
                 const trendCountup = document.querySelector('[data-target="31.7"]');
                 countUp(trendCountup, 31.7);
-            }, 800);
+            }, 300);
             
-            // 떡볶이 시장 숫자 임팩트 (도넛 차트 제거)
+            // 떡볶이 시장 숫자 임팩트
             setTimeout(() => {
-                // 카운트업만 실행
                 const marketCountup = document.querySelector('[data-target="3000"]');
                 countUp(marketCountup, 3000);
-            }, 1000);
+            }, 500);
             
-            // 밥버거 비교 차트 (새로운 높이: 140px)
+            // 밥버거 비교 차트 (새로운 높이: 160px)
             setTimeout(() => {
                 const barBefore = document.getElementById('barBefore');
                 const barAfter = document.getElementById('barAfter');
                 
-                barBefore.style.height = '110px'; // 1100개점 (최대값)
-                barAfter.style.height = '48px';   // 488개점 (약 44% 감소)
+                barBefore.style.height = '130px'; // 1100개점 (최대값)
+                barAfter.style.height = '58px';   // 488개점 (약 44% 감소)
                 
                 // 카운트업
                 const beforeCountup = document.querySelector('[data-target="1100"]');
@@ -480,7 +418,7 @@
                 
                 setTimeout(() => countUp(beforeCountup, 1100), 200);
                 setTimeout(() => countUp(afterCountup, 488), 600);
-            }, 1200);
+            }, 700);
         }
         
         // 페이지 로드 시 애니메이션 시작
