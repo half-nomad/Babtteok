@@ -43,11 +43,14 @@
             width: 180px;
             height: 180px;
             border-radius: 50%;
+            /* Fallback for older browsers */
+            background: linear-gradient(45deg, #B388FF 0%, #673AB7 50%, #FFFFFF 100%);
+            /* Modern browsers with conic-gradient support */
             background: conic-gradient(
                 from 0deg,
-                var(--accent-purple) 0deg 108deg,        /* 재료비 30% (108도) */
-                var(--primary-purple) 108deg 234deg,     /* 고정비 35% (126도) */
-                var(--color-white) 234deg 360deg         /* 순익 35% (126도) */
+                #B388FF 0deg 108deg,        /* 재료비 30% (보라색) */
+                #673AB7 108deg 234deg,      /* 고정비 35% (진보라색) */
+                #FFFFFF 234deg 360deg       /* 순익 35% (흰색) */
             );
             position: relative;
             margin-bottom: 1rem;
@@ -113,9 +116,9 @@
             border-radius: 2px;
         }
         
-        .legend-color.materials { background: var(--accent-purple); }
-        .legend-color.fixed { background: var(--primary-purple); }
-        .legend-color.profit { background: var(--color-white); }
+        .legend-color.materials { background: #B388FF; }
+        .legend-color.fixed { background: #673AB7; }
+        .legend-color.profit { background: #FFFFFF; }
         
         /* 투자 회수 기간 차트 */
         .recovery-timeline {
@@ -479,9 +482,9 @@
                 setTimeout(() => {
                     profitPie.style.background = `conic-gradient(
                         from 0deg,
-                        var(--accent-purple) 0deg 108deg,
-                        var(--primary-purple) 108deg 234deg,
-                        var(--color-white) 234deg 360deg
+                        #B388FF 0deg 108deg,
+                        #673AB7 108deg 234deg,
+                        #FFFFFF 234deg 360deg
                     )`;
                     profitPie.style.transition = 'background 2s ease';
                 }, 500);
@@ -545,9 +548,9 @@
             const originalContent = centerText.innerHTML;
             
             const segments = [
-                { name: '재료비', value: '600만원', percentage: '30%', color: 'var(--accent-purple)' },
-                { name: '고정비', value: '700만원', percentage: '35%', color: 'var(--primary-purple)' },
-                { name: '순익', value: '700만원', percentage: '35%', color: 'var(--color-white)' }
+                { name: '재료비', value: '600만원', percentage: '30%', color: '#B388FF' },
+                { name: '고정비', value: '700만원', percentage: '35%', color: '#673AB7' },
+                { name: '순익', value: '700만원', percentage: '35%', color: '#FFFFFF' }
             ];
             
             let currentSegment = -1;
