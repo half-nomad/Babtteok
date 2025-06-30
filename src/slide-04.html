@@ -151,52 +151,41 @@
         .trend-value.start { color: var(--text-secondary); }
         .trend-value.end { color: var(--accent-purple); }
         
-        /* 떡볶이 시장 도넛 차트 */
-        .donut-chart {
-            position: relative;
-            width: 160px;
-            height: 160px;
+        /* 떡볶이 시장 숫자 임팩트 카드 */
+        .market-impact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 180px;
             margin: 1.5rem auto;
         }
         
-        .donut-svg {
-            transform: rotate(-90deg);
+        .market-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(179, 136, 255, 0.5);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            animation: pulse 2s ease-in-out infinite;
         }
         
-        .donut-bg {
-            fill: none;
-            stroke: rgba(103, 58, 183, 0.2);
-            stroke-width: 16;
-        }
-        
-        .donut-progress {
-            fill: none;
-            stroke: url(#donutGradient);
-            stroke-width: 16;
-            stroke-linecap: round;
-            stroke-dasharray: 377;
-            stroke-dashoffset: 377;
-            transition: stroke-dashoffset 2s ease-out;
-        }
-        
-        .donut-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        
-        .donut-value {
-            font-size: 1.4rem;
-            font-weight: 700;
+        .market-unit {
+            font-size: 1.2rem;
+            font-weight: 600;
             color: var(--accent-purple);
-            text-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
+            margin-bottom: 1rem;
         }
         
-        .donut-label {
-            font-size: 0.8rem;
+        .market-label {
+            font-size: 0.9rem;
             color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.3;
         }
         
         /* 밥버거 공백 비교 차트 */
@@ -322,10 +311,13 @@
                 margin: 1.5rem 0;
             }
             
-            .donut-chart {
-                width: 140px;
+            .market-impact {
                 height: 140px;
                 margin: 1rem auto;
+            }
+            
+            .market-value {
+                font-size: 2.5rem;
             }
             
             .comparison-bars {
@@ -396,23 +388,12 @@
             <!-- 떡볶이 시장 규모 -->
             <div class="chart-container">
                 <h3 class="chart-title">떡볶이 프랜차이즈 시장</h3>
-                <div class="donut-chart">
-                    <svg class="donut-svg" width="160" height="160">
-                        <defs>
-                            <linearGradient id="donutGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color:#673AB7"/>
-                                <stop offset="100%" style="stop-color:#B388FF"/>
-                            </linearGradient>
-                        </defs>
-                        <circle class="donut-bg" cx="80" cy="80" r="60"></circle>
-                        <circle class="donut-progress" id="donutProgress" cx="80" cy="80" r="60"></circle>
-                    </svg>
-                    <div class="donut-center">
-                        <div class="donut-value">
-                            <span class="countup" data-target="3000">0</span>억원
-                        </div>
-                        <div class="donut-label">연 시장 규모</div>
+                <div class="market-impact">
+                    <div class="market-value">
+                        <span class="countup" data-target="3000">0</span>
                     </div>
+                    <div class="market-unit">억원</div>
+                    <div class="market-label">연간 시장 규모<br>꾸준한 성장세</div>
                 </div>
             </div>
             
@@ -478,14 +459,11 @@
                 countUp(trendCountup, 31.7);
             }, 800);
             
-            // 떡볶이 시장 도넛 차트 (r=60, circumference=377)
+            // 떡볶이 시장 숫자 임팩트 (도넛 차트 제거)
             setTimeout(() => {
-                const donutProgress = document.getElementById('donutProgress');
-                donutProgress.style.strokeDashoffset = '94'; // 75% 채움 (377의 25%)
-                
-                // 카운트업
-                const donutCountup = document.querySelector('[data-target="3000"]');
-                countUp(donutCountup, 3000);
+                // 카운트업만 실행
+                const marketCountup = document.querySelector('[data-target="3000"]');
+                countUp(marketCountup, 3000);
             }, 1000);
             
             // 밥버거 비교 차트 (새로운 높이: 140px)
