@@ -277,26 +277,3 @@
     color: var(--background-black);
     transform: translateY(-2px);
 }
-
-/* 시장 분석 섹션 - 깔끔한 스타일 */
-.market-summary {
-    text-align: center;
-    margin: 2rem 0 3rem 0;
-    padding: 2rem;
-}
-
-.market-title {
-    font-size: 1.8rem;
-    line-height: 1.4;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-}
-
-.market-description {
-    font-size: 1.1rem;
-    opacity: 0.9;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
-}
