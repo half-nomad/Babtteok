@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 3: 시장 분석 - 밥떡한끼 프랜차이즈</title>
+    
+    <!-- 공통 CSS (필수) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- 네비게이션 시스템 -->
+    <link rel="stylesheet" href="css/navigation.css">
+    <script src="js/navigation.js" defer></script>
+</head>
+<body>
+    <main class="slide slide-enter">
+        <!-- 네비게이션 -->
+        <nav class="slide-nav" aria-label="슬라이드 네비게이션">
+            <button class="nav-btn nav-prev" aria-label="이전 슬라이드">
+                <span class="nav-icon">←</span>
+            </button>
+            <div class="nav-info">
+                <span class="nav-progress">3 / 8</span>
+            </div>
+            <button class="nav-btn nav-next" aria-label="다음 슬라이드">
+                <span class="nav-icon">→</span>
+            </button>
+        </nav>
+
+        <header class="slide-header">
+            <div class="slide-number">SLIDE 3</div>
+            <h1 class="slide-title">타깃/시장 분석</h1>
+            <p class="slide-subtitle">경기 침체기에도 견고한 서민 외식 시장</p>
+        </header>
+        
+        <section class="impact-section">
+            <div class="main-impact">불황 시 더욱 부각되는<br><span class="highlight-text">가성비 중심 식사 문화</span></div>
+            <p class="impact-description">물가 상승 속에서도 7,000원대 합리적 메뉴에 대한 수요는 오히려 증가</p>
+        </section>
+        
+        <section class="cards-container">
+            <div class="glass-card animate-card" style="animation-delay: 0.2s;">
+                <div class="card-icon">📈</div>
+                <h3 class="card-title">가성비 메뉴<br><span class="card-highlight">수요 증가</span></h3>
+                <p class="card-description">물가 상승으로 외식비 부담 증가하지만 7,000원대 가성비 메뉴에 대한 수요는 오히려 증가</p>
+            </div>
+            
+            <div class="glass-card animate-card" style="animation-delay: 0.4s;">
+                <div class="card-icon">💪</div>
+                <h3 class="card-title">불황형<br><span class="card-highlight">검증된 업종</span></h3>
+                <p class="card-description">떡볶이 시장은 IMF, 코로나 등 경제 위기 때마다 오히려 성장한 대표적 불황형 업종</p>
+            </div>
+            
+            <div class="glass-card animate-card" style="animation-delay: 0.6s;">
+                <div class="card-icon">🏠</div>
+                <h3 class="card-title">1인 가구<br><span class="card-highlight">시장 확대</span></h3>
+                <p class="card-description">1인 가구 증가와 배달 문화로 소량 주문 시장은 경기와 무관하게 지속 확대</p>
+            </div>
+        </section>
+
+        <!-- 접근성 안내 -->
+        <div class="accessibility-info" aria-live="polite">
+            키보드 단축키: 스페이스바(다음), 좌우 화살표(이동), ESC(메뉴)
+        </div>
+    </main>
+</body>
+</html>
