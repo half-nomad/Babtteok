@@ -458,21 +458,10 @@
         </section>
     </main>
     
+    <!-- 네비게이션 JS 자동 로드 (다른 슬라이드와 동일한 방식) -->
+    <script src="js/navigation.js"></script>
+    
     <script>
-        // 네비게이션 시스템 로드
-        function loadNavigationSystem() {
-            if (typeof window.SlideNavigation === 'undefined') {
-                const script = document.createElement('script');
-                script.src = 'js/navigation.js';
-                script.onload = function() {
-                    window.slideNav = new window.SlideNavigation();
-                };
-                document.head.appendChild(script);
-            } else {
-                window.slideNav = new window.SlideNavigation();
-            }
-        }
-        
         // 차트 애니메이션
         function animateCharts() {
             // 파이 차트 애니메이션
@@ -544,8 +533,6 @@
         
         // 페이지 로드 시 실행
         document.addEventListener('DOMContentLoaded', function() {
-            loadNavigationSystem();
-            
             // 잠시 후 차트 애니메이션 시작
             setTimeout(animateCharts, 800);
             
