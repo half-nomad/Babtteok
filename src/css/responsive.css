@@ -16,6 +16,10 @@
         font-size: var(--font-7xl);
     }
     
+    .main-impact-small {
+        font-size: 3.15rem; /* font-7xl의 70% */
+    }
+    
     .cards-container {
         grid-template-columns: 1fr;
         gap: var(--space-sm);
@@ -61,6 +65,10 @@
     
     .main-impact {
         font-size: var(--font-6xl);
+    }
+    
+    .main-impact-small {
+        font-size: 2.6rem; /* font-6xl의 70% */
     }
     
     .impact-description {
@@ -114,6 +122,10 @@
     
     .main-impact {
         font-size: var(--font-5xl);
+    }
+    
+    .main-impact-small {
+        font-size: 2.1rem; /* font-5xl의 70% */
     }
     
     .impact-description {
