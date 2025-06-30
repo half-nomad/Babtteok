@@ -57,9 +57,9 @@
     position: relative;
 }
 
-/* 70% 크기 버전 */
+/* 80% 크기 버전 */
 .main-impact-small {
-    font-size: 4.2rem; /* var(--font-8xl)의 70% */
+    font-size: 4.8rem; /* var(--font-8xl)의 80% */
 }
 
 .impact-description {
