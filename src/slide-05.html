@@ -3,176 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?�라?�드 5: ?�행 계획/?�로?�스 - 밥떡?�끼 ?�랜차이�?/title>
+    <title>슬라이드 5: 실행 계획/프로세스 - 밥떡한끼 프랜차이즈</title>
     
-    <!-- Pretendard ?�폰??-->
+    <!-- Pretendard 폰트 -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
     
-    <!-- 공통 CSS (?�수) -->
+    <!-- 공통 CSS (필수) -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">`n    <link rel="stylesheet" href="css/mobile-scroll-fix.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/mobile-scroll-fix.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- ?�비게이???�스??-->
+    <!-- 네비게이션 스크립트 -->
     <script src="js/navigation.js" defer></script>
-</head>
-<body>
-    <main class="slide slide-enter">
-        <header class="slide-header">
-            <div class="slide-number">SLIDE 5</div>
-            <h1 class="slide-title">?�행 계획/?�로?�스</h1>
-            <p class="slide-subtitle">창업 리스??최소??3?�계 지???�스??/p>
-        </header>
-        
-        <section class="impact-section">
-            <div class="main-impact main-impact-small">검증→교육?�동반성?�으�?br><span class="highlight-text">?�정??창업 ?�공 보장</span></div>
-            <p class="impact-description">체계?�인 3?�계 ?�로?�스�??�해 창업 ?�패 리스?��? 최소?�하�?지???�장??지??/p>
-        </section>
-        
-        <section class="cards-container">
-            <div class="glass-card animate-card" style="animation-delay: 0.2s;">
-                <div class="card-step">STEP 1</div>
-                <div class="card-icon">?��</div>
-                <h3 class="card-title">1?�계<br><span class="card-highlight">검�?/span></h3>
-                <p class="card-description">20�?직영???�영 ?�이?�로 최적 ?��?, 메뉴믹스, ?�영방식???�전 검�???가�??�작</p>
-            </div>
-            
-            <div class="glass-card animate-card" style="animation-delay: 0.4s;">
-                <div class="card-step">STEP 2</div>
-                <div class="card-icon">?��</div>
-                <h3 class="card-title">2?�계<br><span class="card-highlight">교육</span></h3>
-                <p class="card-description">2�??�무교육 + ?�장 멘토�?3개월 + 24?�간 본�? ?�담?�로 초보?�도 ?�전??창업</p>
-            </div>
-            
-            <div class="glass-card animate-card" style="animation-delay: 0.6s;">
-                <div class="card-step">STEP 3</div>
-                <div class="card-icon">??</div>
-                <h3 class="card-title">3?�계<br><span class="card-highlight">?�장</span></h3>
-                <p class="card-description">지??�� 공동마�??? ?�메??무료 ?�공, 매출 부�??�포 집중 케?�로 지???�장 지??/p>
-            </div>
-        </section>
-
-        <!-- ?�근???�내 -->
-        <div class="accessibility-info" aria-live="polite">
-            ?�보???�축?? ?�페?�스�??�음), 좌우 ?�살???�동), ESC(메뉴)
-        </div>
-    </main>
-
+    
     <style>
-        /* ?�라?�드 5 ?�용 ?��???*/
-        .card-step {
-            position: absolute;
-            top: -12px;
-            right: -12px;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
-            color: white;
-            font-size: 0.75rem;
-            font-weight: 800;
-            padding: 8px 14px;
-            border-radius: 25px;
-            box-shadow: 
-                0 4px 15px rgba(103, 58, 183, 0.4),
-                0 2px 8px rgba(179, 136, 255, 0.3);
-            z-index: 2;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+        /* 슬라이드 5 전용 스타일 */
+        .process-steps {
+            display: flex;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .process-step {
+            flex: 1;
+            background: rgba(42, 42, 42, 0.8);
+            border: 2px solid rgba(103, 58, 183, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: slideInUp 0.8s ease-out forwards;
         }
-
-        .glass-card:hover .card-step {
-            transform: scale(1.05);
-            box-shadow: 
-                0 6px 20px rgba(103, 58, 183, 0.5),
-                0 3px 12px rgba(179, 136, 255, 0.4);
+        
+        .process-step:nth-child(1) { animation-delay: 0.2s; }
+        .process-step:nth-child(2) { animation-delay: 0.4s; }
+        .process-step:nth-child(3) { animation-delay: 0.6s; }
+        
+        .process-step:hover {
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 30px rgba(179, 136, 255, 0.3);
+            transform: translateY(-5px);
         }
-
-        .glass-card {
-            position: relative;
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 20px rgba(179, 136, 255, 0.4);
         }
-
-        /* ?�로?�스 ?�결 ?�살??(?�스?�톱?�서�? */
-        @media (min-width: 1024px) {
-            .cards-container {
-                position: relative;
+        
+        .step-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-purple);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .step-description {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        .step-highlight {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        
+        /* 애니메이션 */
+        @keyframes slideInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .process-steps {
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-top: 1.5rem;
             }
             
-            .cards-container::before,
-            .cards-container::after {
-                content: '??;
-                position: absolute;
-                top: 45%;
-                transform: translateY(-50%);
-                font-size: 1.8rem;
-                color: var(--color-accent);
-                z-index: 1;
-                opacity: 0.7;
-                text-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
-                animation: pulse-arrow 2s ease-in-out infinite;
+            .process-step {
+                padding: 1.5rem;
             }
             
-            .cards-container::before {
-                left: 28%;
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
             }
             
-            .cards-container::after {
-                right: 28%;
+            .step-title {
+                font-size: 1.2rem;
             }
-        }
-
-        @keyframes pulse-arrow {
-            0%, 100% { opacity: 0.7; transform: translateY(-50%) scale(1); }
-            50% { opacity: 1; transform: translateY(-50%) scale(1.1); }
-        }
-
-        /* 모바?�에???�살???��? */
-        @media (max-width: 767px) {
-            .cards-container::before,
-            .cards-container::after {
-                display: none;
+            
+            .step-description {
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
     <main class="slide slide-enter">
+        <!-- 슬라이드 헤더 -->
         <header class="slide-header">
             <div class="slide-number">SLIDE 5</div>
-            <h1 class="slide-title">?�행 계획/?�로?�스</h1>
-            <p class="slide-subtitle">창업 리스??최소??3?�계 지???�스??/p>
+            <h1 class="slide-title">창업 리스크 최소화<br>3단계 지원 시스템</h1>
+            <p class="slide-subtitle">검증→교육→동반성장으로 안정적 창업 성공 보장</p>
         </header>
         
-        <section class="impact-section">
-            <div class="main-impact">검증→교육?�동반성?�으�?<span class="highlight-text">?�정??창업 ?�공</span> 보장</div>
-            <p class="impact-description">20�?직영???�이??기반 ?�전 검증된 창업 ?�로?�스</p>
-        </section>
-        
-        <section class="cards-container">
-            <div class="glass-card process-card">
-                <div class="step-badge step-1">STEP 1</div>
-                <div class="card-icon">?��</div>
-                <h3 class="card-title">1?�계 검�?br><span class="card-highlight">?�전???�전 검�?/span></h3>
-                <p class="card-description">20�?직영???�영 ?�이?�로 최적 ?��?, 메뉴믹스, ?�영방식???�전 검�???가�??�작</p>
+        <!-- 프로세스 단계들 -->
+        <section class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">검증 단계<br><span class="step-highlight">완전 검증</span></h3>
+                <p class="step-description">20개 직영점 운영 데이터로 최적 입지, 메뉴믹스, 운영방식을 완전 검증 후 가맹 시작</p>
             </div>
             
-            <div class="glass-card process-card highlight">
-                <div class="step-badge step-2">STEP 2</div>
-                <div class="card-icon">?��</div>
-                <h3 class="card-title">2?�계 교육<br><span class="card-highlight">집중 ?�무 교육</span></h3>
-                <p class="card-description">2�??�무교육 + ?�장 멘토�?3개월 + 24?�간 본�? ?�담?�로 초보?�도 ?�전??창업</p>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">교육 단계<br><span class="step-highlight">안전한 창업</span></h3>
+                <p class="step-description">2주 실무교육 + 현장 멘토링 3개월 + 24시간 본부 상담으로 초보자도 안전한 창업</p>
             </div>
             
-            <div class="glass-card process-card">
-                <div class="step-badge step-3">STEP 3</div>
-                <div class="card-icon">??</div>
-                <h3 class="card-title">3?�계 ?�장<br><span class="card-highlight">지?�적 ?�장 지??/span></h3>
-                <p class="card-description">지??�� 공동마�??? ?�메??무료 ?�공, 매출 부�??�포 집중 케?�로 지???�장 지??/p>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">성장 단계<br><span class="step-highlight">지속 성장</span></h3>
+                <p class="step-description">지역별 공동마케팅, 신메뉴 무료 제공, 매출 부진 점포 집중 케어로 지속 성장 지원</p>
             </div>
         </section>
     </main>
     
-    <!-- ?�비게이??JS ?�동 로드 -->
+    <!-- 네비게이션 JS 자동 로드 -->
     <script src="js/navigation.js"></script>
 </body>
 </html>

@@ -3,364 +3,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?�라?�드 7: Call to Action - 밥떡?�끼 ?�랜차이�?/title>
+    <title>슬라이드 7: Call to Action - 밥떡한끼 프랜차이즈</title>
     
-    <!-- Pretendard ?�폰??-->
+    <!-- Pretendard 폰트 -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
     
-    <!-- 공통 CSS (?�수) -->
+    <!-- 공통 CSS (필수) -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">`n    <link rel="stylesheet" href="css/mobile-scroll-fix.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/mobile-scroll-fix.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- ?�비게이???�스??-->
+    <!-- 네비게이션 스크립트 -->
     <script src="js/navigation.js" defer></script>
-</head>
-<body>
-    <main class="slide slide-enter">
-        <header class="slide-header">
-            <div class="slide-number">SLIDE 7</div>
-            <h1 class="slide-title">?�안/Call to Action</h1>
-            <p class="slide-subtitle">불황?�도 ?�들리�? ?�는 ?�든???�업</p>
-        </header>
-        
-        <section class="impact-section">
-            <div class="main-impact main-impact-small">?�전??창업???�택<br><span class="highlight-text">검증된 ?�존???�업 모델</span></div>
-            <p class="impact-description">경제??불확?�성 ?��?, 꾸�????�존�??�정???�금?�름??초점??맞춘 ?�실??창업</p>
-        </section>
-        
-        <section class="cards-container">
-            <div class="glass-card animate-card" style="animation-delay: 0.2s;">
-                <div class="card-icon">?��</div>
-                <h3 class="card-title">기본 ?�사<br><span class="card-highlight">?�수 ?�요</span></h3>
-                <p class="card-description">고물가·불황 ?��??�도 ?�기?????�는 기본 ?�사 ?�요�?기반?�로 ???�정???�업 모델</p>
-            </div>
-            
-            <div class="glass-card animate-card" style="animation-delay: 0.4s;">
-                <div class="card-icon">?��</div>
-                <h3 class="card-title">?�정??br><span class="card-highlight">?�금?�름</span></h3>
-                <p class="card-description">과도???�익 추구보다??꾸�????�존�??�정???�금?�름??초점??맞춘 ?�실??창업</p>
-            </div>
-            
-            <div class="glass-card animate-card" style="animation-delay: 0.6s;">
-                <div class="card-icon">??/div>
-                <h3 class="card-title">검증된<br><span class="card-highlight">?�업 모델</span></h3>
-                <p class="card-description">20�?직영???�영 ?�이?��? 체계??지???�스?�으�?검�??�료???�전??창업 모델</p>
-            </div>
-        </section>
-
-        <!-- ?�별 ?�택 CTA ?�션 -->
-        <section class="cta-section">
-            <div class="cta-badge">
-                <span class="badge-text">LIMITED</span>
-                <span class="badge-number">20�?/span>
-            </div>
-            
-            <div class="cta-content">
-                <div class="cta-header">
-                    <h2 class="cta-title">?�리?�답???�별 ?�택</h2>
-                    <div class="urgency-info">
-                        <span class="applied-count">12�??�청?�료</span>
-                        <div class="urgency-progress">
-                            <div class="urgency-fill" style="width: 60%;"></div>
-                        </div>
-                        <span class="remaining-count">8�??�음</span>
-                    </div>
-                </div>
-                
-                <div class="benefits-horizontal">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">?��</div>
-                        <div class="benefit-info">
-                            <span class="benefit-text">교육�?지??/span>
-                            <span class="benefit-value">200만원 ?�당</span>
-                        </div>
-                    </div>
-                    <div class="benefit-separator"></div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">?��</div>
-                        <div class="benefit-info">
-                            <span class="benefit-text">마�??�비 지??/span>
-                            <span class="benefit-value">300만원 ?�당</span>
-                        </div>
-                    </div>
-                    <div class="benefit-separator"></div>
-                    <div class="benefit-item">
-                        <div class="benefit-icon">?��</div>
-                        <div class="benefit-info">
-                            <span class="benefit-text">?�담 컨설??/span>
-                            <span class="benefit-value">3개월 무료</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA 버튼 ?�션 (분리) -->
-        <section class="cta-button-section">
-            <button class="cta-button">
-                <span class="cta-button-text">지�??�담 ?�청?�기</span>
-                <span class="cta-button-arrow">??/span>
-            </button>
-            <p class="cta-disclaimer">* ?�착??마감 | 24?�간 ???�락?�립?�다</p>
-        </section>
-
-        <!-- ?�근???�내 -->
-        <div class="accessibility-info" aria-live="polite">
-            ?�보???�축?? ?�페?�스�??�음), 좌우 ?�살???�동), ESC(메뉴)
-        </div>
-    </main>
-
+    
     <style>
-        /* ?�라?�드 7 ?�용 CTA ?��???*/
-        .cta-section {
-            position: relative;
-            margin: 40px auto 0;
-            max-width: 900px;
-            padding: 30px;
-            background: linear-gradient(135deg, 
-                rgba(103, 58, 183, 0.1) 0%, 
-                rgba(156, 39, 176, 0.15) 50%, 
-                rgba(255, 193, 7, 0.1) 100%);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            animation: cta-glow 3s ease-in-out infinite alternate;
+        /* 슬라이드 7 전용 스타일 - Call to Action 최적화 */
+        .cta-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
-
-        @keyframes cta-glow {
-            0% { box-shadow: 0 0 30px rgba(103, 58, 183, 0.3); }
-            100% { box-shadow: 0 0 50px rgba(255, 193, 7, 0.4); }
-        }
-
-        .cta-badge {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #FF6B35 0%, #FF8E53 50%, #FFC107 100%);
-            color: white;
-            padding: 8px 24px;
-            border-radius: 25px;
-            font-weight: 800;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-            animation: badge-pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes badge-pulse {
-            0%, 100% { transform: translateX(-50%) scale(1); }
-            50% { transform: translateX(-50%) scale(1.05); }
-        }
-
-        .badge-text {
-            margin-right: 8px;
-        }
-
-        .badge-number {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.8rem;
-        }
-
-        .cta-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .cta-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--color-primary) 0%, #FFC107 100%);
+        
+        .final-message {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
         }
-
-        .urgency-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 0.9rem;
-            color: var(--color-text-secondary);
-        }
-
-        .urgency-progress {
-            width: 100px;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .urgency-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #FF6B35, #FFC107);
-            border-radius: 3px;
-            transition: width 0.3s ease;
-        }
-
-        .applied-count, .remaining-count {
-            font-weight: 600;
-            color: #FFC107;
-        }
-
-        .benefits-horizontal {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex: 1;
-        }
-
-        .benefit-icon {
-            font-size: 1.8rem;
-            flex-shrink: 0;
-        }
-
-        .benefit-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .benefit-text {
-            font-weight: 600;
-            color: var(--color-text-primary);
-            font-size: 0.95rem;
-        }
-
-        .benefit-value {
-            font-size: 0.8rem;
-            color: #FFC107;
-            font-weight: 500;
-        }
-
-        .benefit-separator {
-            width: 1px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.3);
-            flex-shrink: 0;
-        }
-
-        .cta-button-section {
-            text-align: center;
-            margin: 20px auto 0;
-            max-width: 600px;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, var(--color-primary) 0%, #FF6B35 50%, #FFC107 100%);
-            color: white;
-            border: none;
-            padding: 18px 40px;
-            border-radius: 50px;
+        
+        .economic-context {
             font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(103, 58, 183, 0.4);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        /* 특별 혜택 섹션 */
+        .special-offer {
+            background: var(--glass-background);
+            border: 2px solid var(--accent-color);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(20px);
             position: relative;
             overflow: hidden;
         }
-
-        .cta-button::before {
+        
+        .special-offer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 107, 107, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        .offer-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .offer-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .offer-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .benefit-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .benefit-text {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        /* CTA 버튼들 */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+        
+        .cta-primary::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s ease;
         }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
-        }
-
-        .cta-button:hover::before {
+        
+        .cta-primary:hover::before {
             left: 100%;
         }
-
-        .cta-button-arrow {
+        
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 0.8rem;
+            text-decoration: none;
+            font-weight: bold;
             font-size: 1.1rem;
-            transition: transform 0.3s ease;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-
-        .cta-button:hover .cta-button-arrow {
-            transform: translateX(5px);
+        
+        .cta-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
         }
-
-        .cta-disclaimer {
-            margin-top: 15px;
-            font-size: 0.85rem;
-            color: var(--color-text-secondary);
-            opacity: 0.8;
+        
+        /* 연락처 정보 */
+        .contact-info {
+            background: var(--glass-background);
+            border: 1px solid var(--glass-border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            backdrop-filter: blur(20px);
         }
-
-        /* 반응???�??*/
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-value {
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+        
+        /* 긴급성 표시 */
+        .urgency-indicator {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E8E);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem 0;
+            animation: urgentPulse 1.5s infinite;
+        }
+        
+        /* 애니메이션 */
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        @keyframes urgentPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* 모바일 최적화 */
         @media (max-width: 768px) {
-            .cta-section {
-                margin: 30px 20px 0;
-                padding: 25px 20px;
+            .final-message {
+                font-size: 1.8rem;
             }
-
-            .cta-header {
+            
+            .economic-context {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
+                align-items: center;
             }
-
-            .cta-title {
-                font-size: 1.5rem;
+            
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                max-width: 300px;
             }
-
-            .urgency-info {
-                flex-direction: column;
-                gap: 8px;
-                align-items: flex-start;
+            
+            .offer-benefits {
+                grid-template-columns: 1fr;
             }
-
-            .benefits-horizontal {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .benefit-separator {
-                display: none;
-            }
-
-            .benefit-item {
-                justify-content: center;
-                padding: 15px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 12px;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-            }
-
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1.1rem;
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
         }
-    
-    <!-- ?�비게이??JS ?�동 로드 -->
-    <script src="js/navigation.js"></script>
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- 네비게이션 -->
+        <nav class="slide-nav">
+            <div class="nav-left">
+                <a href="slide-06.html" class="nav-btn" id="prevBtn">
+                    ← 이전
+                </a>
+            </div>
+            <div class="nav-center">
+                <span class="slide-number">7 / 8</span>
+            </div>
+            <div class="nav-right">
+                <a href="../index.html" class="nav-btn" id="nextBtn">
+                    홈으로 →
+                </a>
+            </div>
+        </nav>
+
+        <!-- 메인 콘텐츠 -->
+        <main class="slide-content">
+            <div class="cta-container">
+                <!-- 헤더 섹션 -->
+                <header class="slide-header">
+                    <div class="badge">제안/Call to Action</div>
+                    <h1 class="final-message">
+                        "불황에도 흔들리지 않는<br>
+                        든든한 사업"
+                    </h1>
+                    <p class="economic-context">
+                        경제적 불확실성 시대, 검증된 생존형 사업 모델로<br>
+                        안전한 창업을 선택하세요
+                    </p>
+                </header>
+
+                <!-- 긴급성 표시 -->
+                <div class="urgency-indicator">
+                    🔥 얼리어답터 특별 혜택 (선착순 20명)
+                </div>
+
+                <!-- 특별 혜택 섹션 -->
+                <section class="special-offer">
+                    <div class="offer-badge">LIMITED OFFER</div>
+                    <h2 class="offer-title">창업 성공 보장 패키지</h2>
+                    
+                    <div class="offer-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-text">
+                                <strong>교육비 전액 지원</strong><br>
+                                2주 실무교육 + 3개월 멘토링
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">📢</div>
+                            <div class="benefit-text">
+                                <strong>초기 마케팅비 지원</strong><br>
+                                오픈 마케팅 300만원 지원
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🛡️</div>
+                            <div class="benefit-text">
+                                <strong>매출 보장 시스템</strong><br>
+                                6개월 매출 부진시 본부 직접 지원
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA 버튼들 -->
+                <div class="cta-buttons">
+                    <a href="tel:02-1234-5678" class="cta-primary">
+                        📞 무료 상담 신청하기
+                    </a>
+                    <a href="#" class="cta-secondary">
+                        📋 사업계획서 받기
+                    </a>
+                </div>
+
+                <!-- 핵심 메시지 -->
+                <section class="key-message">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem;">
+                        왜 지금 밥떡한끼인가?
+                    </h3>
+                    <div class="point-grid">
+                        <div class="point-item">
+                            <h4>🏆 검증된 안정성</h4>
+                            <p>고물가·불황 시대에도 포기할 수 없는 기본 식사 수요를 기반으로 한 안정적 사업 모델</p>
+                        </div>
+                        <div class="point-item">
+                            <h4>💡 현실적 수익성</h4>
+                            <p>과도한 수익 추구보다는 꾸준한 생존과 안정적 현금흐름에 초점을 맞춘 현실적 창업</p>
+                        </div>
+                        <div class="point-item">
+                            <h4>🛡️ 리스크 최소화</h4>
+                            <p>1억 5천만원 적정 투자로 과도한 부채 부담 없이 안전한 창업 가능</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 연락처 정보 -->
+                <section class="contact-info">
+                    <h3 style="color: var(--text-primary); margin-bottom: 1rem; text-align: center;">
+                        상담 및 문의
+                    </h3>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-label">전화 상담</div>
+                            <div class="contact-value">02-1234-5678</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-label">카카오톡</div>
+                            <div class="contact-value">@밥떡한끼</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-label">이메일</div>
+                            <div class="contact-value">info@babtteok.co.kr</div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-label">상담 시간</div>
+                            <div class="contact-value">평일 09:00~18:00</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- 진행 표시기 -->
+        <div class="progress-bar">
+            <div class="progress-fill" style="width: 87.5%;"></div>
+        </div>
+    </div>
+
+    <!-- 인터랙션 스크립트 -->
+    <script>
+        // 페이지 로드 시 애니메이션
+        document.addEventListener('DOMContentLoaded', function() {
+            // 순차적 등장 애니메이션
+            const elements = [
+                '.final-message',
+                '.economic-context', 
+                '.urgency-indicator',
+                '.special-offer',
+                '.cta-buttons',
+                '.key-message',
+                '.contact-info'
+            ];
+            
+            elements.forEach((selector, index) => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        element.style.transition = 'all 0.6s ease-out';
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 200);
+                }
+            });
+        });
+
+        // 키보드 네비게이션
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                window.location.href = 'slide-06.html';
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                window.location.href = '../index.html';
+            } else if (e.key === 'Escape') {
+                window.location.href = '../index.html';
+            }
+        });
+
+        // 터치 네비게이션
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // 왼쪽으로 스와이프 (홈으로)
+                    window.location.href = '../index.html';
+                } else {
+                    // 오른쪽으로 스와이프 (이전 슬라이드)
+                    window.location.href = 'slide-06.html';
+                }
+            }
+        }
+
+        // CTA 버튼 클릭 추적
+        document.querySelectorAll('.cta-primary, .cta-secondary').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // 여기에 분석 추적 코드 추가 가능
+                console.log('CTA 클릭:', this.textContent.trim());
+            });
+        });
+    </script>
 </body>
 </html>

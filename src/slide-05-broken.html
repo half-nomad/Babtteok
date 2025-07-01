@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>?¬ë¼?´ë“œ 5: ?¤í–‰ ê³„íš/?„ë¡œ?¸ìŠ¤ - ë°¥ë–¡?œë¼ ?„ëœì°¨ì´ì¦?/title>
+    
+    <!-- Pretendard ?¹í°??-->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+    
+    <!-- ê³µí†µ CSS (?„ìˆ˜) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">`n    <link rel="stylesheet" href="css/mobile-scroll-fix.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- ?¤ë¹„ê²Œì´???œìŠ¤??-->
+    <script src="js/navigation.js" defer></script>
+</head>
+<body>
+    <main class="slide slide-enter">
+        <header class="slide-header">
+            <div class="slide-number">SLIDE 5</div>
+            <h1 class="slide-title">?¤í–‰ ê³„íš/?„ë¡œ?¸ìŠ¤</h1>
+            <p class="slide-subtitle">ì°½ì—… ë¦¬ìŠ¤??ìµœì†Œ??3?¨ê³„ ì§€???œìŠ¤??/p>
+        </header>
+        
+        <section class="impact-section">
+            <div class="main-impact main-impact-small">ê²€ì¦â†’êµìœ¡?’ë™ë°˜ì„±?¥ìœ¼ë¡?br><span class="highlight-text">?ˆì •??ì°½ì—… ?±ê³µ ë³´ì¥</span></div>
+            <p class="impact-description">ì²´ê³„?ì¸ 3?¨ê³„ ?„ë¡œ?¸ìŠ¤ë¥??µí•´ ì°½ì—… ?¤íŒ¨ ë¦¬ìŠ¤?¬ë? ìµœì†Œ?”í•˜ê³?ì§€???±ì¥??ì§€??/p>
+        </section>
+        
+        <section class="cards-container">
+            <div class="glass-card animate-card" style="animation-delay: 0.2s;">
+                <div class="card-step">STEP 1</div>
+                <div class="card-icon">?”</div>
+                <h3 class="card-title">1?¨ê³„<br><span class="card-highlight">ê²€ì¦?/span></h3>
+                <p class="card-description">20ê°?ì§ì˜???´ì˜ ?°ì´?°ë¡œ ìµœì  ?…ì?, ë©”ë‰´ë¯¹ìŠ¤, ?´ì˜ë°©ì‹???„ì „ ê²€ì¦???ê°€ë§??œì‘</p>
+            </div>
+            
+            <div class="glass-card animate-card" style="animation-delay: 0.4s;">
+                <div class="card-step">STEP 2</div>
+                <div class="card-icon">?“</div>
+                <h3 class="card-title">2?¨ê³„<br><span class="card-highlight">êµìœ¡</span></h3>
+                <p class="card-description">2ì£??¤ë¬´êµìœ¡ + ?„ì¥ ë©˜í† ë§?3ê°œì›” + 24?œê°„ ë³¸ë? ?ë‹´?¼ë¡œ ì´ˆë³´?ë„ ?ˆì „??ì°½ì—…</p>
+            </div>
+            
+            <div class="glass-card animate-card" style="animation-delay: 0.6s;">
+                <div class="card-step">STEP 3</div>
+                <div class="card-icon">??</div>
+                <h3 class="card-title">3?¨ê³„<br><span class="card-highlight">?±ì¥</span></h3>
+                <p class="card-description">ì§€??³„ ê³µë™ë§ˆì??? ? ë©”??ë¬´ë£Œ ?œê³µ, ë§¤ì¶œ ë¶€ì§??í¬ ì§‘ì¤‘ ì¼€?´ë¡œ ì§€???±ì¥ ì§€??/p>
+            </div>
+        </section>
+
+        <!-- ?‘ê·¼???ˆë‚´ -->
+        <div class="accessibility-info" aria-live="polite">
+            ?¤ë³´???¨ì¶•?? ?¤í˜?´ìŠ¤ë°??¤ìŒ), ì¢Œìš° ?”ì‚´???´ë™), ESC(ë©”ë‰´)
+        </div>
+    </main>
+
+    <style>
+        /* ?¬ë¼?´ë“œ 5 ?„ìš© ?¤í???*/
+        .card-step {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-accent) 100%);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 8px 14px;
+            border-radius: 25px;
+            box-shadow: 
+                0 4px 15px rgba(103, 58, 183, 0.4),
+                0 2px 8px rgba(179, 136, 255, 0.3);
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover .card-step {
+            transform: scale(1.05);
+            box-shadow: 
+                0 6px 20px rgba(103, 58, 183, 0.5),
+                0 3px 12px rgba(179, 136, 255, 0.4);
+        }
+
+        .glass-card {
+            position: relative;
+        }
+
+        /* ?„ë¡œ?¸ìŠ¤ ?°ê²° ?”ì‚´??(?°ìŠ¤?¬í†±?ì„œë§? */
+        @media (min-width: 1024px) {
+            .cards-container {
+                position: relative;
+            }
+            
+            .cards-container::before,
+            .cards-container::after {
+                content: '??;
+                position: absolute;
+                top: 45%;
+                transform: translateY(-50%);
+                font-size: 1.8rem;
+                color: var(--color-accent);
+                z-index: 1;
+                opacity: 0.7;
+                text-shadow: 0 0 10px rgba(179, 136, 255, 0.5);
+                animation: pulse-arrow 2s ease-in-out infinite;
+            }
+            
+            .cards-container::before {
+                left: 28%;
+            }
+            
+            .cards-container::after {
+                right: 28%;
+            }
+        }
+
+        @keyframes pulse-arrow {
+            0%, 100% { opacity: 0.7; transform: translateY(-50%) scale(1); }
+            50% { opacity: 1; transform: translateY(-50%) scale(1.1); }
+        }
+
+        /* ëª¨ë°”?¼ì—???”ì‚´???¨ê? */
+        @media (max-width: 767px) {
+            .cards-container::before,
+            .cards-container::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="slide slide-enter">
+        <header class="slide-header">
+            <div class="slide-number">SLIDE 5</div>
+            <h1 class="slide-title">?¤í–‰ ê³„íš/?„ë¡œ?¸ìŠ¤</h1>
+            <p class="slide-subtitle">ì°½ì—… ë¦¬ìŠ¤??ìµœì†Œ??3?¨ê³„ ì§€???œìŠ¤??/p>
+        </header>
+        
+        <section class="impact-section">
+            <div class="main-impact">ê²€ì¦â†’êµìœ¡?’ë™ë°˜ì„±?¥ìœ¼ë¡?<span class="highlight-text">?ˆì •??ì°½ì—… ?±ê³µ</span> ë³´ì¥</div>
+            <p class="impact-description">20ê°?ì§ì˜???°ì´??ê¸°ë°˜ ?„ì „ ê²€ì¦ëœ ì°½ì—… ?„ë¡œ?¸ìŠ¤</p>
+        </section>
+        
+        <section class="cards-container">
+            <div class="glass-card process-card">
+                <div class="step-badge step-1">STEP 1</div>
+                <div class="card-icon">?”</div>
+                <h3 class="card-title">1?¨ê³„ ê²€ì¦?br><span class="card-highlight">?„ì „???¬ì „ ê²€ì¦?/span></h3>
+                <p class="card-description">20ê°?ì§ì˜???´ì˜ ?°ì´?°ë¡œ ìµœì  ?…ì?, ë©”ë‰´ë¯¹ìŠ¤, ?´ì˜ë°©ì‹???„ì „ ê²€ì¦???ê°€ë§??œì‘</p>
+            </div>
+            
+            <div class="glass-card process-card highlight">
+                <div class="step-badge step-2">STEP 2</div>
+                <div class="card-icon">?“š</div>
+                <h3 class="card-title">2?¨ê³„ êµìœ¡<br><span class="card-highlight">ì§‘ì¤‘ ?¤ë¬´ êµìœ¡</span></h3>
+                <p class="card-description">2ì£??¤ë¬´êµìœ¡ + ?„ì¥ ë©˜í† ë§?3ê°œì›” + 24?œê°„ ë³¸ë? ?ë‹´?¼ë¡œ ì´ˆë³´?ë„ ?ˆì „??ì°½ì—…</p>
+            </div>
+            
+            <div class="glass-card process-card">
+                <div class="step-badge step-3">STEP 3</div>
+                <div class="card-icon">??</div>
+                <h3 class="card-title">3?¨ê³„ ?±ì¥<br><span class="card-highlight">ì§€?ì  ?±ì¥ ì§€??/span></h3>
+                <p class="card-description">ì§€??³„ ê³µë™ë§ˆì??? ? ë©”??ë¬´ë£Œ ?œê³µ, ë§¤ì¶œ ë¶€ì§??í¬ ì§‘ì¤‘ ì¼€?´ë¡œ ì§€???±ì¥ ì§€??/p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ?¤ë¹„ê²Œì´??JS ?ë™ ë¡œë“œ -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>
