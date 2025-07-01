@@ -54,6 +54,22 @@
             overflow: hidden; /* 스크롤 방지 */
         }
         
+        /* 모바일에서 스크롤 허용 */
+        @media (max-width: 768px) {
+            body {
+                overflow: auto !important;
+                overflow-x: hidden;
+            }
+        }
+        
+        /* 세로 모드에서 스크롤 허용 */
+        @media (orientation: portrait) {
+            body {
+                overflow: auto !important;
+                overflow-x: hidden;
+            }
+        }
+        
         /* 16:9 비율 고정 슬라이드 */
         .slide {
             width: 100vw;
@@ -70,6 +86,27 @@
             padding: var(--space-xl);
             position: relative;
             overflow: hidden;
+        }
+        
+        /* 모바일에서 slide 스크롤 허용 */
+        @media (max-width: 768px) {
+            .slide {
+                height: auto !important;
+                min-height: 100vh;
+                aspect-ratio: unset;
+                overflow: visible !important;
+                padding: var(--space-md);
+            }
+        }
+        
+        /* 세로 모드에서 slide 스크롤 허용 */
+        @media (orientation: portrait) {
+            .slide {
+                height: auto !important;
+                min-height: 100vh;
+                aspect-ratio: unset;
+                overflow: visible !important;
+            }
         }
         
         /* 슬라이드 장식 요소 */

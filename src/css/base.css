@@ -25,6 +25,22 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* 모바일에서 스크롤 허용 */
+@media (max-width: 768px) {
+    body {
+        overflow: auto !important; /* 모바일에서는 스크롤 허용 */
+        overflow-x: hidden; /* 가로 스크롤만 방지 */
+    }
+}
+
+/* 세로 모드에서 스크롤 허용 */
+@media (orientation: portrait) {
+    body {
+        overflow: auto !important;
+        overflow-x: hidden;
+    }
+}
+
 /* 16:9 비율 고정 슬라이드 기본 구조 */
 .slide {
     width: 100vw;
@@ -41,6 +57,27 @@ body {
     padding: var(--space-xl);
     position: relative;
     overflow: hidden;
+}
+
+/* 모바일에서 slide 클래스 유연하게 조정 */
+@media (max-width: 768px) {
+    .slide {
+        height: auto !important; /* 높이를 컨텐츠에 맞게 조정 */
+        min-height: 100vh; /* 최소 높이 보장 */
+        aspect-ratio: unset; /* 고정 비율 해제 */
+        overflow: visible; /* 스크롤 허용 */
+        padding: var(--space-md);
+    }
+}
+
+/* 세로 모드에서 slide 클래스 조정 */
+@media (orientation: portrait) {
+    .slide {
+        height: auto !important;
+        min-height: 100vh;
+        aspect-ratio: unset;
+        overflow: visible;
+    }
 }
 
 /* 슬라이드 장식 요소 - 보라색 테마 */

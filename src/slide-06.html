@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슬라이드 6: 성과 예측 - 밥떡한끼 프랜차이즈</title>
+    <title>?�라?�드 6: ?�과 ?�측 - 밥떡?�끼 ?�랜차이�?/title>
     
-    <!-- 공통 CSS (필수) -->
+    <!-- 공통 CSS (?�수) -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/components.css">`n    <link rel="stylesheet" href="css/mobile-scroll-fix.css">
     <link rel="stylesheet" href="css/responsive.css">
     
     <style>
-        /* 슬라이드 6 전용 스타일 - 인포그래픽 최적화 */
+        /* ?�라?�드 6 ?�용 ?��???- ?�포그래??최적??*/
         .infographic-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -21,7 +21,7 @@
             align-items: start;
         }
         
-        /* 손익 구조 파이 차트 */
+        /* ?�익 구조 ?�이 차트 */
         .profit-structure {
             background: var(--glass-background);
             border: 1px solid var(--glass-border);
@@ -48,9 +48,9 @@
             /* Modern browsers with conic-gradient support */
             background: conic-gradient(
                 from 0deg,
-                #B388FF 0deg 108deg,        /* 재료비 30% (보라색) */
-                #673AB7 108deg 234deg,      /* 고정비 35% (진보라색) */
-                #FFFFFF 234deg 360deg       /* 순익 35% (흰색) */
+                #B388FF 0deg 108deg,        /* ?�료�?30% (보라?? */
+                #673AB7 108deg 234deg,      /* 고정�?35% (진보?�색) */
+                #FFFFFF 234deg 360deg       /* ?�익 35% (?�색) */
             );
             position: relative;
             margin-bottom: 1rem;
@@ -120,7 +120,7 @@
         .legend-color.fixed { background: #673AB7; }
         .legend-color.profit { background: #FFFFFF; }
         
-        /* 투자 회수 기간 차트 */
+        /* ?�자 ?�수 기간 차트 */
         .recovery-timeline {
             background: var(--glass-background);
             border: 1px solid var(--glass-border);
@@ -194,7 +194,7 @@
             display: block;
         }
         
-        /* 연도별 수익 차트 */
+        /* ?�도�??�익 차트 */
         .cumulative-revenue {
             background: var(--glass-background);
             border: 1px solid var(--glass-border);
@@ -229,7 +229,7 @@
             min-height: 20px;
             box-shadow: 0 0 15px rgba(183, 136, 255, 0.3);
             transition: all 0.8s ease;
-            /* 높이는 JavaScript에서 동적으로 설정 */
+            /* ?�이??JavaScript?�서 ?�적?�로 ?�정 */
         }
         
         .bar-value {
@@ -262,7 +262,7 @@
             color: var(--accent-purple);
         }
         
-        /* 반응형 대응 */
+        /* 반응???�??*/
         @media (max-width: 1024px) {
             .infographic-grid {
                 grid-template-columns: 1fr;
@@ -327,7 +327,7 @@
             }
         }
         
-        /* 애니메이션 효과 */
+        /* ?�니메이???�과 */
         .infographic-grid > * {
             opacity: 0;
             transform: translateY(30px);
@@ -345,7 +345,7 @@
             }
         }
         
-        /* 호버 효과 */
+        /* ?�버 ?�과 */
         .profit-structure:hover,
         .recovery-timeline:hover,
         .cumulative-revenue:hover {
@@ -360,116 +360,116 @@
     <main class="slide slide-enter">
         <header class="slide-header">
             <div class="slide-number">SLIDE 6</div>
-            <h1 class="slide-title">결과/성과 예측</h1>
-            <p class="slide-subtitle">안정적 생존과 꾸준한 수익 구조</p>
+            <h1 class="slide-title">결과/?�과 ?�측</h1>
+            <p class="slide-subtitle">?�정???�존�?꾸�????�익 구조</p>
         </header>
         
         <section class="impact-section">
-            <div class="main-impact main-impact-small">월매출 2,000만원 기준 <span class="highlight-text">월 순익 700만원</span></div>
-            <p class="impact-description">경기 변동에 관계없이 지속 가능한 수익 구조</p>
+            <div class="main-impact main-impact-small">?�매�?2,000만원 기�? <span class="highlight-text">???�익 700만원</span></div>
+            <p class="impact-description">경기 변?�에 관계없??지??가?�한 ?�익 구조</p>
         </section>
         
         <section class="infographic-grid">
-            <!-- 월별 손익 구조 파이 차트 -->
+            <!-- ?�별 ?�익 구조 ?�이 차트 -->
             <div class="profit-structure">
-                <h3 class="chart-title">월별 손익 구조</h3>
+                <h3 class="chart-title">?�별 ?�익 구조</h3>
                 <div class="profit-pie-container">
                     <div class="profit-pie">
                         <div class="profit-center-text">
                             <div class="profit-amount">2,000만원</div>
-                            <div style="font-size: 0.8rem; margin-top: 0.2rem; color: var(--color-gray-300);">월 매출</div>
+                            <div style="font-size: 0.8rem; margin-top: 0.2rem; color: var(--color-gray-300);">??매출</div>
                         </div>
                     </div>
                     <div class="profit-legend">
                         <div class="legend-item">
                             <div class="legend-color materials"></div>
-                            <span>재료비 600만원 (30%)</span>
+                            <span>?�료�?600만원 (30%)</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-color fixed"></div>
-                            <span>고정비 700만원 (35%)</span>
+                            <span>고정�?700만원 (35%)</span>
                         </div>
                         <div class="legend-item">
                             <div class="legend-color profit"></div>
-                            <span>순익 700만원 (35%)</span>
+                            <span>?�익 700만원 (35%)</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <!-- 투자 회수 기간 타임라인 -->
+            <!-- ?�자 ?�수 기간 ?�?�라??-->
             <div class="recovery-timeline">
-                <h3 class="chart-title">투자 회수 기간</h3>
+                <h3 class="chart-title">?�자 ?�수 기간</h3>
                 <div class="timeline-container">
                     <div class="recovery-highlight">
-                        <span class="recovery-year">1.8년</span>
-                        <div>회수 완료</div>
+                        <span class="recovery-year">1.8??/span>
+                        <div>?�수 ?�료</div>
                     </div>
                     <div class="timeline-line"></div>
                     <div class="timeline-point start" style="left: 20px;"></div>
                     <div class="timeline-point recovery"></div>
                     <div class="timeline-point end" style="right: 20px;"></div>
                     <div class="timeline-label start">창업</div>
-                    <div class="timeline-label recovery">투자 회수</div>
-                    <div class="timeline-label end">3년차</div>
+                    <div class="timeline-label recovery">?�자 ?�수</div>
+                    <div class="timeline-label end">3?�차</div>
                 </div>
                 <div style="text-align: center; margin-top: 1rem;">
                     <div style="font-size: 0.9rem; color: var(--color-gray-300);">
-                        투자금 1억 5천만원 기준<br>
-                        이후 꾸준한 현금흐름 창출
+                        ?�자�?1??5천만??기�?<br>
+                        ?�후 꾸�????�금?�름 창출
                     </div>
                 </div>
             </div>
             
-            <!-- 연도별 누적 수익 차트 -->
+            <!-- ?�도�??�적 ?�익 차트 -->
             <div class="cumulative-revenue">
-                <h3 class="chart-title">연도별 누적 수익</h3>
+                <h3 class="chart-title">?�도�??�적 ?�익</h3>
                 <div class="revenue-bars">
                     <div class="revenue-bar">
                         <div class="bar-fill year-1">
                             <div class="bar-value">4,200만원</div>
                         </div>
-                        <div class="bar-label">1년차</div>
+                        <div class="bar-label">1?�차</div>
                     </div>
                     <div class="revenue-bar">
                         <div class="bar-fill year-2">
                             <div class="bar-value">8,400만원</div>
                         </div>
-                        <div class="bar-label">2년차</div>
+                        <div class="bar-label">2?�차</div>
                     </div>
                     <div class="revenue-bar">
                         <div class="bar-fill year-3">
-                            <div class="bar-value">1억2,600만원</div>
+                            <div class="bar-value">1??,600만원</div>
                         </div>
-                        <div class="bar-label">3년차</div>
+                        <div class="bar-label">3?�차</div>
                     </div>
                     <div class="revenue-bar">
                         <div class="bar-fill year-4">
-                            <div class="bar-value">1억6,800만원</div>
+                            <div class="bar-value">1??,800만원</div>
                         </div>
-                        <div class="bar-label">4년차</div>
+                        <div class="bar-label">4?�차</div>
                     </div>
                     <div class="revenue-bar">
                         <div class="bar-fill year-5">
-                            <div class="bar-value">2억1,000만원</div>
+                            <div class="bar-value">2??,000만원</div>
                         </div>
-                        <div class="bar-label">5년차</div>
+                        <div class="bar-label">5?�차</div>
                     </div>
                 </div>
                 <div class="revenue-summary">
-                    <div class="total-revenue">연간 8,400만원 순익</div>
+                    <div class="total-revenue">?�간 8,400만원 ?�익</div>
                 </div>
             </div>
         </section>
     </main>
     
-    <!-- 네비게이션 JS 자동 로드 (다른 슬라이드와 동일한 방식) -->
+    <!-- ?�비게이??JS ?�동 로드 (?�른 ?�라?�드?� ?�일??방식) -->
     <script src="js/navigation.js"></script>
     
     <script>
-        // 차트 애니메이션
+        // 차트 ?�니메이??
         function animateCharts() {
-            // 파이 차트 애니메이션
+            // ?�이 차트 ?�니메이??
             const profitPie = document.querySelector('.profit-pie');
             if (profitPie) {
                 profitPie.style.background = 'conic-gradient(from 0deg, transparent 0deg 360deg)';
@@ -485,7 +485,7 @@
                 }, 500);
             }
             
-            // 타임라인 애니메이션
+            // ?�?�라???�니메이??
             const timelineLine = document.querySelector('.timeline-line');
             const timelinePoints = document.querySelectorAll('.timeline-point');
             
@@ -505,15 +505,15 @@
                 });
             }
             
-            // 수익 바 차트 애니메이션
+            // ?�익 �?차트 ?�니메이??
             const revenueBars = document.querySelectorAll('.bar-fill');
-            const targetHeights = ['20%', '40%', '60%', '80%', '100%']; // 정확한 비율
-            const containerHeight = 180; // .revenue-bars의 높이
-            const actualHeights = ['36px', '72px', '108px', '144px', '180px']; // 실제 픽셀 값
+            const targetHeights = ['20%', '40%', '60%', '80%', '100%']; // ?�확??비율
+            const containerHeight = 180; // .revenue-bars???�이
+            const actualHeights = ['36px', '72px', '108px', '144px', '180px']; // ?�제 ?��? �?
             
             revenueBars.forEach((bar, index) => {
                 bar.style.height = '0px';
-                bar.style.transition = 'none'; // 초기 설정 시 애니메이션 없음
+                bar.style.transition = 'none'; // 초기 ?�정 ???�니메이???�음
                 
                 setTimeout(() => {
                     bar.style.height = actualHeights[index];
@@ -522,7 +522,7 @@
             });
         }
         
-        // 카운트업 애니메이션 (숫자만)
+        // 카운?�업 ?�니메이??(?�자�?
         function countUpAnimation(element, target, duration = 2000, suffix = '만원') {
             let start = 0;
             const increment = target / (duration / 16);
@@ -540,16 +540,16 @@
             updateCount();
         }
         
-        // 파이 차트 호버 인터랙션
+        // ?�이 차트 ?�버 ?�터?�션
         function setupPieChartInteraction() {
             const profitPie = document.querySelector('.profit-pie');
             const centerText = document.querySelector('.profit-center-text');
             const originalContent = centerText.innerHTML;
             
             const segments = [
-                { name: '재료비', value: '600만원', percentage: '30%', color: '#B388FF' },
-                { name: '고정비', value: '700만원', percentage: '35%', color: '#673AB7' },
-                { name: '순익', value: '700만원', percentage: '35%', color: '#FFFFFF' }
+                { name: '?�료�?, value: '600만원', percentage: '30%', color: '#B388FF' },
+                { name: '고정�?, value: '700만원', percentage: '35%', color: '#673AB7' },
+                { name: '?�익', value: '700만원', percentage: '35%', color: '#FFFFFF' }
             ];
             
             let currentSegment = -1;
@@ -560,15 +560,15 @@
                 const centerY = rect.top + rect.height / 2;
                 
                 const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX) * 180 / Math.PI;
-                const normalizedAngle = (angle + 90 + 360) % 360; // 0도를 12시 방향으로 조정
+                const normalizedAngle = (angle + 90 + 360) % 360; // 0?��? 12??방향?�로 조정
                 
                 let segmentIndex;
                 if (normalizedAngle <= 108) {
-                    segmentIndex = 0; // 재료비
+                    segmentIndex = 0; // ?�료�?
                 } else if (normalizedAngle <= 234) {
-                    segmentIndex = 1; // 고정비
+                    segmentIndex = 1; // 고정�?
                 } else {
-                    segmentIndex = 2; // 순익
+                    segmentIndex = 2; // ?�익
                 }
                 
                 if (segmentIndex !== currentSegment) {
@@ -587,7 +587,7 @@
             });
         }
         
-        // 수익 바 높이 즉시 설정 함수
+        // ?�익 �??�이 즉시 ?�정 ?�수
         function setBarHeights() {
             const revenueBars = document.querySelectorAll('.bar-fill');
             const actualHeights = ['36px', '72px', '108px', '144px', '180px'];
@@ -597,18 +597,18 @@
             });
         }
         
-        // 페이지 로드 시 실행
+        // ?�이지 로드 ???�행
         document.addEventListener('DOMContentLoaded', function() {
-            // 바 높이 즉시 설정 (애니메이션 전에)
+            // �??�이 즉시 ?�정 (?�니메이???�에)
             setBarHeights();
             
-            // 파이 차트 호버 인터랙션 설정
+            // ?�이 차트 ?�버 ?�터?�션 ?�정
             setupPieChartInteraction();
             
-            // 잠시 후 차트 애니메이션 시작
+            // ?�시 ??차트 ?�니메이???�작
             setTimeout(animateCharts, 800);
             
-            // 중앙 텍스트 카운트업 (매출 2000만원)
+            // 중앙 ?�스??카운?�업 (매출 2000만원)
             const profitAmount = document.querySelector('.profit-amount');
             if (profitAmount) {
                 setTimeout(() => {

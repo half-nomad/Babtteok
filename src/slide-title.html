@@ -63,6 +63,22 @@
             position: relative;
         }
 
+        /* 모바일에서 스크롤 허용 */
+        @media (max-width: 768px) {
+            body {
+                overflow: auto !important;
+                overflow-x: hidden;
+            }
+        }
+        
+        /* 세로 모드에서 스크롤 허용 */
+        @media (orientation: portrait) {
+            body {
+                overflow: auto !important;
+                overflow-x: hidden;
+            }
+        }
+
         /* Background Animated Particles */
         .bg-particles {
             position: fixed;

@@ -1,0 +1,67 @@
+/* ========================================
+   모바일 스크롤 허용 (Mobile Scroll Fix)
+   ======================================== */
+
+/* 모바일에서 body 스크롤 허용 */
+@media (max-width: 768px) {
+    body {
+        overflow: auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .slide {
+        height: auto !important;
+        min-height: 100vh !important;
+        aspect-ratio: unset !important;
+        overflow: visible !important;
+        padding: var(--space-md, 2rem) !important;
+    }
+    
+    .main-container {
+        padding: var(--spacing-sm, 1rem) !important;
+    }
+}
+
+/* 세로 모드에서 스크롤 허용 */
+@media (orientation: portrait) {
+    body {
+        overflow: auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .slide {
+        height: auto !important;
+        min-height: 100vh !important;
+        aspect-ratio: unset !important;
+        overflow: visible !important;
+    }
+}
+
+/* 작은 모바일 화면 (480px 이하) */
+@media (max-width: 480px) {
+    body {
+        overflow: auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .slide {
+        height: auto !important;
+        min-height: 100vh !important;
+        padding: var(--space-sm, 1rem) !important;
+    }
+}
+
+/* 터치 스크롤 개선 */
+@media (hover: none) and (pointer: coarse) {
+    body {
+        -webkit-overflow-scrolling: touch;
+        overflow: auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .slide {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+    }
+}

@@ -222,6 +222,21 @@
     }
 }
 
+/* 모바일 스크롤 허용 (우선순위 높음) */
+@media (max-width: 768px) and (orientation: portrait) {
+    body {
+        overflow: auto !important;
+        overflow-x: hidden !important;
+    }
+    
+    .slide {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+        padding: var(--space-md) !important;
+    }
+}
+
 /* 가로 모드 (landscape) */
 @media (orientation: landscape) and (max-height: 600px) {
     .slide {
