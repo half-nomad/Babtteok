@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# 검색 엔진이 크롤링하면 안 되는 디렉토리 (현재는 모든 것 허용)
+Disallow: /index-backup.html
+
+# Sitemap 위치 명시
+Sitemap: https://half-nomad.github.io/Babtteok/sitemap.xml
+
+# 자주 업데이트되는 파일들
+Crawl-delay: 1
+
+# 특정 검색 엔진별 설정
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
+User-agent: NaverBot
+Allow: /
+
+User-agent: Yeti
+Allow: /
