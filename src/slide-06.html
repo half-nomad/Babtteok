@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>슬라이드 6: 결과/성과 예측 - 밥떡한끼 프랜차이즈</title>
     
+    <!-- Pretendard 폰트 로드 -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+    
     <!-- 공통 CSS (필수) -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/base.css">
@@ -15,9 +19,14 @@
     <style>
         /* 슬라이드 6 전용 스타일 - 인포그래픽 최적화 */
         
-        /* Pretendard 폰트 강제 적용 */
-        * {
-            font-family: 'Pretendard', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        /* Pretendard 폰트 강제 적용 - 모든 요소에 */
+        *, *::before, *::after {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif !important;
+        }
+        
+        /* 추가 보장 */
+        body, html, h1, h2, h3, h4, h5, h6, p, div, span {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif !important;
         }
         
         .infographic-grid {
@@ -177,10 +186,14 @@
         .timeline-label {
             position: absolute;
             bottom: 5px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: var(--color-white);
             text-align: center;
             transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
         }
         
         .timeline-label.start { left: 30px; }
@@ -248,13 +261,17 @@
         
         .bar-value {
             position: absolute;
-            top: -25px;
+            top: -30px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.7rem;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 700;
             color: var(--color-white);
             white-space: nowrap;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid var(--accent-purple);
         }
         
         .bar-label {
@@ -311,12 +328,13 @@
         @media (max-width: 768px) {
             .infographic-grid {
                 gap: 1rem;
+                margin-bottom: 2rem; /* 하단 여백 추가 */
             }
             
             .profit-structure,
             .recovery-timeline,
             .cumulative-revenue {
-                height: 220px; /* 모바일에서 더 작게 */
+                height: 240px; /* 높이 증가 */
                 padding: 1rem;
             }
             
@@ -335,19 +353,25 @@
             }
             
             .revenue-bars {
-                height: 80px; /* 모바일에서 훨씬 작게 */
-                gap: 0.3rem; /* 간격도 줄임 */
+                height: 90px; /* 높이 증가 */
+                gap: 0.3rem;
                 padding: 0 0.5rem;
-                margin: 0.5rem 0; /* 마진도 줄임 */
+                margin: 0.5rem 0;
             }
             
             .bar-value {
-                font-size: 0.6rem; /* 폰트 크기도 줄임 */
-                top: -20px;
+                font-size: 0.7rem;
+                top: -25px;
             }
             
             .bar-label {
-                font-size: 0.7rem;
+                font-size: 0.8rem; /* 크기 증가 */
+                font-weight: 600;
+            }
+            
+            .timeline-label {
+                font-size: 0.8rem;
+                font-weight: 700;
             }
         }
         
@@ -355,23 +379,35 @@
             .profit-structure,
             .recovery-timeline,
             .cumulative-revenue {
-                height: 200px; /* 더 작은 모바일에서 */
+                height: 220px;
                 padding: 0.8rem;
             }
             
             .revenue-bars {
-                height: 60px; /* 매우 작은 화면에서 */
+                height: 70px;
                 gap: 0.2rem;
                 margin: 0.3rem 0;
             }
             
             .bar-value {
-                font-size: 0.5rem;
-                top: -15px;
+                font-size: 0.6rem;
+                top: -20px;
+                padding: 1px 4px;
             }
             
             .bar-label {
-                font-size: 0.6rem;
+                font-size: 0.7rem;
+                font-weight: 600;
+            }
+            
+            .timeline-label {
+                font-size: 0.7rem;
+                font-weight: 700;
+                padding: 1px 4px;
+            }
+            
+            .infographic-grid {
+                margin-bottom: 3rem; /* 하단 여백 더 크게 */
             }
         }
         
@@ -559,9 +595,9 @@
             // 현재 화면 크기에 따른 높이 결정
             let actualHeights;
             if (window.innerWidth <= 480) {
-                actualHeights = ['12px', '24px', '36px', '48px', '60px'];
+                actualHeights = ['14px', '28px', '42px', '56px', '70px'];
             } else if (window.innerWidth <= 768) {
-                actualHeights = ['16px', '32px', '48px', '64px', '80px'];
+                actualHeights = ['18px', '36px', '54px', '72px', '90px'];
             } else if (window.innerWidth <= 1024) {
                 actualHeights = ['24px', '48px', '72px', '96px', '120px'];
             } else {
@@ -652,10 +688,10 @@
             let actualHeights;
             if (window.innerWidth <= 480) {
                 // 매우 작은 모바일
-                actualHeights = ['12px', '24px', '36px', '48px', '60px'];
+                actualHeights = ['14px', '28px', '42px', '56px', '70px'];
             } else if (window.innerWidth <= 768) {
                 // 일반 모바일
-                actualHeights = ['16px', '32px', '48px', '64px', '80px'];
+                actualHeights = ['18px', '36px', '54px', '72px', '90px'];
             } else if (window.innerWidth <= 1024) {
                 // 태블릿
                 actualHeights = ['24px', '48px', '72px', '96px', '120px'];
