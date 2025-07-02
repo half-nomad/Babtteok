@@ -235,7 +235,7 @@
             display: flex;
             align-items: end;
             gap: 1rem;
-            height: 200px;
+            height: 100px; /* 높이 절반으로 축소 */
             margin: 3rem 0 2rem 0; /* 상단 여백을 3rem으로 대폭 증가 */
             padding: 0 1rem;
             position: relative;
@@ -281,6 +281,8 @@
             font-size: 0.8rem;
             color: var(--color-gray-300);
             text-align: center;
+            white-space: nowrap; /* 1줄로 강제 */
+            overflow: hidden;
         }
         
         .revenue-summary {
@@ -357,7 +359,7 @@
             }
             
             .revenue-bars {
-                height: 180px; /* 바 차트 높이 대폭 증가 */
+                height: 90px; /* 높이 절반으로 축소 */
                 gap: 0.8rem; /* 간격 증가 */
                 padding: 0 0.8rem;
                 margin: 3rem 0 2rem 0; /* 상단 여백 확보 */
@@ -415,7 +417,7 @@
             }
             
             .revenue-bars {
-                height: 150px; /* 바 차트 높이 증가 */
+                height: 75px; /* 높이 절반으로 축소 */
                 gap: 0.6rem; /* 간격 증가 */
                 margin: 2.5rem 0 1.5rem 0; /* 상단 여백 확보 */
                 padding: 0 0.6rem;
@@ -636,19 +638,19 @@
                 });
             }
             
-            // 수익 바 차트 애니메이션
+            // 수익 바 차트 애니메이션 - 높이 절반으로 축소
             const revenueBars = document.querySelectorAll('.bar-fill');
             
-            // 현재 화면 크기에 따른 높이 결정
+            // 현재 화면 크기에 따른 높이 결정 - 기존의 절반 크기
             let actualHeights;
             if (window.innerWidth <= 480) {
-                actualHeights = ['30px', '60px', '90px', '120px', '150px'];
+                actualHeights = ['15px', '30px', '45px', '60px', '75px'];
             } else if (window.innerWidth <= 768) {
-                actualHeights = ['36px', '72px', '108px', '144px', '180px'];
+                actualHeights = ['18px', '36px', '54px', '72px', '90px'];
             } else if (window.innerWidth <= 1024) {
-                actualHeights = ['32px', '64px', '96px', '128px', '160px'];
+                actualHeights = ['16px', '32px', '48px', '64px', '80px'];
             } else {
-                actualHeights = ['40px', '80px', '120px', '160px', '200px'];
+                actualHeights = ['20px', '40px', '60px', '80px', '100px'];
             }
             
             revenueBars.forEach((bar, index) => {
@@ -727,24 +729,24 @@
             });
         }
         
-        // 수익 바 높이 즉시 설정 함수 (반응형)
+        // 수익 바 높이 즉시 설정 함수 (반응형) - 높이 절반으로 축소
         function setBarHeights() {
             const revenueBars = document.querySelectorAll('.bar-fill');
             
-            // 현재 화면 크기에 따른 높이 결정 - 정확한 1:2:3:4:5 비율
+            // 현재 화면 크기에 따른 높이 결정 - 기존의 절반 크기, 정확한 1:2:3:4:5 비율
             let actualHeights;
             if (window.innerWidth <= 480) {
-                // 소형 모바일 - 컨테이너 150px, 정확한 비율
-                actualHeights = ['30px', '60px', '90px', '120px', '150px'];
+                // 소형 모바일 - 컨테이너 75px, 정확한 비율
+                actualHeights = ['15px', '30px', '45px', '60px', '75px'];
             } else if (window.innerWidth <= 768) {
-                // 일반 모바일 - 컨테이너 180px, 정확한 비율
-                actualHeights = ['36px', '72px', '108px', '144px', '180px'];
+                // 일반 모바일 - 컨테이너 90px, 정확한 비율
+                actualHeights = ['18px', '36px', '54px', '72px', '90px'];
             } else if (window.innerWidth <= 1024) {
-                // 태블릿 - 컨테이너 160px, 정확한 비율
-                actualHeights = ['32px', '64px', '96px', '128px', '160px'];
+                // 태블릿 - 컨테이너 80px, 정확한 비율
+                actualHeights = ['16px', '32px', '48px', '64px', '80px'];
             } else {
-                // 데스크톱 - 컨테이너 200px, 정확한 비율
-                actualHeights = ['40px', '80px', '120px', '160px', '200px'];
+                // 데스크톱 - 컨테이너 100px, 정확한 비율
+                actualHeights = ['20px', '40px', '60px', '80px', '100px'];
             }
             
             revenueBars.forEach((bar, index) => {
