@@ -331,52 +331,68 @@
         
         @media (max-width: 768px) {
             .infographic-grid {
-                gap: 1rem;
-                margin-bottom: 2rem;
+                gap: 2rem; /* 간격 증가 */
+                margin-bottom: 3rem;
             }
             
             .profit-structure,
             .recovery-timeline,
             .cumulative-revenue {
-                height: 280px; /* 높이 증가 */
-                padding: 1rem;
+                height: 350px; /* 높이 대폭 증가 */
+                padding: 1.5rem; /* 패딩 증가 */
             }
             
             .profit-pie {
-                width: 120px;
-                height: 120px;
+                width: 160px; /* 파이 차트 크기 증가 */
+                height: 160px;
             }
             
             .profit-pie::after {
-                width: 65px;
-                height: 65px;
+                width: 90px; /* 중앙 원 크기 증가 */
+                height: 90px;
             }
             
             .profit-amount {
-                font-size: 1.1rem;
+                font-size: 1.3rem; /* 폰트 크기 증가 */
             }
             
             .revenue-bars {
-                height: 120px; /* 높이 증가 */
-                gap: 0.4rem; /* 간격 조정 */
-                padding: 0 0.5rem;
-                margin: 1.5rem 0; /* 여백 증가 */
+                height: 180px; /* 바 차트 높이 대폭 증가 */
+                gap: 0.8rem; /* 간격 증가 */
+                padding: 0 0.8rem;
+                margin: 2rem 0; /* 여백 증가 */
             }
             
             .bar-value {
-                font-size: 0.65rem;
-                top: -30px;
-                padding: 2px 6px;
+                font-size: 0.8rem; /* 폰트 크기 증가 */
+                top: -35px;
+                padding: 4px 8px; /* 패딩 증가 */
+                font-weight: 700;
             }
             
             .bar-label {
-                font-size: 0.8rem;
+                font-size: 0.9rem; /* 폰트 크기 증가 */
                 font-weight: 600;
             }
             
             .timeline-label {
-                font-size: 0.8rem;
+                font-size: 0.9rem; /* 폰트 크기 증가 */
                 font-weight: 700;
+                padding: 4px 8px; /* 패딩 증가 */
+            }
+            
+            .timeline-container {
+                height: 180px; /* 타임라인 높이 증가 */
+            }
+            
+            .legend-item {
+                font-size: 1rem; /* 범례 폰트 크기 증가 */
+                gap: 0.8rem;
+            }
+            
+            .legend-color {
+                width: 16px; /* 범례 색상 박스 크기 증가 */
+                height: 16px;
             }
         }
         
@@ -384,35 +400,61 @@
             .profit-structure,
             .recovery-timeline,
             .cumulative-revenue {
-                height: 260px; /* 높이 증가 */
-                padding: 0.8rem;
+                height: 320px; /* 높이 더 증가 */
+                padding: 1.2rem; /* 패딩 증가 */
+            }
+            
+            .profit-pie {
+                width: 140px; /* 파이 차트 크기 증가 */
+                height: 140px;
+            }
+            
+            .profit-pie::after {
+                width: 80px; /* 중앙 원 크기 증가 */
+                height: 80px;
             }
             
             .revenue-bars {
-                height: 100px; /* 높이 증가 */
-                gap: 0.3rem;
-                margin: 1rem 0; /* 여백 증가 */
+                height: 150px; /* 바 차트 높이 증가 */
+                gap: 0.6rem; /* 간격 증가 */
+                margin: 1.5rem 0;
+                padding: 0 0.6rem;
             }
             
             .bar-value {
-                font-size: 0.6rem;
-                top: -28px;
-                padding: 2px 4px;
+                font-size: 0.75rem; /* 폰트 크기 증가 */
+                top: -32px;
+                padding: 3px 6px;
+                font-weight: 700;
             }
             
             .bar-label {
-                font-size: 0.7rem;
+                font-size: 0.8rem; /* 폰트 크기 증가 */
                 font-weight: 600;
             }
             
             .timeline-label {
-                font-size: 0.7rem;
+                font-size: 0.8rem; /* 폰트 크기 증가 */
                 font-weight: 700;
-                padding: 1px 4px;
+                padding: 3px 6px;
+            }
+            
+            .timeline-container {
+                height: 160px; /* 타임라인 높이 증가 */
             }
             
             .infographic-grid {
-                margin-bottom: 3rem;
+                margin-bottom: 4rem; /* 하단 여백 더 증가 */
+                gap: 2rem; /* 간격 증가 */
+            }
+            
+            .legend-item {
+                font-size: 0.9rem; /* 범례 폰트 크기 증가 */
+            }
+            
+            .legend-color {
+                width: 14px; /* 범례 색상 박스 크기 증가 */
+                height: 14px;
             }
         }
         
@@ -600,9 +642,9 @@
             // 현재 화면 크기에 따른 높이 결정
             let actualHeights;
             if (window.innerWidth <= 480) {
-                actualHeights = ['20px', '40px', '60px', '80px', '100px'];
+                actualHeights = ['30px', '60px', '90px', '120px', '150px'];
             } else if (window.innerWidth <= 768) {
-                actualHeights = ['24px', '48px', '72px', '96px', '120px'];
+                actualHeights = ['36px', '72px', '108px', '144px', '180px'];
             } else if (window.innerWidth <= 1024) {
                 actualHeights = ['32px', '64px', '96px', '128px', '160px'];
             } else {
@@ -692,11 +734,11 @@
             // 현재 화면 크기에 따른 높이 결정
             let actualHeights;
             if (window.innerWidth <= 480) {
-                // 소형 모바일 - 컨테이너 100px
-                actualHeights = ['20px', '40px', '60px', '80px', '100px'];
+                // 소형 모바일 - 컨테이너 150px
+                actualHeights = ['30px', '60px', '90px', '120px', '150px'];
             } else if (window.innerWidth <= 768) {
-                // 일반 모바일 - 컨테이너 120px
-                actualHeights = ['24px', '48px', '72px', '96px', '120px'];
+                // 일반 모바일 - 컨테이너 180px
+                actualHeights = ['36px', '72px', '108px', '144px', '180px'];
             } else if (window.innerWidth <= 1024) {
                 // 태블릿 - 컨테이너 160px
                 actualHeights = ['32px', '64px', '96px', '128px', '160px'];
