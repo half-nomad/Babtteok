@@ -228,15 +228,15 @@
             border-radius: 1rem;
             padding: 1.5rem;
             backdrop-filter: blur(20px);
-            height: 360px; /* 높이 증가 */
+            height: 420px; /* 높이 대폭 증가 */
         }
         
         .revenue-bars {
             display: flex;
             align-items: end;
             gap: 1rem;
-            height: 200px; /* 높이 증가 */
-            margin: 2rem 0; /* 상하 여백 증가 */
+            height: 200px;
+            margin: 3rem 0 2rem 0; /* 상단 여백을 3rem으로 대폭 증가 */
             padding: 0 1rem;
             position: relative;
         }
@@ -360,7 +360,7 @@
                 height: 180px; /* 바 차트 높이 대폭 증가 */
                 gap: 0.8rem; /* 간격 증가 */
                 padding: 0 0.8rem;
-                margin: 2rem 0; /* 여백 증가 */
+                margin: 3rem 0 2rem 0; /* 상단 여백 확보 */
             }
             
             .bar-value {
@@ -417,7 +417,7 @@
             .revenue-bars {
                 height: 150px; /* 바 차트 높이 증가 */
                 gap: 0.6rem; /* 간격 증가 */
-                margin: 1.5rem 0;
+                margin: 2.5rem 0 1.5rem 0; /* 상단 여백 확보 */
                 padding: 0 0.6rem;
             }
             
@@ -731,19 +731,19 @@
         function setBarHeights() {
             const revenueBars = document.querySelectorAll('.bar-fill');
             
-            // 현재 화면 크기에 따른 높이 결정
+            // 현재 화면 크기에 따른 높이 결정 - 정확한 1:2:3:4:5 비율
             let actualHeights;
             if (window.innerWidth <= 480) {
-                // 소형 모바일 - 컨테이너 150px
+                // 소형 모바일 - 컨테이너 150px, 정확한 비율
                 actualHeights = ['30px', '60px', '90px', '120px', '150px'];
             } else if (window.innerWidth <= 768) {
-                // 일반 모바일 - 컨테이너 180px
+                // 일반 모바일 - 컨테이너 180px, 정확한 비율
                 actualHeights = ['36px', '72px', '108px', '144px', '180px'];
             } else if (window.innerWidth <= 1024) {
-                // 태블릿 - 컨테이너 160px
+                // 태블릿 - 컨테이너 160px, 정확한 비율
                 actualHeights = ['32px', '64px', '96px', '128px', '160px'];
             } else {
-                // 데스크톱 - 컨테이너 200px
+                // 데스크톱 - 컨테이너 200px, 정확한 비율
                 actualHeights = ['40px', '80px', '120px', '160px', '200px'];
             }
             
