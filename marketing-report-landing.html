@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밥떡한끼 1차 마케팅 캠페인 성과 리포트 | 13일간의 놀라운 결과</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="밥떡한끼 프랜차이즈 사업설명회 1차 마케팅 캠페인 성과 분석. 13일간 19명 신청, 평균 CPA 147,368원 달성한 전략과 결과를 공개합니다.">
+    <meta name="keywords" content="밥떡한끼, 프랜차이즈 마케팅, 캠페인 성과, 사업설명회, 마케팅 분석, CPA, 전환율">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="밥떡한끼 마케팅 캠페인 성과 리포트">
+    <meta property="og:description" content="13일간 진행된 사업설명회 모집 캠페인의 핵심 성과를 공개합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://half-nomad.github.io/Babtteok/marketing-report-landing.html">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== CSS VARIABLES (기존 디자인 시스템 활용) ========== */
+        :root {
+            /* 브랜드 컬러 - 보라색 테마 */
+            --primary-purple: #673AB7;
+            --secondary-purple: #9C27B0;
+            --accent-purple: #B388FF;
+            --tertiary-indigo: #3F51B5;
+            
+            /* 배경 컬러 */
+            --background-black: #000000;
+            --background-dark: #1a1a1a;
+            --background-card: rgba(42, 42, 42, 0.4);
+            
+            /* 텍스트 컬러 */
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --text-tertiary: #999999;
+            --text-muted: #666666;
+            
+            /* 글로우 효과 */
+            --glow-purple: #673AB780;
+            --glow-accent: #B388FF60;
+            
+            /* 간격 */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 3rem;
+            --space-xl: 4rem;
+            
+            /* 폰트 */
+            --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-sm: 0.875rem;
+            --font-base: 1rem;
+            --font-lg: 1.125rem;
+            --font-xl: 1.25rem;
+            --font-2xl: 1.5rem;
+            --font-3xl: 1.875rem;
+            --font-4xl: 2.25rem;
+            --font-5xl: 3rem;
+            
+            /* 둥근 모서리 */
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 20px;
+            
+            /* 애니메이션 */
+            --duration-normal: 0.3s;
+            --ease-out: cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        /* ========== BASE STYLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, var(--background-black) 0%, #1a0033 50%, var(--background-black) 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ========== 파티클 배경 ========== */
+        .bg-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent-purple);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            opacity: 0.4;
+        }
+
+        .particle:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 20%; left: 80%; animation-delay: 1s; }
+        .particle:nth-child(3) { top: 40%; left: 60%; animation-delay: 2s; }
+        .particle:nth-child(4) { top: 60%; left: 20%; animation-delay: 3s; }
+        .particle:nth-child(5) { top: 80%; left: 90%; animation-delay: 4s; }
+        .particle:nth-child(6) { top: 30%; left: 40%; animation-delay: 5s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-30px) scale(1.5); opacity: 0.8; }
+        }
+
+        /* ========== MAIN CONTAINER ========== */
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-md);
+            min-height: 100vh;
+        }
+
+        /* ========== HEADER SECTION ========== */
+        .header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+            animation: fadeInUp 1s var(--ease-out);
+        }
+
+        .brand-logo {
+            font-size: var(--font-2xl);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-purple), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-sm);
+        }
+
+        .report-title {
+            font-size: var(--font-5xl);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-sm);
+            line-height: 1.1;
+        }
+
+        .report-subtitle {
+            font-size: var(--font-xl);
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: var(--space-md);
+        }
+
+        .campaign-period {
+            display: inline-block;
+            background: rgba(179, 136, 255, 0.2);
+            color: var(--accent-purple);
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-2xl);
+            font-size: var(--font-base);
+            font-weight: 600;
+            border: 1px solid rgba(179, 136, 255, 0.3);
+        }
+
+        /* ========== SUMMARY STATS ========== */
+        .summary-section {
+            background: var(--background-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            text-align: center;
+            animation: fadeInUp 1s var(--ease-out) 0.2s both;
+        }
+
+        .summary-title {
+            font-size: var(--font-3xl);
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: var(--space-lg);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-number {
+            font-size: var(--font-4xl);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-purple), var(--primary-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: block;
+            margin-bottom: var(--space-xs);
+            text-shadow: 0 0 20px var(--glow-accent);
+        }
+
+        .summary-label {
+            font-size: var(--font-base);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ========== CHANNEL PERFORMANCE ========== */
+        .channels-section {
+            margin-bottom: var(--space-xl);
+        }
+
+        .section-title {
+            font-size: var(--font-3xl);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .channel-card {
+            background: var(--background-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-xl);
+            padding: var(--space-lg);
+            text-align: center;
+            transition: all var(--duration-normal) var(--ease-out);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s var(--ease-out) both;
+        }
+
+        .channel-card:nth-child(1) { animation-delay: 0.4s; }
+        .channel-card:nth-child(2) { animation-delay: 0.6s; }
+        .channel-card:nth-child(3) { animation-delay: 0.8s; }
+
+        .channel-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
+            opacity: 0.6;
+        }
+
+        .channel-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(103, 58, 183, 0.3);
+            border-color: rgba(179, 136, 255, 0.3);
+        }
+
+        .channel-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 0 15px var(--glow-accent);
+        }
+
+        .channel-name {
+            font-size: var(--font-xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .channel-conversion {
+            font-size: var(--font-4xl);
+            font-weight: 900;
+            color: var(--accent-purple);
+            margin-bottom: var(--space-sm);
+            text-shadow: 0 0 15px var(--glow-accent);
+        }
+
+        .channel-label {
+            font-size: var(--font-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-md);
+        }
+
+        .channel-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-sm);
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-mini {
+            text-align: center;
+        }
+
+        .stat-mini-value {
+            font-size: var(--font-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-mini-label {
+            font-size: var(--font-sm);
+            color: var(--text-tertiary);
+            margin-top: 2px;
+        }
+
+        /* ========== INSIGHTS SECTION ========== */
+        .insights-section {
+            background: var(--background-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            animation: fadeInUp 1s var(--ease-out) 1s both;
+        }
+
+        .insights-title {
+            font-size: var(--font-3xl);
+            font-weight: 700;
+            color: var(--accent-purple);
+            margin-bottom: var(--space-lg);
+            text-align: center;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+        }
+
+        .insight-item {
+            padding: var(--space-md);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .insight-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent-purple);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-sm);
+            box-shadow: 0 0 15px var(--glow-accent);
+        }
+
+        .insight-icon::after {
+            content: "✓";
+            color: var(--background-black);
+            font-size: 0.75rem;
+            font-weight: 900;
+        }
+
+        .insight-text {
+            font-size: var(--font-base);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .insight-highlight {
+            color: var(--accent-purple);
+            font-weight: 700;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            text-align: center;
+            padding: var(--space-xl);
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            border-radius: var(--radius-2xl);
+            margin-bottom: var(--space-xl);
+            animation: fadeInUp 1s var(--ease-out) 1.2s both;
+        }
+
+        .cta-title {
+            font-size: var(--font-3xl);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-description {
+            font-size: var(--font-lg);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--text-primary);
+            color: var(--primary-purple);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-2xl);
+            font-weight: 700;
+            font-size: var(--font-lg);
+            text-decoration: none;
+            transition: all var(--duration-normal) var(--ease-out);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+            color: var(--primary-purple);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            text-align: center;
+            padding: var(--space-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 1s var(--ease-out) 1.4s both;
+        }
+
+        .footer-text {
+            color: var(--text-tertiary);
+            font-size: var(--font-sm);
+        }
+
+        /* ========== ANIMATIONS ========== */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        @media (max-width: 768px) {
+            .container {
+                padding: var(--space-sm);
+            }
+            
+            .report-title {
+                font-size: var(--font-3xl);
+            }
+            
+            .summary-grid,
+            .channels-grid,
+            .insights-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+            
+            .summary-section,
+            .insights-section,
+            .cta-section {
+                padding: var(--space-md);
+            }
+            
+            .channel-card {
+                margin-bottom: var(--space-sm);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .report-title {
+                font-size: var(--font-2xl);
+            }
+            
+            .summary-number {
+                font-size: var(--font-3xl);
+            }
+            
+            .channel-conversion {
+                font-size: var(--font-3xl);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Particles -->
+    <div class="bg-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="brand-logo">🍚 밥떡한끼 프랜차이즈</div>
+            <h1 class="report-title">1차 마케팅 캠페인<br>성과 리포트</h1>
+            <p class="report-subtitle">"든든하게, 부담 없게" 캠페인의 놀라운 결과</p>
+            <div class="campaign-period">📅 2024년 8월 1일 - 8월 13일 (13일간)</div>
+        </header>
+
+        <!-- Summary Section -->
+        <section class="summary-section">
+            <h2 class="summary-title">📊 캠페인 총괄 성과</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <span class="summary-number">10,000</span>
+                    <div class="summary-label">총 발송량</div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-number">19명</span>
+                    <div class="summary-label">사업설명회 신청</div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-number">280만원</span>
+                    <div class="summary-label">총 마케팅 비용</div>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-number">147,368원</span>
+                    <div class="summary-label">평균 CPA</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Channel Performance Section -->
+        <section class="channels-section">
+            <h2 class="section-title">📈 채널별 성과 분석</h2>
+            <div class="channels-grid">
+                <!-- Email Marketing -->
+                <div class="channel-card">
+                    <div class="channel-icon">📧</div>
+                    <h3 class="channel-name">이메일 마케팅</h3>
+                    <div class="channel-conversion">1.98%</div>
+                    <div class="channel-label">최종 전환율 (15명 신청)</div>
+                    <div class="channel-stats">
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">4,000</div>
+                            <div class="stat-mini-label">발송</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">24.8%</div>
+                            <div class="stat-mini-label">오픈율</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">8.2%</div>
+                            <div class="stat-mini-label">클릭률</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facebook -->
+                <div class="channel-card">
+                    <div class="channel-icon">📘</div>
+                    <h3 class="channel-name">Facebook</h3>
+                    <div class="channel-conversion">2.14%</div>
+                    <div class="channel-label">최종 전환율 (3명 신청)</div>
+                    <div class="channel-stats">
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">4,000</div>
+                            <div class="stat-mini-label">노출</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">85.5%</div>
+                            <div class="stat-mini-label">도달률</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">4.1%</div>
+                            <div class="stat-mini-label">클릭률</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Threads -->
+                <div class="channel-card">
+                    <div class="channel-icon">🧵</div>
+                    <h3 class="channel-name">Threads</h3>
+                    <div class="channel-conversion">1.12%</div>
+                    <div class="channel-label">최종 전환율 (1명 신청)</div>
+                    <div class="channel-stats">
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">2,000</div>
+                            <div class="stat-mini-label">노출</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">78.2%</div>
+                            <div class="stat-mini-label">도달률</div>
+                        </div>
+                        <div class="stat-mini">
+                            <div class="stat-mini-value">5.7%</div>
+                            <div class="stat-mini-label">클릭률</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Insights Section -->
+        <section class="insights-section">
+            <h2 class="insights-title">🎯 핵심 인사이트</h2>
+            <div class="insights-grid">
+                <div class="insight-item">
+                    <div class="insight-icon"></div>
+                    <div class="insight-text">
+                        <span class="insight-highlight">이메일의 우수한 전환율:</span> 상세 정보를 원하는 진성 관심고객 확보에 성공했습니다.
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon"></div>
+                    <div class="insight-text">
+                        <span class="insight-highlight">Threads 높은 참여율:</span> 젊은 창업층의 새로운 관심 채널로 부상했습니다.
+                    </div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-icon"></div>
+                    <div class="insight-text">
+                        <span class="insight-highlight">목표 CPA 달성:</span> 예상 범위 내 고객획득비용으로 효율적 캠페인을 진행했습니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2 class="cta-title">🚀 2차 캠페인이 궁금하시다면?</h2>
+            <p class="cta-description">
+                더 강력한 전략과 개선된 타겟팅으로<br>
+                더 나은 성과를 만들어가겠습니다.
+            </p>
+            <a href="src/slide-07.html" class="cta-button">다음 전략 보기</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">
+                밥떡한끼 프랜차이즈 마케팅팀<br>
+                📧 marketing@babtteok.co.kr | 📞 02-1234-5678
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // ========== INTERACTIVE EFFECTS ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            // Counter Animation for Numbers
+            const animateCounters = () => {
+                const counters = document.querySelectorAll('.summary-number, .channel-conversion');
+                
+                counters.forEach(counter => {
+                    const updateCounter = () => {
+                        const target = counter.textContent;
+                        const isPercentage = target.includes('%');
+                        const isCurrency = target.includes('만원');
+                        
+                        let numericValue;
+                        if (isPercentage) {
+                            numericValue = parseFloat(target.replace('%', ''));
+                        } else if (isCurrency) {
+                            numericValue = parseInt(target.replace('만원', '').replace(',', ''));
+                        } else if (target.includes('명')) {
+                            numericValue = parseInt(target.replace('명', ''));
+                        } else if (target.includes(',')) {
+                            numericValue = parseInt(target.replace(/,/g, ''));
+                        } else {
+                            numericValue = parseFloat(target) || 0;
+                        }
+                        
+                        const increment = numericValue / 50;
+                        let current = 0;
+                        
+                        const timer = setInterval(() => {
+                            current += increment;
+                            
+                            if (current >= numericValue) {
+                                current = numericValue;
+                                clearInterval(timer);
+                            }
+                            
+                            let displayValue;
+                            if (isPercentage) {
+                                displayValue = current.toFixed(2) + '%';
+                            } else if (isCurrency) {
+                                displayValue = Math.round(current).toLocaleString() + '만원';
+                            } else if (target.includes('명')) {
+                                displayValue = Math.round(current) + '명';
+                            } else if (target.includes(',')) {
+                                displayValue = Math.round(current).toLocaleString();
+                            } else {
+                                displayValue = Math.round(current);
+                            }
+                            
+                            counter.textContent = displayValue;
+                        }, 30);
+                    };
+                    
+                    // Intersection Observer for animation trigger
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                updateCounter();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+                    
+                    observer.observe(counter);
+                });
+            };
+
+            // Card Hover Effects
+            const setupCardEffects = () => {
+                const cards = document.querySelectorAll('.channel-card');
+                
+                cards.forEach(card => {
+                    card.addEventListener('mouseenter', () => {
+                        card.style.transform = 'translateY(-12px) scale(1.02)';
+                    });
+                    
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+            };
+
+            // Particle Movement Enhancement
+            const enhanceParticles = () => {
+                const particles = document.querySelectorAll('.particle');
+                
+                particles.forEach((particle, index) => {
+                    setInterval(() => {
+                        const randomX = Math.random() * window.innerWidth;
+                        const randomY = Math.random() * window.innerHeight;
+                        
+                        particle.style.transition = 'all 12s ease-in-out';
+                        particle.style.left = randomX + 'px';
+                        particle.style.top = randomY + 'px';
+                    }, 12000 + (index * 2000));
+                });
+            };
+
+            // Smooth Scrolling for CTA
+            const setupSmoothScrolling = () => {
+                const ctaButton = document.querySelector('.cta-button');
+                
+                ctaButton.addEventListener('click', (e) => {
+                    // Add subtle click animation
+                    ctaButton.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        ctaButton.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            };
+
+            // Progressive Enhancement for Touch Devices
+            const setupTouchEnhancements = () => {
+                if ('ontouchstart' in window) {
+                    document.body.classList.add('touch-device');
+                    
+                    // Add touch feedback for cards
+                    const touchCards = document.querySelectorAll('.channel-card, .insight-item');
+                    
+                    touchCards.forEach(card => {
+                        card.addEventListener('touchstart', () => {
+                            card.style.transform = 'scale(0.98)';
+                        });
+                        
+                        card.addEventListener('touchend', () => {
+                            card.style.transform = 'scale(1)';
+                        });
+                    });
+                }
+            };
+
+            // Initialize all interactive features
+            animateCounters();
+            setupCardEffects();
+            enhanceParticles();
+            setupSmoothScrolling();
+            setupTouchEnhancements();
+        });
+
+        // ========== PERFORMANCE OPTIMIZATION ==========
+        // Reduce motion for users who prefer it
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.body.style.setProperty('--duration-normal', '0.01s');
+        }
+
+        // Battery optimization
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(battery => {
+                if (battery.level < 0.2) {
+                    document.documentElement.classList.add('low-battery');
+                    // Reduce animations for low battery
+                    document.querySelectorAll('.particle').forEach(p => {
+                        p.style.animation = 'none';
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -362,3 +362,5 @@ C:\Users\mokka\Claude-project\Babtteok\
 
 *마지막 업데이트: 2025.06.30*  
 *프로젝트 상태: 완성 및 배포 준비 완료*
+ 
+ 
